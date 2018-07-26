@@ -1,0 +1,17 @@
+
+<nav class="subnav" >
+    <ul class="nav">
+      <li *ngIf="!tickers.length">Loading tickers...</li>
+      <li class="nav-item" *ngFor="let ticker of tickers" [@slideOut]>
+        <clr-icon shape="wallet" class="is-solid" *ngIf="ticker.type == 0"></clr-icon>
+        <clr-icon shape="shopping-cart" class="has-badge is-solid" *ngIf="ticker.type == 1"></clr-icon>
+        <clr-icon shape="no-wifi" class="is-solid" *ngIf="ticker.type == 2"></clr-icon>
+        <clr-icon shape="building" class="has-badge is-solid" *ngIf="ticker.type == 3"></clr-icon>
+        <clr-icon shape="store"  class="is-solid" *ngIf="ticker.type == 4"></clr-icon>
+
+       <span class="ticker-title"> {{ticker.title}}</span>  <span class="ticker-message">{{ticker.message}}</span>
+     
+     
+      </li>
+    </ul>
+  </nav>

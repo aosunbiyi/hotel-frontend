@@ -1,20 +1,284 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="main-container">
+  <div class="alert alert-app-level">
+      &nbsp;&nbsp;&nbsp;&nbsp;alert message
+  </div>
+  <nav class="subnav" style="overflow:hidden!important;">
+    <app-ticker [tickers]="tickers"></app-ticker>
+  </nav>
+  <header class="header header-6">
+    <div class="branding">
+      <a href="javascript://" class="nav-link">
+        <clr-icon shape="vm-bug"></clr-icon>
+        <span class="title">Hotel Application</span>
+      </a>
+    </div>
+    <div class="header-nav">
+      <a href="javascript://" class=" active nav-link nav-text">Dashboard</a>
+      <a href="javascript://" class="nav-link nav-text">Interactive Analytics</a>
+      <a href="javascript://" class="nav-link nav-text">Customers</a>
+      <a href="javascript://" class="nav-link nav-text">Booking</a>
+      <a href="javascript://" class="nav-link nav-text">Reports</a>
+      <a href="javascript://" class="nav-link nav-text">Inventory</a>
+      <a href="javascript://" class="nav-link nav-text">Calendar</a>
+      <a href="javascript://" class="nav-link nav-text">Manage</a>
+      <a href="javascript://" class="nav-link nav-text">Help</a>
+    </div>
+    <div class="header-actions">
+      <a href="javascript://" class="nav-link nav-icon">
+        <clr-icon shape="cog"></clr-icon>
+      </a>
+    </div>
+  </header>
+  <nav class="subnav little-links">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Management</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cloud</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tenants</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Select</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Guests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Archives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Financials</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cashbook</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Prices</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">Extras</a>
+        </li>
+    </ul>
+  </nav>
+  <div class="content-container">
+    <div class="content-area">
 
+
+      <div class="row">
+        <div class="col-md-4">
+
+          <div class="row x-component">
+            <div class="col-md x-today">
+
+              <div class="day-name">{{day_name}}</div>
+              <div class="month-name">{{month_name}}</div>
+              <div class="day-number">{{day_number}}</div>
+              <div class="year-name">{{year_name}}</div>
+              <div class="date-time">{{time}}</div>
+            </div>
+            <div class="col-md-8 x-rooms">
+              <div class="room-info">52 Rooms</div>
+              <div class="available-total">Available Total</div>
+            </div>
+          </div>
+
+          <div class="row x-component2">
+            <div class="col-md">
+              <div class="row">
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check In Today</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check Out Today</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check In Today</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check Out Today</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 x-comp">
+              <div class="row">
+                <div class="col-md x-summary">
+                  <div class="occupancy">0%</div>
+                  <div class="occupancy-letter">Occupancy</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row x-component2">
+            <div class="col-md">
+              <div class="row">
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check In Today</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check Out Today</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check In Today</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">0</div>
+                  <div class="checkin">Check Out Today</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 x-comp">
+              <div class="row">
+                <div class="col-md x-summary">
+                  <div class="occupancy">₦0.00</div>
+                  <div class="occupancy-letter">Disccount</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="row x-component">
+              <div class="col-md category-bar2">
+                Customer Details
+              </div>
+            </div>
+            <div class="row x-component3">
+                <div class="col-md category-content2">
+             
+    
+                </div>
+              </div>
+
+          <div class="row x-component">
+            <div class="col-md category-bar">
+              Categories
+            </div>
+          </div>
+
+          <div class="row x-component3">
+            <div class="col-md category-content">
+              <div class="row">
+                <div class="col-md-6">
+
+
+                  <ol class="category-list">
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single1" checked>
+                        <label for="single1">Single Bedroom</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single2">
+                        <label for="single2">Double Bedroom</label>
+                      </div>
+
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single3" checked>
+                        <label for="single3">Share Bedroom</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single4">
+                        <label for="single4">Holiday Apartment</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single5">
+                        <label for="single5">Holiday Home</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single6">
+                        <label for="single6">Holiday Suite</label>
+                      </div>
+                    </li>
+                  </ol>
+
+                </div>
+                <div class="col-md-6">
+                  <ol class="category-list">
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single7" checked>
+                        <label for="single7">Single Bedroom</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single8" checked>
+                        <label for="single8">Double Bedroom</label>
+                      </div>
+
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single9" checked>
+                        <label for="single9">Share Bedroom</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single10" checked>
+                        <label for="single10">Holiday Apartment</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single11" checked>
+                        <label for="single11">Holiday Home</label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" id="single12" checked>
+                        <label for="single12">Holiday Suite</label>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+       
+
+
+
+
+        </div>
+        <div class="col-md-8">
+          <app-dashboard ></app-dashboard>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.summary-bar {
+    background-color:white;
+    padding: 10px;
+    overflow: hidden;
+    height: 63px;
+}
+
+.view-select{
+    background-color: #C1CDD4;
+    padding: 5px;
+    width:250px;
+    margin-left:-10px;
+}
+.x-icon-row{
+    margin-top:-5px;
+ 
+}
+.x-icon-dot{
+    background-color:#0065AB;
+    height: 50px;
+  margin: 1px;
+  color:white;
+  text-align: center;
+}

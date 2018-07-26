@@ -1,0 +1,144 @@
+.content-area{
+    padding: 0!important;
+}
+
+
+
+.content-area{
+    overflow:hidden;
+}
+.x-component{
+    margin-top:5px;
+    margin-left:5px;
+    color:white;
+    text-align: center;
+}
+
+.x-component2{
+    margin-top:2px;
+    margin-left:4px;
+    color:white;
+    text-align: center;
+}
+.x-component3{
+    margin-top:5px;
+    margin-left:5px;
+    color:#25333D;
+}
+.x-comp{
+    margin-top:2px;
+}
+
+.x-today{
+ background-color: #798893;
+ height: 150px;
+ margin-right:2px;
+ 
+}
+
+.x-today .day-name{
+    margin-top:2px;
+    font-size: 14px;
+}
+.x-today .month-name{
+    margin-top:1px;
+    font-size: 20px;
+}
+.x-today .day-number{
+    margin-top:4px;
+    font-size: 50px;
+}
+.x-today .year-name{
+    margin-top:4px;
+    font-size: 20px;
+}
+.x-today .date-time{
+    margin-top:2px;
+    font-size: 20px;
+}
+.x-rooms{
+    background-color: #0065AB;
+    height: 150px;
+    text-align:center;
+}
+.x-rooms .room-info{
+    font-size:46px;
+    margin-top:20px; 
+}
+.x-rooms .available-total{
+    font-size:17px;
+    margin-top:15px;
+    border-bottom: solid 1px white;
+    width:70%;
+    margin-left: 45px;
+    letter-spacing: 3px;
+    
+}
+
+.x-ratio{
+    background-color: #798893;
+    margin: 2px;
+    height: 80px;
+}
+.x-ratio .num{
+    font-size:35px;
+    margin-top:15px;
+}
+.x-ratio .checkin{
+    font-size:9px;
+    margin-top:3px;
+    font-weight: bold;
+    line-height: 15px;
+}
+.x-summary{
+    background-color: #25333D;
+    height: 80px;
+    color:white;
+}
+
+.x-summary .occupancy{
+    font-size:48px;
+    margin-top:17px;
+}
+.x-summary .occupancy-letter{
+    font-size:18px;
+    margin-top:8px;
+}
+
+.category-bar{
+    background-color:#25333D;
+    margin-top:-3px;
+    height: 35px;
+    padding-top:5px;
+    font-size:22px;
+    letter-spacing: 4px;
+}
+.category-bar2{
+    background-color:#25333D;
+    margin-top:-5px;
+    height: 35px;
+    padding-top:5px;
+    font-size:22px;
+    letter-spacing: 4px;
+}
+.category-content{
+    background-color:#C1CDD4;
+    margin-top:-5px;
+    height: 160px;
+    padding-top:8px;
+ 
+}
+.category-content2{
+    background-color:#C1CDD4;
+    margin-top:-5px;
+    height: 90px;
+    padding-top:8px;
+ 
+}
+.category-list{
+  list-style: none;
+}
+.little-links{
+    background-color:#A6D8E7;
+    color:#25333D;
+}
