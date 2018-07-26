@@ -5,13 +5,15 @@ import { SummaryBarComponent } from './summary-bar/summary-bar.component';
 import { DateBarComponent } from './date-bar/date-bar.component';
 import { ClarityModule } from '@clr/angular';
 import { SchedularComponent } from './schedular/schedular.component';
+import { HeaderComponent } from './schedular/header/header.component';
+import { BodyComponent } from './schedular/body/body.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ClarityModule
   ],
-  declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent],
+  declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent, HeaderComponent, BodyComponent],
   exports: [DashboardComponent, SummaryBarComponent, DateBarComponent]
 })
 export class DashboardModule { }
