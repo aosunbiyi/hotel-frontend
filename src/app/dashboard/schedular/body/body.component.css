@@ -1,0 +1,33 @@
+
+.box-dt{
+   
+    height: 30px;
+}
+
+.red{
+    background-color:#CD3517;
+}
+
+.green{
+    background-color:#1D5100;
+}
+
+.x40{
+    width: 10px;
+}
+
+.x80{
+    width: 10px;
+}
+
+.x120{
+    width: 10px;
+}
+
+tbody{
+    border:solid 1px #0065AB!important;
+}
+td{
+    border:solid 1px #0065AB!important;
+    width:45px;
+}
