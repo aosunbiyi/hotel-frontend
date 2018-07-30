@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-schedular',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedularComponent implements OnInit {
 
-  constructor() { }
+  @Input() startdate: any;
+
+  constructor() {
+    console.log('from schedular start date=' + this.startdate);
+  }
 
   ngOnInit() {
   }

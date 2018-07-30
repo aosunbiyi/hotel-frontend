@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SummaryBarComponent } from './summary-bar/summary-bar.component';
 import { DateBarComponent } from './date-bar/date-bar.component';
@@ -11,7 +12,8 @@ import { BodyComponent } from './schedular/body/body.component';
 @NgModule({
   imports: [
     CommonModule,
-    ClarityModule
+    ClarityModule,
+    FormsModule
   ],
   declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent, HeaderComponent, BodyComponent],
   exports: [DashboardComponent, SummaryBarComponent, DateBarComponent]

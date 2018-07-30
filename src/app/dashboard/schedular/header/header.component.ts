@@ -9,21 +9,67 @@ import { LocalDate, LocalTime } from 'js-joda';
 export class HeaderComponent implements OnInit {
 
   labels: any[] = [];
+  date: any;
+  totalDays: any;
+  lengthOfMonth: any;
+  totalNeededDays: any;
+  startingDay: any;
+  endingDay: any;
+  expectedTotalDay: any;
+  jodalLib = LocalDate.now();
 
   constructor() {
     this.labels.push('+/-');
     this.labels.push('Rooms');
-    const date = LocalDate.now();
-    const totalDays = date.lengthOfMonth();
-    const totalNeededDays = 15;
-    const startingDay = date.dayOfMonth();
-    const endingDay = startingDay + totalNeededDays;
+    this.date = LocalDate.now();
+    this.lengthOfMonth = this.date.lengthOfMonth();
+    this.totalNeededDays = 30;
+    this.startingDay = this.date.dayOfMonth();
+    this.endingDay = this.startingDay + this.totalNeededDays;
 
-    // if(endingDay > (totalDays+startingDay)){
-    //   endingDay=totalDays;
-    // }
 
-    console.log(endingDay);
+
+    if (this.endingDay > this.lengthOfMonth) {
+      let newEndingDay = this.endingDay - this.lengthOfMonth;
+
+      for (let i = this.startingDay; i <= this.lengthOfMonth; i++) {
+        let year = this.jodalLib.year();
+        let month = this.jodalLib.monthValue();
+        let monthName = this.jodalLib.month();
+        let fulldate = `${year}-${month}-${i}`;
+        let parseDate = this.jodalLib.plusDays(i);
+        let strDate = `${monthName.toString().substr(0,3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0,3)}`;
+        this.labels.push(strDate);
+        this.totalNeededDays = this.totalNeededDays - 1;
+      }
+
+      let localJodaLib = this.jodalLib.plusMonths(1);
+      for (let i = 1; i <= this.totalNeededDays; i++) {
+        let year = localJodaLib.year();
+        let month = localJodaLib.monthValue();
+        let monthName = localJodaLib.month();
+        let fulldate = `${year}-${month}-${i}`;
+        let parseDate = localJodaLib.plusDays(i);
+        let strDate = `${monthName.toString().substr(0,3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0,3)}`;
+        this.labels.push(strDate);
+      }
+
+
+    } else {
+      let localJodaLib = this.jodalLib.plusMonths(1);
+      for (let i = 1; i <= this.totalNeededDays; i++) {
+        let year = localJodaLib.year();
+        let month = localJodaLib.monthValue();
+        let monthName = localJodaLib.month();
+        let fulldate = `${year}-${month}-${i}`;
+        let parseDate = localJodaLib.plusDays(i);
+        let strDate = `${monthName.toString().substr(0,3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0,3)}`;
+        this.labels.push(strDate);
+      }
+    }
+
+
+
 
   }
 

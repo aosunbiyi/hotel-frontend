@@ -2,40 +2,9 @@
 
 
 <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>A <div class="box-dt red x40"></div></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>B<div class="box-dt green x80"></div> </td>
-      <td> </td>
-      <td> </td>
-      <td>C<div class="box-dt green x120"></div> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td></td>
-      <td> </td>
-      <td></td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+    <tr *ngFor="let room_label of room_labels">
+      
+      <td width="150px" *ngFor="let label of room_label" style="width:150px!important"> {{label}}</td>
    
     </tr>
   </tbody>
