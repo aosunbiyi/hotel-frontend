@@ -1,0 +1,23 @@
+
+.red{
+    background-color: #C92100;
+    color:white;
+}
+
+.blue{
+    background-color: #004A70;
+    color:white;
+}
+
+.green{
+    background-color: #318700;
+    color:white;
+}
+
+.comp{
+    width: 100px;
+    height: 40px;
+    padding-top: 15px;
+    margin-left:-10px;
+    cursor: pointer;
+}

@@ -8,6 +8,7 @@ import { ClarityModule } from '@clr/angular';
 import { SchedularComponent } from './schedular/schedular.component';
 import { HeaderComponent } from './schedular/header/header.component';
 import { BodyComponent } from './schedular/body/body.component';
+import { BookStatusComponent } from './schedular/book-status/book-status.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { BodyComponent } from './schedular/body/body.component';
     ClarityModule,
     FormsModule
   ],
-  declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent, HeaderComponent, BodyComponent],
+  declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent, HeaderComponent, BodyComponent, BookStatusComponent],
   exports: [DashboardComponent, SummaryBarComponent, DateBarComponent]
 })
 export class DashboardModule { }

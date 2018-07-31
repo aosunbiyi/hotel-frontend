@@ -3,6 +3,7 @@ import { LocalDate, LocalTime } from 'js-joda';
 import { Ticker } from './services/ticker.model';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,17 +17,36 @@ export class AppComponent {
   year_name: any = '';
   time: any = '';
   tickers: Ticker[] = [];
+  intervalHadle: any;
 
   constructor() {
-    const day = LocalDate.now();
-    const time = LocalTime.now();
-    this.day_name = day.dayOfWeek();
-    this.month_name = day.month();
-    this.day_number = day.dayOfMonth();
-    this.year_name = day.year();
-    this.time = time.toString().split('.')[0];
 
-    this.tickers = [
+
+
+    this.intervalHadle = setInterval(() => {
+      const day = LocalDate.now();
+      const time = LocalTime.now();
+      this.day_name = day.dayOfWeek();
+      this.month_name = day.month();
+      this.day_number = day.dayOfMonth();
+      this.year_name = day.year();
+      this.time = time.toString().split('.')[0];
+
+      console.log(this.tickers.length);
+      if (this.tickers.length === 0) {
+        this.tickers = this.loadTickers();
+      }
+
+      console.log(this.time);
+    }, 1000);
+
+    this.tickers = this.loadTickers();
+
+
+  }
+
+  loadTickers() {
+    return [
       { type: 0, title: 'Low Credit', message: 'Custmer in room 202, Mr Ben is running out of deposited credit' },
       { type: 0, title: 'Low Credit', message: 'Custmer in room 201, Mr King is running out of deposited credit' },
       { type: 1, title: 'Low Inventry', message: 'The inventry is very low, please reorder' },
@@ -988,8 +1008,6 @@ export class AppComponent {
       { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
       { type: 4, title: 'No Stock', message: 'Stock Level is very low' }
     ];
-
-
   }
 
 

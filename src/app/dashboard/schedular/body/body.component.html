@@ -4,7 +4,12 @@
 <tbody>
     <tr *ngFor="let room_label of room_labels">
       
-      <td width="150px" *ngFor="let label of room_label" style="width:150px!important"> {{label}}</td>
+      <td  *ngFor="let label of room_label" > 
+
+        <div class="x80">
+          <app-book-status [label]="label"></app-book-status>
+        </div>
+      </td>
    
     </tr>
   </tbody>

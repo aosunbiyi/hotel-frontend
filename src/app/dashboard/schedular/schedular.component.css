@@ -1,4 +1,11 @@
 table{
     margin-top:-4px;
-    
+    border: solid 1px white;
+}
+table  thead  tr th{
+    border: solid 1px white!important;
+}
+
+table  tbody tr  td{
+    border: solid 1px white!important;
 }

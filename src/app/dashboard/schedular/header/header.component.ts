@@ -17,13 +17,14 @@ export class HeaderComponent implements OnInit {
   endingDay: any;
   expectedTotalDay: any;
   jodalLib = LocalDate.now();
+  DAYS = 30;
 
   constructor() {
     this.labels.push('+/-');
     this.labels.push('Rooms');
     this.date = LocalDate.now();
     this.lengthOfMonth = this.date.lengthOfMonth();
-    this.totalNeededDays = 30;
+    this.totalNeededDays = this.DAYS;
     this.startingDay = this.date.dayOfMonth();
     this.endingDay = this.startingDay + this.totalNeededDays;
 
