@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { LocalDate, LocalTime } from 'js-joda';
 import { Ticker } from './services/ticker.model';
 
@@ -9,7 +9,8 @@ import { Ticker } from './services/ticker.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
+
 
   day_name: any = '';
   month_name: any = '';
@@ -17,13 +18,12 @@ export class AppComponent {
   year_name: any = '';
   time: any = '';
   tickers: Ticker[] = [];
-  intervalHadle: any;
+  intervalHandle: any;
 
   constructor() {
 
 
-
-    this.intervalHadle = setInterval(() => {
+    this.intervalHandle = setInterval(() => {
       const day = LocalDate.now();
       const time = LocalTime.now();
       this.day_name = day.dayOfWeek();
@@ -32,18 +32,23 @@ export class AppComponent {
       this.year_name = day.year();
       this.time = time.toString().split('.')[0];
 
-      console.log(this.tickers.length);
+  
       if (this.tickers.length === 0) {
         this.tickers = this.loadTickers();
       }
 
-      console.log(this.time);
     }, 1000);
 
     this.tickers = this.loadTickers();
 
 
   }
+
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalHandle);
+  }
+
 
   loadTickers() {
     return [

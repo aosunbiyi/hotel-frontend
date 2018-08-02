@@ -1,2 +1,2 @@
-<app-summary-bar></app-summary-bar>
-<app-schedular ></app-schedular>
+<app-summary-bar (onDateChanged)="schedular.onDateChanged($event)"></app-summary-bar>
+<app-schedular  #schedular></app-schedular>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-book-status',
@@ -16,7 +16,7 @@ export class BookStatusComponent implements OnInit {
   transactionType: String = '';
 
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
     if (this.label !== '' && this.label.length > 0) {

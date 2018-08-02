@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LocalDate } from 'js-joda';
 import { ClarityIcons } from '@clr/icons';
 import { NgForm } from '@angular/forms';
@@ -10,6 +10,9 @@ import { NgForm } from '@angular/forms';
 })
 export class SummaryBarComponent implements OnInit {
 
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onDateChanged: EventEmitter<null> = new EventEmitter<null>();
+
   date = LocalDate.now();
 
   constructor() { }
@@ -18,7 +21,7 @@ export class SummaryBarComponent implements OnInit {
   }
 
   changeDate(date) {
-    console.log('date changed ' + date);
+    this.onDateChanged.emit(date);
   }
 
 }

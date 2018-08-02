@@ -12,7 +12,7 @@ export class BodyComponent implements OnInit {
   room_labels: any[] = [];
   rooms: any[] = [
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 1', short_name: 'RM1', wing: 'Wing A', floor: 'Floor 1', oc: 'Fred', isFree: false, transaction_type: 1, from: '2018-08-01', to: '2018-08-30' },
+    { name: 'Room 1', short_name: 'RM1', wing: 'Wing A', floor: 'Floor 1', oc: 'Fred', isFree: false, transaction_type: 1, from: '2018-08-01', to: '2018-08-05' },
     // tslint:disable-next-line:max-line-length
     { name: 'Room 2', short_name: 'RM2', wing: 'Wing B', floor: 'Floor 3', oc: 'Ben', isFree: false, transaction_type: 1, from: '2018-08-01', to: '2018-08-01' },
     // tslint:disable-next-line:max-line-length
@@ -44,9 +44,27 @@ export class BodyComponent implements OnInit {
   DAYS = 30;
 
   constructor() {
-    this.labels.push('+/-');
-    this.labels.push('Rooms');
+
+    this.jodalLib = LocalDate.now();
     this.date = LocalDate.now();
+    this.room_labels = [];
+    this.generateBody();
+
+  }
+
+  ngOnInit() {
+  }
+
+  reSetDate(date) {
+    this.date = LocalDate.parse(date);
+    this.jodalLib = LocalDate.parse(date);
+    this.room_labels = [];
+    this.generateBody();
+  }
+
+  generateBody() {
+
+
     this.lengthOfMonth = this.date.lengthOfMonth();
     this.totalNeededDays = this.DAYS;
     this.startingDay = this.date.dayOfMonth();
@@ -57,15 +75,17 @@ export class BodyComponent implements OnInit {
       this.room_labels[this.rowIndex] = new Array();
       this.totalNeededDays = this.DAYS;
 
-      this.room_labels[this.rowIndex].push('*');
-      this.room_labels[this.rowIndex].push(room.short_name);
+
+      this.room_labels[this.rowIndex].push(room.name);
 
 
 
       if (this.endingDay > this.lengthOfMonth) {
         const newEndingDay = this.endingDay - this.lengthOfMonth;
+
+
         for (let i = this.startingDay; i <= this.lengthOfMonth; i++) {
-          const parseDate = this.jodalLib.plusDays(i);
+          const parseDate = this.jodalLib.withDayOfMonth(i);
           const year = this.jodalLib.year();
           const month = this.jodalLib.monthValue();
           const monthName = this.jodalLib.month();
@@ -74,28 +94,33 @@ export class BodyComponent implements OnInit {
 
           const strDate = this.checkBooking(room.to, room.from, parseDate.toString(), room);
           // `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
+          // const rr = `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
+          // console.log(rr);
           this.room_labels[this.rowIndex].push(strDate);
           this.totalNeededDays = this.totalNeededDays - 1;
         }
 
+
+
         const localJodaLib = this.jodalLib.plusMonths(1);
         for (let i = 1; i <= this.totalNeededDays; i++) {
-          const parseDate = localJodaLib.plusDays(i);
+          const parseDate = localJodaLib.withDayOfMonth(i);
           const year = localJodaLib.year();
           const month = localJodaLib.monthValue();
           const monthName = localJodaLib.month();
           const fulldate = `${year}-${month}-${i}`;
 
           const strDate = this.checkBooking(room.to, room.from, parseDate.toString(), room);
-          // `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
+          // const rr = `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
+          // console.log(rr);
           this.room_labels[this.rowIndex].push(strDate);
         }
 
 
       } else {
-        const localJodaLib = this.jodalLib.plusMonths(1);
+        const localJodaLib = this.jodalLib.plusMonths(0);
         for (let i = 1; i <= this.totalNeededDays; i++) {
-          const parseDate = localJodaLib.plusDays(i);
+          const parseDate = localJodaLib.withDayOfMonth(i );
           const year = localJodaLib.year();
           const month = localJodaLib.monthValue();
           const monthName = localJodaLib.month();
@@ -118,9 +143,6 @@ export class BodyComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-  }
-
   checkBooking(date2, date1, date3, room) {
 
     const d1 = new Date(date1);
@@ -132,7 +154,7 @@ export class BodyComponent implements OnInit {
 
     for (let i = 0; i <= diffDays; i++) {
       const dt = currentDate.plusDays(i);
-      const d33 = LocalDate.parse(date3).minusMonths(1);
+      const d33 = LocalDate.parse(date3).minusMonths(0);
 
       if (d33.equals(dt)) {
         return `${room.oc}-${room.transaction_type}-${room.wing}-${room.floor}`;

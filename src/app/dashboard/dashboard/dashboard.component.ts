@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  date = '01/02/2015';
 
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

@@ -8,8 +8,14 @@
 .view-select{
     background-color: #C1CDD4;
     padding: 5px;
-    width:250px;
+    margin-top: 10px;
+    width:150px;
     margin-left:-10px;
+}
+.view-date{
+    margin-top:-5px;
+    margin-left:-20px;
+    width:150px;
 }
 .x-icon-row{
     margin-top:-5px;
