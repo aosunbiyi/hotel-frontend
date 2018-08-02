@@ -12,25 +12,267 @@ export class BodyComponent implements OnInit {
   room_labels: any[] = [];
   rooms: any[] = [
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 1', short_name: 'RM1', wing: 'Wing A', floor: 'Floor 1', oc: 'Fred', isFree: false, transaction_type: 1, from: '2018-08-01', to: '2018-08-05' },
+    {
+      name: 'Room 1', short_name: 'RM1',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-01', to: '2018-08-05', oc: 'Fred'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 2', short_name: 'RM2', wing: 'Wing B', floor: 'Floor 3', oc: 'Ben', isFree: false, transaction_type: 1, from: '2018-08-01', to: '2018-08-01' },
+    {
+      name: 'Room 2', short_name: 'RM2',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-03', to: '2018-08-04', oc: 'G2'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 3', short_name: 'RM3', wing: 'Wing C', floor: 'Floor 2', oc: 'Micheal', isFree: false, transaction_type: 2, from: '2018-08-01', to: '2018-08-03' },
+    {
+      // tslint:disable-next-line:max-line-length
+      name: 'Room 3', short_name: 'RM3',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-03', to: '2018-08-03', oc: 'Samsung'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 4', short_name: 'RM4', wing: 'Wing A', floor: 'Floor 1', oc: 'Ade', isFree: false, transaction_type: 1, from: '2018-08-06', to: '2018-08-07' },
+    {
+      name: 'Room 4', short_name: 'RM4',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-05', to: '2018-08-05', oc: 'KC'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 5', short_name: 'RM5', wing: 'Wing C', floor: 'Floor 1', oc: 'Adebayo', isFree: false, transaction_type: 2, from: '2018-07-31', to: '2018-08-01' },
+    {
+      // tslint:disable-next-line:max-line-length
+      name: 'Room 5', short_name: 'RM5',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-02', to: '2018-08-04', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 6', short_name: 'RM6', wing: 'Wing A', floor: 'Floor 4', oc: 'Will', isFree: false, transaction_type: 1, from: '2018-08-07', to: '2018-08-07' },
+    {
+      name: 'Room 6', short_name: 'RM6', bookings: [
+        {
+          transaction_type: 1, from: '2018-08-01', to: '2018-08-01', oc: 'Willi'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 7', short_name: 'RM7', wing: 'Wing A', floor: 'Floor 1', oc: 'Smith', isFree: false, transaction_type: 0, from: '2018-08-01', to: '2018-08-03' },
+    {
+      name: 'Room 7', short_name: 'RM7',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-02', to: '2018-08-03', oc: 'Dada'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 8', short_name: 'RM8', wing: 'Wing C', floor: 'Floor 2', oc: 'Krang', isFree: false, transaction_type: 0, from: '2018-08-04', to: '2018-08-05' },
+    {
+      name: 'Room 8', short_name: 'RM8',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-02', to: '2018-08-03', oc: 'Yemi'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 9', short_name: 'RM9', wing: 'Wing B', floor: 'Floor 2', oc: 'Blog', isFree: false, transaction_type: 1, from: '2018-08-03', to: '2018-08-03' },
+    {
+      name: 'Room 9', short_name: 'RM9',  bookings: [
+        {
+          transaction_type: 1, from: '2018-08-05', to: '2018-08-05', oc: 'Kingson'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-08-26', to: '2018-08-27', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-08-28', to: '2018-08-30', oc: 'Unknown'
+        }
+      ]
+    },
     // tslint:disable-next-line:max-line-length
-    { name: 'Room 10', short_name: 'RM10', wing: 'Wing B', floor: 'Floor 1', oc: 'Troy', isFree: false, transaction_type: 1, from: '2018-08-01', to: '2018-08-03' }
+    {
+      name: 'Room 10', short_name: 'RM10', bookings: [
+        {
+          transaction_type: 1, from: '2018-08-03', to: '2018-08-03', oc: 'Benson'
+        },
+        {
+          transaction_type: 1, from: '2018-08-07', to: '2018-08-08', oc: 'Ben'
+        },
+        {
+          transaction_type: 1, from: '2018-08-12', to: '2018-08-15', oc: 'Mr King'
+        },
+        {
+          transaction_type: 1, from: '2018-08-20', to: '2018-08-20', oc: 'Allen'
+        },
+        {
+          transaction_type: 1, from: '2018-08-22', to: '2018-08-25', oc: 'Greg'
+        },
+        {
+          transaction_type: 1, from: '2018-09-04', to: '2018-09-8', oc: 'Prince'
+        },
+        {
+          transaction_type: 1, from: '2018-09-18', to: '2018-10-30', oc: 'Unknown'
+        }
+      ]
+    }
   ];
   date: any;
   totalDays: any;
@@ -92,11 +334,14 @@ export class BodyComponent implements OnInit {
           const fulldate = `${year}-${month}-${i}`;
 
 
-          const strDate = this.checkBooking(room.to, room.from, parseDate.toString(), room);
+          this.checkMultipleBookings(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+
+
+
           // `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
           // const rr = `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
           // console.log(rr);
-          this.room_labels[this.rowIndex].push(strDate);
+
           this.totalNeededDays = this.totalNeededDays - 1;
         }
 
@@ -110,26 +355,34 @@ export class BodyComponent implements OnInit {
           const monthName = localJodaLib.month();
           const fulldate = `${year}-${month}-${i}`;
 
-          const strDate = this.checkBooking(room.to, room.from, parseDate.toString(), room);
-          // const rr = `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
-          // console.log(rr);
-          this.room_labels[this.rowIndex].push(strDate);
+          this.checkMultipleBookings(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+
+          // room.bookings.forEach(booking => {
+          //   const strDate = this.checkBooking(booking.to, booking.from, parseDate.toString(), booking);
+          //   this.room_labels[this.rowIndex].push(strDate);
+          // });
         }
 
 
       } else {
         const localJodaLib = this.jodalLib.plusMonths(0);
         for (let i = 1; i <= this.totalNeededDays; i++) {
-          const parseDate = localJodaLib.withDayOfMonth(i );
+          const parseDate = localJodaLib.withDayOfMonth(i);
           const year = localJodaLib.year();
           const month = localJodaLib.monthValue();
           const monthName = localJodaLib.month();
           const fulldate = `${year}-${month}-${i}`;
 
 
-          const strDate = this.checkBooking(room.to, room.from, parseDate.toString(), room);
-          // `${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}`;
-          this.room_labels[this.rowIndex].push(strDate);
+          this.checkMultipleBookings(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+          // const strDate = this.checkBooking(room.to, room.from, parseDate.toString(), room);
+          // this.room_labels[this.rowIndex].push(strDate);
+
+          // room.bookings.forEach(booking => {
+          //   const strDate = this.checkBooking(booking.to, booking.from, parseDate.toString(), booking);
+          //   this.room_labels[this.rowIndex].push(strDate);
+          // });
+
         }
       }
 
@@ -143,7 +396,51 @@ export class BodyComponent implements OnInit {
 
   }
 
-  checkBooking(date2, date1, date3, room) {
+  checkMultipleBookings(date3, bookings, room_labels, rowIndex) {
+
+    let seen = false;
+
+    bookings.forEach(booking => {
+      const d1 = new Date(booking.from);
+      const d2 = new Date(booking.to);
+      const timeDiff = Math.abs(d2.getTime() - d1.getTime());
+      const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      const currentDate = LocalDate.parse(booking.from);
+
+      for (let i = 0; i <= diffDays; i++) {
+        const dt = currentDate.plusDays(i);
+        const d33 = LocalDate.parse(date3).minusMonths(0);
+
+        if (d33.equals(dt)) {
+          const temp = `${booking.oc}-${booking.transaction_type}-${booking.wing}-${booking.floor}`;
+          room_labels[rowIndex].push(temp);
+          seen = true;
+          break;
+        }
+
+      }
+
+
+
+    });
+
+
+
+    if (seen) {
+      return;
+    } else {
+
+      room_labels[rowIndex].push('');
+      return;
+    }
+
+
+
+
+
+  }
+
+  checkBooking(date2, date1, date3, booking) {
 
     const d1 = new Date(date1);
     const d2 = new Date(date2);
@@ -157,7 +454,7 @@ export class BodyComponent implements OnInit {
       const d33 = LocalDate.parse(date3).minusMonths(0);
 
       if (d33.equals(dt)) {
-        return `${room.oc}-${room.transaction_type}-${room.wing}-${room.floor}`;
+        return `${booking.oc}-${booking.transaction_type}-${booking.wing}-${booking.floor}`;
       }
 
     }
