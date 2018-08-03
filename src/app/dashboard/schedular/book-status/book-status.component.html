@@ -1,2 +1,247 @@
+<div class="comp " #comp (click)="open()"> {{occupantName}}</div>
 
-<div class="comp " #comp >  {{occupantName}}</div>
+<clr-modal [(clrModalOpen)]="isBookingMenu" [clrModalSize]="'sm'">
+
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="col-md-12 r-menu" (click)="isBookingMenu = false">User Details </div>
+      <div class="col-md-12 r-menu" (click)="isBookingMenu = false">Edit  </div>
+    </div>
+
+
+  </div>
+
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="isEmptyMenu" [clrModalSize]="'sm'" >
+
+    <div class="modal-body">
+  
+      <div class="row">
+        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Book</div>
+        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Checkin </div>
+        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Reserve </div>
+      </div>
+  
+  
+    </div>
+  
+  </clr-modal>
+
+
+
+<clr-modal [(clrModalOpen)]="isRoom" [clrModalSize]="'xl'">
+  <h6 class="modal-title m-title">Room Details</h6>
+  <div class="modal-body m-body">
+
+    <div class="row room-details">
+      <div class="col-md-4">
+        <b>Room Type:</b> Standard</div>
+      <div class="col-md-4">
+        <b>Floor:</b> Floor 50</div>
+      <div class="col-md-4">
+        <b>Room Owner:</b> Fred Amata</div>
+    </div>
+
+    <div class="row room-details">
+      <div class="col-md-4">
+        <b>Room Extension:</b> 450</div>
+      <div class="col-md-4">
+        <b>Data Extension:</b> 230</div>
+      <div class="col-md-4">
+        <b>Power Code:</b> 778</div>
+    </div>
+
+    <div class="row room-details">
+      <div class="col-md-12">
+        <b>Remarks:</b>
+        <br> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+        from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+        looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites
+        of the word in classical literature, discovered the undoubtable source.
+
+      </div>
+    </div>
+    <div class="row  ">
+      <div class="col-md-12 pbar">Room Images</div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md">
+            <a class="card clickable">
+              <div class="card-img">
+                <img src="assets/images/h1.png" style="width:250px;">
+              </div>
+            </a>
+          </div>
+          <div class="col-md">
+            <a class="card clickable">
+              <div class="card-img">
+                <img src="assets/images/h2.png" style="width:250px;">
+              </div>
+            </a>
+          </div>
+          <div class="col-md">
+            <a class="card clickable">
+              <div class="card-img">
+                <img src="assets/images/h3.png" style="width:250px;">
+              </div>
+            </a>
+          </div>
+          <div class="col-md">
+            <a class="card clickable">
+              <div class="card-img">
+                <img src="assets/images/h4.png" style="width:250px;">
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row  ">
+      <div class="col-md-12 pbar">Amenities</div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Vending
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Gym
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Recreation
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Swimming Pool
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Parking Lot
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Pool Bar
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Kichenette
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Television
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Laptop & Internet
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Iron
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Vending
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="alert alert-success alert-sm">
+          <div class="alert-items">
+            <div class="alert-item static">
+              <span class="alert-text">
+                Vending
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+
+    <button type="button" class="btn btn-danger" (click)="isBookingMenu = false">Close</button>
+  </div>
+</clr-modal>

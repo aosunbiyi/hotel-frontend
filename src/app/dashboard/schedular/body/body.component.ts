@@ -13,7 +13,11 @@ export class BodyComponent implements OnInit {
   rooms: any[] = [
     // tslint:disable-next-line:max-line-length
     {
-      name: 'Room 1', short_name: 'RM1',  bookings: [
+      name: 'Room 1', short_name: 'RM1',
+      details: [
+
+      ],
+      bookings: [
         {
           transaction_type: 1, from: '2018-08-01', to: '2018-08-05', oc: 'Fred'
         },
@@ -39,7 +43,7 @@ export class BodyComponent implements OnInit {
     },
     // tslint:disable-next-line:max-line-length
     {
-      name: 'Room 2', short_name: 'RM2',  bookings: [
+      name: 'Room 2', short_name: 'RM2', bookings: [
         {
           transaction_type: 1, from: '2018-08-03', to: '2018-08-04', oc: 'G2'
         },
@@ -66,7 +70,7 @@ export class BodyComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     {
       // tslint:disable-next-line:max-line-length
-      name: 'Room 3', short_name: 'RM3',  bookings: [
+      name: 'Room 3', short_name: 'RM3', bookings: [
         {
           transaction_type: 1, from: '2018-08-03', to: '2018-08-03', oc: 'Samsung'
         },
@@ -92,7 +96,7 @@ export class BodyComponent implements OnInit {
     },
     // tslint:disable-next-line:max-line-length
     {
-      name: 'Room 4', short_name: 'RM4',  bookings: [
+      name: 'Room 4', short_name: 'RM4', bookings: [
         {
           transaction_type: 1, from: '2018-08-05', to: '2018-08-05', oc: 'KC'
         },
@@ -119,7 +123,7 @@ export class BodyComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     {
       // tslint:disable-next-line:max-line-length
-      name: 'Room 5', short_name: 'RM5',  bookings: [
+      name: 'Room 5', short_name: 'RM5', bookings: [
         {
           transaction_type: 1, from: '2018-08-02', to: '2018-08-04', oc: 'Ben'
         },
@@ -171,7 +175,7 @@ export class BodyComponent implements OnInit {
     },
     // tslint:disable-next-line:max-line-length
     {
-      name: 'Room 7', short_name: 'RM7',  bookings: [
+      name: 'Room 7', short_name: 'RM7', bookings: [
         {
           transaction_type: 1, from: '2018-08-02', to: '2018-08-03', oc: 'Dada'
         },
@@ -197,7 +201,7 @@ export class BodyComponent implements OnInit {
     },
     // tslint:disable-next-line:max-line-length
     {
-      name: 'Room 8', short_name: 'RM8',  bookings: [
+      name: 'Room 8', short_name: 'RM8', bookings: [
         {
           transaction_type: 1, from: '2018-08-02', to: '2018-08-03', oc: 'Yemi'
         },
@@ -223,7 +227,7 @@ export class BodyComponent implements OnInit {
     },
     // tslint:disable-next-line:max-line-length
     {
-      name: 'Room 9', short_name: 'RM9',  bookings: [
+      name: 'Room 9', short_name: 'RM9', bookings: [
         {
           transaction_type: 1, from: '2018-08-05', to: '2018-08-05', oc: 'Kingson'
         },
@@ -317,8 +321,8 @@ export class BodyComponent implements OnInit {
       this.room_labels[this.rowIndex] = new Array();
       this.totalNeededDays = this.DAYS;
 
-
-      this.room_labels[this.rowIndex].push(room.name);
+      const rm = `${room.name}-5-room`;
+      this.room_labels[this.rowIndex].push(rm);
 
 
 
@@ -412,7 +416,7 @@ export class BodyComponent implements OnInit {
         const d33 = LocalDate.parse(date3).minusMonths(0);
 
         if (d33.equals(dt)) {
-          const temp = `${booking.oc}-${booking.transaction_type}-${booking.wing}-${booking.floor}`;
+          const temp = `${booking.oc}-${booking.transaction_type}-booking`;
           room_labels[rowIndex].push(temp);
           seen = true;
           break;

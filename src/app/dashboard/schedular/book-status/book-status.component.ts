@@ -14,6 +14,10 @@ export class BookStatusComponent implements OnInit {
   bgColor: String = '';
   occupantName: String = '';
   transactionType: String = '';
+  isRoom = false;
+  isBookingMenu = false;
+  isEmptyMenu = false;
+  componentType: String = '';
 
 
   constructor(private el: ElementRef) { }
@@ -22,8 +26,10 @@ export class BookStatusComponent implements OnInit {
     if (this.label !== '' && this.label.length > 0) {
       const list = this.label.split('-');
 
+
       this.occupantName = list[0];
       this.transactionType = list[1];
+      this.componentType = list[2];
 
       if (this.transactionType === '0') {
         this.comp.nativeElement.classList.add('red');
@@ -38,6 +44,21 @@ export class BookStatusComponent implements OnInit {
       }
 
     }
+  }
+
+  open() {
+
+    console.log(this.componentType);
+    if (this.componentType === 'room') {
+      this.isRoom = true;
+    }
+    if (this.componentType === 'booking') {
+      this.isBookingMenu = true;
+    }
+    if (this.componentType === '') {
+      this.isEmptyMenu = true;
+    }
+
   }
 
 }

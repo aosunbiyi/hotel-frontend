@@ -10,6 +10,7 @@ import { HeaderComponent } from './schedular/header/header.component';
 import { BodyComponent } from './schedular/body/body.component';
 import { BookStatusComponent } from './schedular/book-status/book-status.component';
 import { CardHoverDirective } from './schedular/directives/card-hover.directive';
+import { RoomStatusComponent } from './schedular/room-status/room-status.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { CardHoverDirective } from './schedular/directives/card-hover.directive'
     FormsModule
   ],
   // tslint:disable-next-line:max-line-length
-  declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent, HeaderComponent, BodyComponent, BookStatusComponent, CardHoverDirective],
+  declarations: [DashboardComponent, SummaryBarComponent, DateBarComponent, SchedularComponent, HeaderComponent, BodyComponent, BookStatusComponent, CardHoverDirective, RoomStatusComponent],
   exports: [DashboardComponent, SummaryBarComponent, DateBarComponent]
 })
 export class DashboardModule { }

@@ -21,3 +21,37 @@
     margin-left:-10px;
     cursor: pointer;
 }
+.m-body{
+    color: #0065AB!important;
+    
+}
+.m-title{
+
+    background-color:#C1CDD4;
+    padding: 10px;
+}
+.room-details{
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.pbar{
+    background-color:#25333D;
+    margin-top:20px;
+    height: 40px;
+    text-align: center;
+    color:white;
+    margin-left: 5px;
+    font-size: 17px;
+    padding-top:10px;
+}
+
+.r-menu{
+    height: 40px;
+    background: #798893;
+    padding-top: 12px;
+    color:white;
+    margin-bottom: 2px; 
+    cursor: pointer;   
+}
+
