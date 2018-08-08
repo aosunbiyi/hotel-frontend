@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="alert alert-app-level">
-      &nbsp;&nbsp;&nbsp;&nbsp;alert message
+    &nbsp;&nbsp;&nbsp;&nbsp;alert message
   </div>
   <nav class="subnav" style="overflow:hidden!important;">
     <app-ticker [tickers]="tickers"></app-ticker>
@@ -35,7 +35,7 @@
         <a class="nav-link active" href="#">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Management</a>
+        <a class="nav-link" href="#" (click)="loadRooms()">Management</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Cloud</a>
@@ -62,8 +62,8 @@
         <a class="nav-link" href="#">Prices</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">Extras</a>
-        </li>
+        <a class="nav-link" href="#">Extras</a>
+      </li>
     </ul>
   </nav>
   <div class="content-container">
@@ -92,27 +92,24 @@
             <div class="col-md">
               <div class="row">
                 <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check In Today</div>
+                  <div class="num">17</div>
+                  <div class="checkin">Arrival</div>
+                </div>
+                <div class="col-md x-ratio">
+                  <div class="num">20</div>
+                  <div class="checkin">Departure</div>
                 </div>
                 <div class="col-md x-ratio">
                   <div class="num">0</div>
-                  <div class="checkin">Check Out Today</div>
+                  <div class="checkin">Group Booking</div>
                 </div>
-                <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check In Today</div>
-                </div>
-                <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check Out Today</div>
-                </div>
+               
               </div>
             </div>
             <div class="col-md-5 x-comp">
               <div class="row">
                 <div class="col-md x-summary">
-                  <div class="occupancy">0%</div>
+                  <div class="occupancy">15%</div>
                   <div class="occupancy-letter">Occupancy</div>
                 </div>
               </div>
@@ -124,44 +121,31 @@
             <div class="col-md">
               <div class="row">
                 <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check In Today</div>
+                  <div class="num">15</div>
+                  <div class="checkin">Walk In</div>
                 </div>
                 <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check Out Today</div>
+                  <div class="num">12</div>
+                  <div class="checkin">Reserv</div>
                 </div>
                 <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check In Today</div>
+                  <div class="num">35</div>
+                  <div class="checkin">Occupied</div>
                 </div>
-                <div class="col-md x-ratio">
-                  <div class="num">0</div>
-                  <div class="checkin">Check Out Today</div>
-                </div>
+               
               </div>
             </div>
             <div class="col-md-5 x-comp">
               <div class="row">
                 <div class="col-md x-summary">
-                  <div class="occupancy">₦0.00</div>
-                  <div class="occupancy-letter">Disccount</div>
+                  <div class="occupancy">35%</div>
+                  <div class="occupancy-letter">Avalability</div>
                 </div>
               </div>
 
             </div>
           </div>
-          <div class="row x-component">
-              <div class="col-md category-bar2">
-                Customer Details
-              </div>
-            </div>
-            <div class="row x-component3">
-                <div class="col-md category-content2">
-             
-    
-                </div>
-              </div>
+
 
           <div class="row x-component">
             <div class="col-md category-bar">
@@ -263,14 +247,14 @@
             </div>
           </div>
 
-       
+
 
 
 
 
         </div>
         <div class="col-md-8">
-          <app-dashboard ></app-dashboard>
+          <app-dashboard></app-dashboard>
         </div>
       </div>
 

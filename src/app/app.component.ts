@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { LocalDate, LocalTime } from 'js-joda';
 import { Ticker } from './services/ticker.model';
+import { DataService } from './backend/data.service';
 
 
 
@@ -20,7 +21,7 @@ export class AppComponent implements OnDestroy {
   tickers: Ticker[] = [];
   intervalHandle: any;
 
-  constructor() {
+  constructor(private ds: DataService) {
 
 
     this.intervalHandle = setInterval(() => {
@@ -32,7 +33,7 @@ export class AppComponent implements OnDestroy {
       this.year_name = day.year();
       this.time = time.toString().split('.')[0];
 
-  
+
       if (this.tickers.length === 0) {
         this.tickers = this.loadTickers();
       }
@@ -47,6 +48,12 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     clearInterval(this.intervalHandle);
+  }
+
+  loadRooms() {
+    this.ds.getRooms().subscribe(rooms => {
+      console.log(rooms);
+    });
   }
 
 
