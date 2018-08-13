@@ -14,6 +14,7 @@ export class AppComponent implements OnDestroy {
 
 
   day_name: any = '';
+  open_out_of_order = false;
   month_name: any = '';
   day_number: any = '';
   year_name: any = '';
@@ -43,6 +44,10 @@ export class AppComponent implements OnDestroy {
     this.tickers = this.loadTickers();
 
 
+  }
+
+  on_open_out_of_order() {
+    this.open_out_of_order = true;
   }
 
 

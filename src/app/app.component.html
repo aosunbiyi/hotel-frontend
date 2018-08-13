@@ -14,7 +14,7 @@
     </div>
     <div class="header-nav">
       <a href="javascript://" class=" active nav-link nav-text">Dashboard</a>
-      <a href="javascript://" class="nav-link nav-text">Interactive Analytics</a>
+      <a href="javascript://" class="nav-link nav-text" (click)="on_open_out_of_order()">Out of Order</a>
       <a href="javascript://" class="nav-link nav-text">Customers</a>
       <a href="javascript://" class="nav-link nav-text">Booking</a>
       <a href="javascript://" class="nav-link nav-text">Reports</a>
@@ -266,3 +266,22 @@
 
   </div>
 </div>
+
+
+
+
+<clr-modal [(clrModalOpen)]="open_out_of_order" [clrModalSize]="'xl'">
+
+  <div class="modal-body">
+
+    <div class="row">
+        <div class="col-md-6"></div>
+      <div class="col-md-3 r-menu" (click)="open_out_of_order = false">User Details </div>
+      <div class="col-md-3 r-menu" (click)="open_out_of_order = false">Close  </div>
+     
+    </div>
+
+
+  </div>
+
+</clr-modal>

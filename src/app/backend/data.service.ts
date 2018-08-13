@@ -7,9 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-
   user: any;
-
   constructor(private http: HttpClient) {
 
   }

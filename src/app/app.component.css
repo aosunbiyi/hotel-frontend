@@ -142,3 +142,13 @@
     background-color:#A6D8E7;
     color:#25333D;
 }
+
+.r-menu{
+    height: 40px;
+    background: #798893;
+    padding-top: 12px;
+    color:white;
+    margin-bottom: 2px; 
+    cursor: pointer;   
+}
+
