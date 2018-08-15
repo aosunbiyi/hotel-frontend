@@ -1,7 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ViewChild, OnInit } from '@angular/core';
 import { LocalDate, LocalTime } from 'js-joda';
 import { Ticker } from './services/ticker.model';
 import { DataService } from './backend/data.service';
+import { ClrWizard } from '@clr/angular';
 
 
 
@@ -12,6 +13,8 @@ import { DataService } from './backend/data.service';
 })
 export class AppComponent implements OnDestroy {
 
+  @ViewChild('wizardxl') wizardExtraLarge: ClrWizard;
+
 
   day_name: any = '';
   open_out_of_order = false;
@@ -21,9 +24,20 @@ export class AppComponent implements OnDestroy {
   time: any = '';
   tickers: Ticker[] = [];
   intervalHandle: any;
+  open_wizard = false;
+  roomTypes: any[] = [];
+  rooms: any[] = [];
+  out_of_order_list: any[] = [];
+
+  roomTypes2: any[] = [];
+  rooms2: any[] = [];
+
+  out_of_order_start_date: any;
+  out_of_order_end_date: any;
+  out_of_order_reason: any;
+  selectedRoomIds: any[] = [];
 
   constructor(private ds: DataService) {
-
 
     this.intervalHandle = setInterval(() => {
       const day = LocalDate.now();
@@ -33,15 +47,14 @@ export class AppComponent implements OnDestroy {
       this.day_number = day.dayOfMonth();
       this.year_name = day.year();
       this.time = time.toString().split('.')[0];
-
-
-      if (this.tickers.length === 0) {
-        this.tickers = this.loadTickers();
-      }
-
     }, 1000);
 
     this.tickers = this.loadTickers();
+
+    this.ds.getRoomTypes().subscribe(rTypes => {
+      this.roomTypes = rTypes.roomTypes;
+      this.roomTypes2 = rTypes.roomTypes;
+    });
 
 
   }
@@ -55,11 +68,7 @@ export class AppComponent implements OnDestroy {
     clearInterval(this.intervalHandle);
   }
 
-  loadRooms() {
-    this.ds.getRooms().subscribe(rooms => {
-      console.log(rooms);
-    });
-  }
+
 
 
   loadTickers() {
@@ -1027,6 +1036,48 @@ export class AppComponent implements OnDestroy {
     ];
   }
 
+
+
+
+  onRoomTypeChanged(event) {
+    this.ds.getRoomById(event.target.value).subscribe(rms => {
+      this.rooms = rms.rooms;
+    });
+  }
+
+  onRoomTypeChanged2(event) {
+    this.ds.getRoomById(event.target.value).subscribe(rms => {
+      this.rooms2 = rms.rooms;
+      console.log(this.rooms2);
+    });
+  }
+
+  onFinish() {
+    console.log(this.rooms2, this.out_of_order_start_date, this.out_of_order_end_date, this.out_of_order_reason);
+
+    this.rooms2.forEach(room => {
+
+      if (room.selected) {
+        if (room.selected === true) {
+          this.selectedRoomIds.push(room.id);
+        }
+      }
+
+    });
+
+    const data = {
+      rooms: this.selectedRoomIds,
+      out_of_order_start_date: this.out_of_order_start_date,
+      out_of_order_end_date: this.out_of_order_end_date,
+      out_of_order_reason: this.out_of_order_reason
+    };
+
+    this.ds.postOutofOrderRooms(data).subscribe(data2 => {
+      this.out_of_order_list = data2;
+    });
+
+
+  }
 
 
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,27 @@ export class DataService {
   }
 
 
-  getRooms(): Observable<any[]> {
-    const headers = new HttpHeaders()
-      .set('Accept', 'application/json')
-      .set('Content-Type', 'application/json');
+  getRooms(): Observable<any> {
+    return this.http.get(`${environment.baseUrl}Rooms`).pipe(map((response: any) => {
+      return response;
+    }));
+  }
+  getRoomById(id: number): Observable<any> {
+    return this.http.get(`${environment.baseUrl}Rooms/get_room_by_type/${id}`).pipe(map((response: any) => {
+      return response;
+    }));
+  }
 
-    return this.http.get('http://localhost/api/v1/Rooms', { headers }) as Observable<any>;
+  getRoomTypes(): Observable<any> {
+    return this.http.get(`${environment.baseUrl}RoomTypes`).pipe(map((response: any) => {
+      return response;
+    }));
+  }
+
+  postOutofOrderRooms(data): Observable<any> {
+    return this.http.post(`${environment.baseUrl}Rooms/out_of_order_rooms`, data).pipe(map((response: any) => {
+      return response;
+    }));
   }
 
 }

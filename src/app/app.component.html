@@ -35,7 +35,7 @@
         <a class="nav-link active" href="#">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" (click)="loadRooms()">Management</a>
+        <a class="nav-link" href="#" >Management</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Cloud</a>
@@ -103,7 +103,7 @@
                   <div class="num">0</div>
                   <div class="checkin">Group Booking</div>
                 </div>
-               
+
               </div>
             </div>
             <div class="col-md-5 x-comp">
@@ -132,7 +132,7 @@
                   <div class="num">35</div>
                   <div class="checkin">Occupied</div>
                 </div>
-               
+
               </div>
             </div>
             <div class="col-md-5 x-comp">
@@ -271,17 +271,237 @@
 
 
 <clr-modal [(clrModalOpen)]="open_out_of_order" [clrModalSize]="'xl'">
+  <h3 class="modal-title"> Out of Order Room List</h3>
 
   <div class="modal-body">
 
     <div class="row">
-        <div class="col-md-6"></div>
-      <div class="col-md-3 r-menu" (click)="open_out_of_order = false">User Details </div>
-      <div class="col-md-3 r-menu" (click)="open_out_of_order = false">Close  </div>
-     
+
+      <div class="col-md-12">
+        <table class="table btable">
+          <thead>
+            <tr>
+              <th colspan="7" style="text-align:left!important;">
+                <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search Criteria</button>
+              </th>
+              <th colspan="1" style="text-align:right!important;">
+                <button type="button" class="btn btn-info btn-sm">Search</button>
+              </th>
+            </tr>
+
+          </thead>
+          <tbody>
+            <tr>
+              <th>Room Type</th>
+              <th>
+                <div class="form-group">
+                    <div class="select">
+                  <select name="select" id="select"  (change)="onRoomTypeChanged($event)">
+                  
+                    <option  value="{{rt.id}}" *ngFor="let rt of roomTypes" >{{rt.room_type_name}}</option>
+                  </select>
+                  </div>
+                </div>
+              </th>
+              <th>Room</th>
+              <th>
+                <div class="form-group">
+                    <div class="select">
+                  <select name="select" id="select" >
+                   
+                    <option  value="{{rm.id}}" *ngFor="let rm of rooms" >{{rm.room_name}}</option>
+                  </select>
+                  </div>
+                </div>
+              </th>
+              <th>From Date</th>
+              <th>
+                <input type="date">
+              </th>
+              <th>To Date</th>
+              <th>
+                <input type="date">
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-primary">
+          <thead>
+            <tr>
+              <th style="text-align:left!important;">
+                <input type="checkbox" name="" id=""> </th>
+              <th style="text-align:left!important;">Date</th>
+              <th style="text-align:left!important;">O/O Date</th>
+              <th style="text-align:left!important;">Room Type</th>
+              <th style="text-align:left!important;">Room</th>
+              <th style="text-align:left!important;">Remark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align:left!important;">
+                <input type="checkbox" name="" id=""> </td>
+              <td style="text-align:left!important;">7/31/2018 3:41 PM</td>
+              <td style="text-align:left!important;">8/1/2018</td>
+              <td style="text-align:left!important;">King Suit</td>
+              <td style="text-align:left!important;">201</td>
+              <td style="text-align:left!important;">Remark</td>
+            </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8"></div>
+
+      <div class="col-md-4" style="text-align:right!important;">
+        <br>
+        <button class="btn  btn-info" (click)="open_out_of_order = false; open_wizard = true"> Mark O/O </button>
+        <button class="btn btn-info" (click)="open_out_of_order = false; open_wizard = true"> Unmark O/O </button>
+        <button class="btn btn-danger" (click)="open_out_of_order = false; open_wizard = false"> Close </button>
+      </div>
+
     </div>
 
 
   </div>
 
+
+
 </clr-modal>
+
+
+
+
+<clr-wizard #wizardxl [(clrWizardOpen)]="open_wizard">
+  <clr-wizard-title>Out of Order Rooms</clr-wizard-title>
+
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'" (click)="onFinish()">Finish</clr-wizard-button>
+
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Set the dates</ng-template>
+    <p>
+      Set the dates and press Next button to continue.
+    </p>
+    <div class="row">
+      <div class="col-md-7">
+        <div style="width:400px; height:380px; background:url(assets/images/bg1.png)"></div>
+      </div>
+      <div class="col-md-4 toper">
+        <div class="form-group">
+          <label for="">Start Date:</label>
+          <input type="date" name="out_of_order_start_date" clrDate [(ngModel)]="out_of_order_start_date" >
+        </div>
+        
+        <div class="form-group">
+            <label for="">End Date:</label>
+            <input type="date" name="out_of_order_end_date" clrDate [(ngModel)]="out_of_order_end_date"  >
+          </div>
+      </div>
+    </div>
+  </clr-wizard-page>
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Out of Order Room</ng-template>
+
+    <div class="row">
+
+        <div class="col-md-12">
+          <table class="table btable">
+            <thead>
+              <tr>
+                <th colspan="7" style="text-align:left!important;">
+                  <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search Criteria</button>
+                </th>
+                <th colspan="1" style="text-align:right!important;">
+                  <button type="button" class="btn btn-info btn-sm">Search</button>
+                </th>
+              </tr>
+  
+            </thead>
+            <tbody>
+              <tr>
+                  <th>Room Type</th>
+                  <th>
+                    <div class="form-group">
+                        <div class="select">
+                      <select name="select" id="select"  (change)="onRoomTypeChanged2($event)">
+                       <option> -- select -- </option>
+                        <option  value="{{rt.id}}" *ngFor="let rt of roomTypes2" >{{rt.room_type_name}}</option>
+                      </select>
+                      </div>
+                    </div>
+                  </th>
+           
+           
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th style="text-align:left!important;">
+                  <input type="checkbox" name="" id=""> </th>
+                <th style="text-align:left!important;">Room Type</th>
+                <th style="text-align:left!important;">Room Name</th>
+                <th style="text-align:left!important;">Floor</th>
+                <th style="text-align:left!important;">Room Owner</th>
+   
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let room of rooms2">
+
+                <td style="text-align:left!important;">
+                  <input type="checkbox"  [(ngModel)]="room.selected"> </td>
+                <td style="text-align:left!important;">{{room.room_type.room_type_name}} </td>
+                <td style="text-align:left!important;">{{room.room_name}}</td>
+                <td style="text-align:left!important;">{{room.floor.floor_name}}</td>
+                <td style="text-align:left!important;">{{room.room_owner.first_name}} {{room.room_owner.last_name}}</td>
+           
+              </tr>
+         
+            </tbody>
+          </table>
+
+          <br>
+          <div class="row">
+            <div class="col-md-3">From</div>
+            <div class="col-md-3">{{out_of_order_start_date}}</div>
+            <div class="col-md-3">To</div>
+            <div class="col-md-3">{{out_of_order_end_date}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="col-md-2">Reason</label>
+                <textarea rows="2" cols="5" [(ngModel)]="out_of_order_reason"></textarea>
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+
+  </clr-wizard-page>
+
+
+</clr-wizard>
