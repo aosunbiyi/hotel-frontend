@@ -1,0 +1,62 @@
+
+.filter{
+    width:98%;
+    height: 200px;
+    border: solid 4px #25333D;
+    background-color:white;
+    margin-top:5px;
+    margin-left:10px;
+}
+.filter200{
+    width:98%;
+    border: solid 4px #25333D;
+    background-color:white;
+    margin-top:5px;
+    margin-left:10px;
+}
+
+.left-container{
+    background-color:#C1CDD4;
+    min-height: 600px;
+}
+
+.right{
+    float: right;
+}
+
+.space90{
+    margin-top:80px;
+}
+
+.bspace{
+    margin-left:10px;
+}
+
+.top-bar1{
+    border-bottom: solid 4px #25333D; 
+    height: 40px;  
+}
+.body-bar1{
+    min-height: 100px;
+    padding: 2px;
+
+}
+
+.plabel{
+    font-weight: bold;
+    margin-top:5px;
+    margin-left: 5px;
+    font-size:11px;
+}
+
+.drop{
+    width: 50px!important;
+}
+
+.high{
+    
+}
+
+.text-drop{
+    padding-top:20px!important;
+}

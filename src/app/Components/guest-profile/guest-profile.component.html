@@ -1,0 +1,397 @@
+<div class="clr-row">
+  <div class="clr-col-3 left-container">
+    <div class="filter">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="left">
+              <input type="checkbox">
+            </th>
+            <th class="left">Filter By</th>
+            <th class="left">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+        </tbody>
+      </table>
+      <div class="right space90">
+        <button class="btn btn-default btn-sm">Reset</button>
+        <button class="btn  btn-dark bspace btn-sm">Search</button>
+      </div>
+    </div>
+    <div class="filter200">
+      <div class="top-bar1">
+        <div class="clr-row">
+          <div class="clr-col-10">
+            <p class="plabel">
+              Search By Personal Information
+            </p>
+
+          </div>
+          <div class="clr-col-1">
+            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened()">
+              <clr-icon shape="angle-double"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body-bar1" [hidden]="isPersonalInfoOpened">
+        <table class="table  table-compact">
+          <tr>
+            <td colspan="2" class="left">
+              <label for="">Gender</label>
+            </td>
+            <td colspan="2">
+              <div class="select">
+                <select>
+                  <option>Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="left">
+              <label for="">Marital Status</label>
+            </td>
+            <td colspan="2">
+              <div class="select">
+                <select>
+                  <option>Select Marital Status</option>
+                  <option>Single </option>
+                  <option>Married</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Month</td>
+            <td>Day</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label for="">Birth date</label>
+            </td>
+            <td>
+              <div class="select">
+                <select>
+                  <option>Jan</option>
+                  <option>Feb</option>
+
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="select">
+                <select>
+                  <option>Any</option>
+                  <option>1</option>
+
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox">
+            </td>
+            <td>
+              <label for="">Aniniversiry</label>
+            </td>
+            <td>
+              <div class="select">
+                <select>
+                  <option>Jan</option>
+                  <option>Feb</option>
+
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="select">
+                <select>
+                  <option>Any</option>
+                  <option>1</option>
+
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="filter200">
+      <div class="top-bar1">
+        <div class="clr-row">
+          <div class="clr-col-10">
+            <p class="plabel">
+              Search By Address Information
+            </p>
+
+          </div>
+          <div class="clr-col-1">
+            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened2()">
+              <clr-icon shape="angle-double"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body-bar1" [hidden]="isPersonalInfoOpened2">
+        <table class="table table-compact table-vertical">
+          <tr>
+            <td class="left text-drop">
+              <label for="">City</label>
+            </td>
+            <td>
+              <input type="text" class="drop">
+            </td>
+            <td class="left text-drop">
+              <label for="">State</label>
+            </td>
+            <td>
+              <input type="text" class="drop high">
+            </td>
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Address</label>
+            </td>
+            <td colspan="3">
+              <input type="text" class="high">
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Address2</label>
+            </td>
+            <td colspan="3">
+              <input type="text" class="high">
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Country</label>
+            </td>
+            <td colspan="3">
+              <select>
+                <option>Select Country</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Zip Code</label>
+            </td>
+            <td colspan="3">
+              <input type="text" class="high">
+            </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+    </div>
+
+    <div class="filter200">
+      <div class="top-bar1">
+        <div class="clr-row">
+          <div class="clr-col-10">
+            <p class="plabel">
+              Search By Identification Information
+            </p>
+
+          </div>
+          <div class="clr-col-1">
+            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened3()">
+              <clr-icon shape="angle-double"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body-bar1" [hidden]="isPersonalInfoOpened3">
+        <table class="table table-compact table-vertical">
+
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Type</label>
+            </td>
+            <td colspan="3">
+              <div class="select">
+                <select>
+                  <option>Select ID Type</option>
+                </select>
+              </div>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">State</label>
+            </td>
+            <td colspan="3">
+              <input type="text" class="high">
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Exp. Date</label>
+            </td>
+            <td colspan="3">
+              <input type="date">
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Country</label>
+            </td>
+            <td colspan="3">
+              <div class="select">
+                <select>
+                  <option>Select Country</option>
+                </select>
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Number</label>
+            </td>
+            <td colspan="3">
+              <input type="text">
+            </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+    </div>
+
+    <div class="filter200">
+      <div class="top-bar1">
+        <div class="clr-row">
+          <div class="clr-col-10">
+            <p class="plabel">
+              Search By Contact Information
+            </p>
+
+          </div>
+          <div class="clr-col-1">
+            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened4()">
+              <clr-icon shape="angle-double"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="body-bar1" [hidden]="isPersonalInfoOpened4">
+        <table class="table table-compact table-vertical">
+
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Phone</label>
+            </td>
+            <td colspan="3">
+
+              <input type="text">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="text-drop">
+              <label for="">Email</label>
+            </td>
+            <td colspan="3">
+              <input type="text" class="high">
+            </td>
+
+          </tr>
+
+
+
+
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="clr-col-9">
+
+    <clr-datagrid style=" height:100%;">
+            <clr-dg-column></clr-dg-column>
+      <clr-dg-column>Guest Name
+            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column>Country
+            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column>Source
+            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column>Email
+            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column>City
+            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column>Phone
+            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+
+      <clr-dg-placeholder>We couldn't find any Guest!</clr-dg-placeholder>
+
+      <clr-dg-row *ngFor="let g of guests">
+            <clr-dg-cell> <input type="checkbox"> </clr-dg-cell>
+        <clr-dg-cell>{{g.guestName}}</clr-dg-cell>
+        <clr-dg-cell>{{g.country }}</clr-dg-cell>
+        <clr-dg-cell>{{g.source}}</clr-dg-cell>
+        <clr-dg-cell>{{g.email}}</clr-dg-cell>
+        <clr-dg-cell>{{g.city}}</clr-dg-cell>
+        <clr-dg-cell>{{g.phone}}</clr-dg-cell>
+      </clr-dg-row>
+
+      <clr-dg-footer> Guests</clr-dg-footer>
+    </clr-datagrid>
+
+  </div>
+</div>
