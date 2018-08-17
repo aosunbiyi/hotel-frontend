@@ -1,62 +1,113 @@
+.filter {
+  width: 98%;
+  height: 200px;
+  border: solid 4px #25333D;
+  background-color: white;
+  margin-top: 5px;
+  margin-left: 10px;
+}
 
-.filter{
-    width:98%;
-    height: 200px;
-    border: solid 4px #25333D;
-    background-color:white;
+.filter200 {
+  width: 98%;
+  border: solid 4px #25333D;
+  background-color: white;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.left-container {
+  background-color: #C1CDD4;
+  min-height: 600px;
+}
+
+.right {
+  float: right;
+}
+
+.space90 {
+  margin-top: 80px;
+}
+
+.bspace {
+  margin-left: 10px;
+}
+
+.top-bar1 {
+  border-bottom: solid 4px #25333D;
+  height: 40px;
+}
+
+.body-bar1 {
+  min-height: 100px;
+  padding: 2px;
+}
+
+.plabel {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 11px;
+}
+
+.drop {
+  width: 50px !important;
+}
+
+.high {}
+
+.text-drop {
+  padding-top: 20px !important;
+}
+
+.right-content {
+  margin-left: 15px;
+  text-align: right;
+  float: right;
+}
+
+.form-contents {
+  margin: 5px;
+  border: solid 1px #C1CDD4;
+  min-height: 350px;
+}
+
+.formx {
+  margin-top: -25px;
+}
+
+.imageGrid {
+  width: 210px;
+  height: 150px;
+  background-color: #798893;
+  border:solid 2px #C1CDD4;
+}
+
+
+.imageBox{
+    width: 140px;
+    height: 140px;
+    background-color:#25333D;
+    margin-left:5px;
     margin-top:5px;
-    margin-left:10px;
-}
-.filter200{
-    width:98%;
-    border: solid 4px #25333D;
-    background-color:white;
-    margin-top:5px;
-    margin-left:10px;
+    float:left;
 }
 
-.left-container{
-    background-color:#C1CDD4;
-    min-height: 600px;
+.imageTools{
+    float:left;
+    margin-left:3px;
 }
 
-.right{
-    float: right;
-}
-
-.space90{
-    margin-top:80px;
-}
-
-.bspace{
-    margin-left:10px;
-}
-
-.top-bar1{
-    border-bottom: solid 4px #25333D; 
-    height: 40px;  
-}
-.body-bar1{
-    min-height: 100px;
-    padding: 2px;
-
-}
-
-.plabel{
-    font-weight: bold;
-    margin-top:5px;
-    margin-left: 5px;
-    font-size:11px;
-}
-
-.drop{
-    width: 50px!important;
-}
-
-.high{
-    
-}
-
-.text-drop{
-    padding-top:20px!important;
-}
+.even{
+  background: #0065AB;
+  color: white!important;
+ }
+ 
+ .odd{
+     background: #49AFD9;
+     color: white!important;
+ }
+ 
+ .header1{
+     background-color: #C1CDD4;
+     color:white!important;
+ }

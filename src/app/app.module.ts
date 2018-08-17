@@ -24,6 +24,7 @@ import { WingService } from './services/wing.service';
 import { GuestProfileComponent } from './Components/guest-profile/guest-profile.component';
 import { HomeComponent } from './Components/home/home.component';
 import { MainDashboardComponent } from './Components/main-dashboard/main-dashboard.component';
+import { HotelWalkinComponent } from './Components/hotel-walkin/hotel-walkin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MainDashboardComponent } from './Components/main-dashboard/main-dashboa
     TickerComponent,
     GuestProfileComponent,
     HomeComponent,
-    MainDashboardComponent
+    MainDashboardComponent,
+    HotelWalkinComponent
   ],
   imports: [
     BrowserModule,

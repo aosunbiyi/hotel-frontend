@@ -357,41 +357,805 @@
   </div>
   <div class="clr-col-9">
 
-    <clr-datagrid style=" height:100%;">
-            <clr-dg-column></clr-dg-column>
-      <clr-dg-column>Guest Name
-            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+    <clr-datagrid style=" height:95%;">
+      <clr-dg-column  [ngClass]="{'header1':true}"></clr-dg-column>
+      <clr-dg-column  [ngClass]="{'header1':true}">Guest Name
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
       </clr-dg-column>
-      <clr-dg-column>Country
-            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      <clr-dg-column  [ngClass]="{'header1':true}">Country
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
       </clr-dg-column>
-      <clr-dg-column>Source
-            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      <clr-dg-column  [ngClass]="{'header1':true}">Source
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
       </clr-dg-column>
-      <clr-dg-column>Email
-            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      <clr-dg-column  [ngClass]="{'header1':true}">Email
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
       </clr-dg-column>
-      <clr-dg-column>City
-            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      <clr-dg-column  [ngClass]="{'header1':true}">City
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
       </clr-dg-column>
-      <clr-dg-column>Phone
-            <clr-dg-string-filter [clrDgStringFilter]="myFilter"></clr-dg-string-filter>
+      <clr-dg-column  [ngClass]="{'header1':true}">Phone
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
       </clr-dg-column>
 
       <clr-dg-placeholder>We couldn't find any Guest!</clr-dg-placeholder>
 
-      <clr-dg-row *ngFor="let g of guests">
-            <clr-dg-cell> <input type="checkbox"> </clr-dg-cell>
-        <clr-dg-cell>{{g.guestName}}</clr-dg-cell>
-        <clr-dg-cell>{{g.country }}</clr-dg-cell>
-        <clr-dg-cell>{{g.source}}</clr-dg-cell>
-        <clr-dg-cell>{{g.email}}</clr-dg-cell>
-        <clr-dg-cell>{{g.city}}</clr-dg-cell>
-        <clr-dg-cell>{{g.phone}}</clr-dg-cell>
+      <clr-dg-row *ngFor="let g of guests; let  even=even; let odd=odd; trackBy: tracker">
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">
+          <input type="checkbox"  > </clr-dg-cell>
+        <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.guestName}}</clr-dg-cell>
+        <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.country }}</clr-dg-cell>
+        <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.source}}</clr-dg-cell>
+        <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.email}}</clr-dg-cell>
+        <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.city}}</clr-dg-cell>
+        <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.phone}}</clr-dg-cell>
       </clr-dg-row>
 
       <clr-dg-footer> Guests</clr-dg-footer>
     </clr-datagrid>
 
+    <div class="clr-row">
+      <div class="clr-md-12 right-content">
+        <button class="btn btn-default btn-sm" (click)="onEdit()">New</button>
+        <button class="btn btn-default btn-sm" (click)="onEdit()">Edit</button>
+        <button class="btn btn-default btn-sm">Delete</button>
+      </div>
+    </div>
+
   </div>
 </div>
+
+
+
+<clr-modal [(clrModalOpen)]="canEdit" [clrModalSize]="'xl'">
+  <h3 class="modal-title"> Add / Edit Guest</h3>
+
+  <div class="modal-body">
+
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <clr-tabs>
+          <clr-tab>
+            <button clrTabLink>General</button>
+            <clr-tab-content *clrIfActive>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    <form class="clr-form clr-form-compact formx">
+                      <h6>Guest Information</h6>
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">FirstName</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="First Name" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">LastName</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Last Name" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <h6>Address Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Address</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Address" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Street</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Street" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">City</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="City" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">State</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="State" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Zip Code</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Zip Code" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Country</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Country" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+
+
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    <form class="clr-form clr-form-compact formx">
+
+                      <h6>Contact Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Email</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Email" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Phone</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="Phone" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <h6>Other Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">GuestType</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">BirthDate</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Gender</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Reg. No.</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <h6>Login Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">UserName</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Password</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                    </form>
+
+
+
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    <form class="clr-form clr-form-compact formx">
+
+                      <h6>Identity Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDType</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDNumber</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDState</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDCountry</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Exp. Date</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <h6>Guest Image</h6>
+
+                      <div class="imageGrid">
+                        <div class="imageBox">
+
+                        </div>
+                        <div class="imageTools">
+                          <button class="btn btn-icon btn-success ">
+                            <clr-icon shape="plus-circle"></clr-icon>
+                          </button>
+                          <br>
+                          <button class="btn btn-icon  btn-danger">
+                            <clr-icon shape="minus-circle"></clr-icon>
+                          </button>
+                        </div>
+                      </div>
+
+
+
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </clr-tab-content>
+          </clr-tab>
+
+          <clr-tab>
+            <button clrTabLink>Personal</button>
+            <clr-tab-content *clrIfActive>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    <form class="clr-form clr-form-compact formx">
+
+                      <h6>Professional Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Education</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select>
+                              <option value="">Select Education</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Occupation</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Income</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="0" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <h6>Religion Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Nationality</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select name="" id="">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Language1</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select name="" id="">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Language2</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select name="" id="">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    <form class="clr-form clr-form-compact formx">
+
+                      <h6>Marital Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">MaritalStatus</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select>
+                              <option value="">Select Marital Status</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Aniversary</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="date" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Children</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <h6>Health Information</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Allegies</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">BloodGroup</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select name="" id="">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Festival</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+
+                          <div class="select multiple">
+                            <select id="selects_5" multiple>
+                              <option>Christmas</option>
+                              <option>New Year</option>
+                              <option>Ramdhan</option>
+                              <option>Holiday 1</option>
+                            </select>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    <form class="clr-form clr-form-compact formx">
+
+                      <h6>Communication Channel</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">OfficeAddress</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            
+                              <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">OfficeNumber</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Residential</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                          <span class="clr-subtext"></span>
+                        </div>
+                      </div>
+
+
+                      <div class="clr-form-control clr-row">
+                          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Fax</label>
+                          <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                            <div class="clr-input-wrapper">
+                              <input type="text" id="example" placeholder="" class="clr-input">
+                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                            </div>
+                            <span class="clr-subtext"></span>
+                          </div>
+                        </div>
+  
+
+                        <div class="clr-form-control clr-row">
+                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Website</label>
+                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                              <div class="clr-input-wrapper">
+                                <input type="text" id="example" placeholder="" class="clr-input">
+                                <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                              </div>
+                              <span class="clr-subtext"></span>
+                            </div>
+                          </div>
+                  
+
+
+
+
+
+
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </clr-tab-content>
+          </clr-tab>
+
+          <clr-tab>
+            <button clrTabLink>Preference</button>
+            <clr-tab-content *clrIfActive>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-contents">
+                      <form class="clr-form clr-form-compact formx">
+
+                          <h6>Room Preferences</h6>
+    
+                          <div class="clr-form-control clr-row">
+                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Wing</label>
+                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                              <div class="select">
+                                <select>
+                                  <option value=""> --All--</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+    
+
+                          <div class="clr-form-control clr-row">
+                              <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Floor</label>
+                              <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                                <div class="select">
+                                  <select>
+                                    <option value=""> --All--</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+      
+
+                            
+                          <div class="clr-form-control clr-row">
+                              <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">RoomType</label>
+                              <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                                <div class="select">
+                                  <select>
+                                    <option value=""> --All--</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+      
+                     
+    
+                            <div class="clr-form-control clr-row">
+                                <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">RoomNo</label>
+                                <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                                  <div class="select">
+                                    <select>
+                                      <option value=""> --All--</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+        
+                     
+    
+    
+                       
+    
+    
+    
+    
+    
+    
+    
+                        </form>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-contents">
+                    
+                      <h6>Other Preferences</h6>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Magazine</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="clr-input-wrapper">
+                            <input type="text" id="example" placeholder="" class="clr-input">
+                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">NewsPaper</label>
+                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                          <div class="select">
+                            <select name="" id="">
+                              <option value=""></option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="clr-form-control clr-row">
+                          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Flower</label>
+                          <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                            <div class="select">
+                              <select name="" id="">
+                                <option value=""></option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="clr-form-control clr-row">
+                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Fragrance</label>
+                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                              <div class="select">
+                                <select name="" id="">
+                                  <option value=""></option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+
+                   
+
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-contents">
+                      <div class="clr-form-control clr-row">
+                          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Amenities</label>
+                          <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+  
+                            <div class="select multiple">
+                              <select id="selects_5" multiple>
+                                <option>Air Condition</option>
+                                <option>Coffee Maker</option>
+                                <option>Fridge</option>
+                                <option>Telephone</option>
+                                <option>Television</option>
+                              </select>
+                            </div>
+  
+                          </div>
+                        </div>
+  
+                        <div class="clr-form-control clr-row">
+                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Remark </label>
+                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">
+                                <div class="clr-input-wrapper">
+                                    <input type="text" id="example" placeholder="" class="clr-input">
+                                    <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                  </div>
+                            </div>
+                          </div>
+                  </div>
+                </div>
+              </div>
+            </clr-tab-content>
+          </clr-tab>
+
+    
+
+
+        </clr-tabs>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-8"></div>
+
+      <div class="col-md-4" style="text-align:right!important;">
+        <br>
+        <button class="btn btn-default btn-sm" (click)="canEdit = false"> Save </button>
+        <button class="btn btn-danger  btn-sm" (click)="canEdit = false"> Close </button>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+</clr-modal>

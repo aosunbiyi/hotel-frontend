@@ -37,4 +37,15 @@ export class DataService {
     }));
   }
 
+  getRateTypes(): Observable<any> {
+    return this.http.get(`${environment.baseUrl}RateTypes`).pipe(map((response: any) => {
+      return response;
+    }));
+  }
+
+  getRateById(id: number): Observable<any> {
+    return this.http.get(`${environment.baseUrl}Rates/get_rate_by_type/${id}`).pipe(map((response: any) => {
+      return response;
+    }));
+  }
 }

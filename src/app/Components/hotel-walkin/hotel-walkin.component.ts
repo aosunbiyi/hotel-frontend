@@ -1,0 +1,76 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DataService } from '../../backend/data.service';
+import { ClrWizard } from '@clr/angular';
+
+@Component({
+  selector: 'app-hotel-walkin',
+  templateUrl: './hotel-walkin.component.html',
+  styleUrls: ['./hotel-walkin.component.css']
+})
+export class HotelWalkinComponent implements OnInit {
+  @ViewChild('wizardxl') wizardExtraLarge: ClrWizard;
+  open_wizard = false;
+  roomTypes: any[] = [];
+  rooms: any[] = [];
+  rateTypes: any[] = [];
+  rates: any[] = [];
+
+  walkins: Walkin[] = [
+    { id: 1, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 2, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 3, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 4, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 5, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 1, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 2, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 3, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 4, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 5, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 }
+
+  ];
+
+  constructor(private ds: DataService) {
+
+    this.ds.getRoomTypes().subscribe(rTypes => {
+      this.roomTypes = rTypes.roomTypes;
+    });
+
+    this.ds.getRateTypes().subscribe(rt => {
+      this.rateTypes = rt.rateTypes;
+    });
+  }
+
+  ngOnInit() {
+  }
+  onFinish() {
+    this.open_wizard = false;
+  }
+
+  onNew() {
+    this.open_wizard = true;
+  }
+
+  onRoomTypeChanged(event) {
+    this.ds.getRoomById(event.target.value).subscribe(rms => {
+      this.rooms = rms.rooms;
+    });
+  }
+
+  onRateTypeChanged(event) {
+    this.ds.getRateById(event.target.value).subscribe(rms => {
+      this.rates = rms.rates;
+    });
+  }
+
+
+}
+
+
+export interface Walkin {
+  id: number;
+  guestName: string;
+  identity: string;
+  roomType: string;
+  room: string;
+  rate: number;
+}
