@@ -1,49 +1,49 @@
-
 <div class="clr-row">
-    <div class="clr-col-12">
+  <div class="clr-col-12">
 
-        <clr-datagrid style=" height:95%;">
+    <clr-datagrid style=" height:95%;">
 
-          <clr-dg-column [ngClass]="{'header1':true}">Guest Name
-            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-          </clr-dg-column>
-          <clr-dg-column  [ngClass]="{'header1':true}">Identity
-            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-          </clr-dg-column>
-          <clr-dg-column  [ngClass]="{'header1':true}">Room Type
-            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-          </clr-dg-column>
-          <clr-dg-column  [ngClass]="{'header1':true}">Room
-            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-          </clr-dg-column  >
-          <clr-dg-column  [ngClass]="{'header1':true}">Rate
-            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-          </clr-dg-column>
-     
-    
-          <clr-dg-placeholder>We couldn't find any Hotel Walkin!</clr-dg-placeholder>
-    
-          <clr-dg-row *ngFor="let g of walkins; let  even=even; let odd=odd; trackBy: tracker">
-           
-            <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.guestName}}</clr-dg-cell>
-            <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.identity }}</clr-dg-cell>
-            <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.roomType}}</clr-dg-cell>
-            <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.room}}</clr-dg-cell>
-            <clr-dg-cell  [ngClass]="{'odd':odd, 'even':even}">{{g.rate}}</clr-dg-cell>
- 
-          </clr-dg-row>
-    
-          <clr-dg-footer> Hotel Walkin</clr-dg-footer>
-        </clr-datagrid>
-    
-        <div class="clr-row">
-          <div class="clr-md-12 right-content">
-              &nbsp;&nbsp;&nbsp;  <button class="btn btn-default btn-sm" (click)="onNew()">New</button>
-         
-          </div>
-        </div>
-    
+      <clr-dg-column [ngClass]="{'header1':true}">Guest Name
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Identity
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Room Type
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Room
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Rate
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+
+
+      <clr-dg-placeholder>We couldn't find any Hotel Walkin!</clr-dg-placeholder>
+
+      <clr-dg-row *ngFor="let g of walkins; let  even=even; let odd=odd; trackBy: tracker">
+
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.guestName}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.identity }}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.roomType}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.room}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.rate}}</clr-dg-cell>
+
+      </clr-dg-row>
+
+      <clr-dg-footer> Hotel Walkin</clr-dg-footer>
+    </clr-datagrid>
+
+    <div class="clr-row">
+      <div class="clr-md-12 right-content">
+        &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-default btn-sm" (click)="onNew()">New</button>
+
       </div>
+    </div>
+
+  </div>
 </div>
 
 
@@ -51,166 +51,175 @@
 
 
 <clr-wizard #wizardxl [(clrWizardOpen)]="open_wizard">
-    <clr-wizard-title>Walk In Wizard</clr-wizard-title>
-  
-    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
-    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
-    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-    <clr-wizard-button [type]="'finish'" (click)="onFinish()">Finish</clr-wizard-button>
-  
-  
-    <clr-wizard-page>
-      <ng-template clrPageTitle>Select walkin Info</ng-template>
-      <p>
-        Welcome to Walk In Wizard...
-      </p>
-      <div class="row">
-        <div class="col-md-7">
-          <div style="width:400px; height:380px; background:url(assets/images/bg2.png)"></div>
-        </div>
-        <div class="col-md-4 toper">
-          <div class="form-group">
-            <label for="">Room Type:</label>
-            <div class="select">
-                <select name="select" id="select"  (change)="onRoomTypeChanged($event)">
-                 <option>--select--</option>
-                  <option  value="{{rt.id}}" *ngFor="let rt of roomTypes" >{{rt.room_type_name}}</option>
-                </select>
-                </div>
-          </div> <br>
-          
-          <div class="form-group">
-              <label for="">Room:</label>
-              <div class="select">
-                  <select name="select" id="select" >
-                   
-                    <option  value="{{rm.id}}" *ngFor="let rm of rooms" >{{rm.room_name}}</option>
-                  </select>
-                  </div>
-            </div> <br>
+  <clr-wizard-title>Walk In Wizard</clr-wizard-title>
 
-            <div class="form-group">
-                <label for="">Rate Type:</label>
-
-                <div class="select">
-                    <select name="select" id="select"  (change)="onRateTypeChanged($event)">
-                     <option>--select--</option>
-                      <option  value="{{rt.id}}" *ngFor="let rt of rateTypes" >{{rt.rate_type_name}}</option>
-                    </select>
-                    </div>
-              </div> <br>
-
-              <div class="form-group">
-                  <label for="">Rate:</label>
-                  <div class="select">
-                      <select name="select" id="select" >
-                       
-                        <option  value="{{rm.id}}" *ngFor="let rm of rates" >{{rm.rate_name}}</option>
-                      </select>
-                      </div>
-                </div>
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'" (click)="onFinish()">Finish</clr-wizard-button>
 
 
-
-
-        </div>
-
-     
-          
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Select walkin Info</ng-template>
+    <p>
+      Welcome to Walk In Wizard...
+    </p>
+    <div class="row">
+      <div class="col-md-7">
+        <div style="width:400px; height:380px; background:url(assets/images/bg2.png)"></div>
       </div>
-    </clr-wizard-page>
-  
-    <clr-wizard-page>
-      <ng-template clrPageTitle>Out of Order Room</ng-template>
-  
-      <div class="row">
-  
-          <div class="col-md-12">
-            <table class="table btable">
-              <thead>
-                <tr>
-                  <th colspan="7" style="text-align:left!important;">
-                    <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search Criteria</button>
-                  </th>
-                  <th colspan="1" style="text-align:right!important;">
-                    <button type="button" class="btn btn-info btn-sm">Search</button>
-                  </th>
-                </tr>
-    
-              </thead>
-              <tbody>
-                <tr>
-                    <th>Room Type</th>
-                    <th>
-                      <div class="form-group">
-                          <div class="select">
-                        <select name="select" id="select"  (change)="onRoomTypeChanged2($event)">
-                         <option> -- select -- </option>
-                          <option  value="{{rt.id}}" *ngFor="let rt of roomTypes2" >{{rt.room_type_name}}</option>
-                        </select>
-                        </div>
-                      </div>
-                    </th>
-             
-             
-                </tr>
-              </tbody>
-            </table>
+      <div class="col-md-4 toper">
+        <div class="form-group">
+          <label for="">Wing:</label>
+          <div class="select">
+            <select name="select" id="select" (change)="onWingChanged($event)">
+              <option>--select--</option>
+              <option value="{{w.id}}" *ngFor="let w of wings">{{w.wing_name}}</option>
+            </select>
           </div>
         </div>
-      
+        <br>
+
+        <div class="form-group">
+          <label for="">Floor:</label>
+          <div class="select">
+            <select name="select" id="select" (change)="onFloorChanged($event)">
+              <option>--select--</option>
+              <option value="{{f.id}}" *ngFor="let f of floors">{{f.floor_name}}</option>
+            </select>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="">Rooms:</label>
+          <div class="select">
+            <select name="select" id="select">
+
+              <option value="{{f.id}}" *ngFor="let f of rooms">{{f.room_name}}</option>
+            </select>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="">Rate Type:</label>
+
+          <div class="select">
+            <select name="select" id="select" (change)="onRateTypeChanged($event)">
+              <option>--select--</option>
+              <option value="{{rt.id}}" *ngFor="let rt of rateTypes">{{rt.rate_type_name}}</option>
+            </select>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <label for="">Rate:</label>
+          <div class="select">
+            <select name="select" id="select">
+
+              <option value="{{rm.id}}" *ngFor="let rm of rates">{{rm.rate_name}}</option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </clr-wizard-page>
+
+  <clr-wizard-page>
+    <ng-template clrPageTitle>Other details</ng-template>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Departure:</label>
+          <input type="date">
+        </div>
+        <br>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Nights:</label>
+          <input type="number">
+        </div>
+        <br>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Extra Adults:</label>
+          <input type="number">
+        </div>
+        <br>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Extra Children:</label>
+          <input type="number">
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <h3 class="taxExempt">Tax Exempt</h3>
+
+    <div class="col-md-12">
+
+      <div class="form-group">
+        <span *ngFor="let t of taxes">
+          <label> {{t.tax_name}}</label>
+          <clr-checkbox id="t.id" [clrChecked]="false" [clrInline]="false">
+          </clr-checkbox>
+        </span>
+      </div>
+    </div>
+
+  </clr-wizard-page>
+
+
+  <clr-wizard-page>
+      <ng-template clrPageTitle>Market Source</ng-template>
+  
       <div class="row">
-          <div class="col-md-12">
-            <table class="table table-primary">
-              <thead>
-                <tr>
-                  <th style="text-align:left!important;">
-                    <input type="checkbox" name="" id=""> </th>
-                  <th style="text-align:left!important;">Room Type</th>
-                  <th style="text-align:left!important;">Room Name</th>
-                  <th style="text-align:left!important;">Floor</th>
-                  <th style="text-align:left!important;">Room Owner</th>
-     
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let room of rooms2">
   
-                  <td style="text-align:left!important;">
-                    <input type="checkbox"  [(ngModel)]="room.selected"> </td>
-                  <td style="text-align:left!important;">{{room.room_type.room_type_name}} </td>
-                  <td style="text-align:left!important;">{{room.room_name}}</td>
-                  <td style="text-align:left!important;">{{room.floor.floor_name}}</td>
-                  <td style="text-align:left!important;">{{room.room_owner.first_name}} {{room.room_owner.last_name}}</td>
-             
-                </tr>
-           
-              </tbody>
-            </table>
-  
-            <br>
-            <div class="row">
-              <div class="col-md-3">From</div>
-              <div class="col-md-3">{{out_of_order_start_date}}</div>
-              <div class="col-md-3">To</div>
-              <div class="col-md-3">{{out_of_order_end_date}}</div>
-            </div>
-  
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label class="col-md-2">Reason</label>
-                  <textarea rows="2" cols="5" [(ngModel)]="out_of_order_reason"></textarea>
-                </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Business Source Type:</label>
+            <div class="select">
+                <select name="select" id="select" (change)="onBusinessSourceChanged($event)">
+                  <option>--select--</option>
+                  <option value="{{f.id}}" *ngFor="let f of businessSourceTypes">{{f.business_source_type_name}}</option>
+                </select>
               </div>
-            </div>
-  
-          
           </div>
+          <br>
         </div>
+        <br><br>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Business Source:</label>
+            <div class="select">
+                <select name="select" id="select" >
+                  <option value="{{f.id}}" *ngFor="let f of businessSources">{{f.business_source_name }}</option>
+                </select>
+              </div>
+          </div>
+          <br>
+        </div>
+      </div>
   
     </clr-wizard-page>
   
-  
-  </clr-wizard>
-  
+
+
+</clr-wizard>

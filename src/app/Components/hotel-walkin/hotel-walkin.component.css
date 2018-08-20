@@ -13,3 +13,11 @@
     background-color: #C1CDD4;
     color:white!important;
 }
+
+.taxExempt{
+    height: 40px;
+    background-color: #0065AB;
+    color: white;
+    padding-top: 7px;
+    text-align: center;
+}
