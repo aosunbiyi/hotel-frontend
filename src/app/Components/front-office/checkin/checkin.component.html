@@ -270,6 +270,41 @@
           <div class="clr-col-md-12">
   
             <h5>Reserved Rooms</h5>
+
+            <table class="table table-bordered table-responsive">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Serial Number</th>
+                  <th>Room Type</th>
+                  <th>Room Name</th>
+                  <th>Extra Adult</th>
+                  <th>Extra Child</th>
+                  <th>Owner</th>
+                  <th>Total Charges</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let room of selectedReservation.reserved_rooms">
+                  <td><clr-icon shape="home" class="is-solid"></clr-icon></td>
+                  <td>{{room.serial_number}}</td>
+                  <td> {{room.room_type_name}}</td>
+                  <td> {{room.room_name}} </td>
+                  <td> <input type="number"  value="{{room.num_of_adult}}" style="width:50px!important;" readonly class="r{{room.id}}" (change)="onNumberOfAdultChange($event,room)"> </td>
+                  <td>  <input type="number"  value="{{room.num_of_children}}"  style="width:50px!important;" readonly  class="rr{{room.id}}"  (change)="onNumberOfChildChange($event,room)">  </td>
+                  <td> {{room.original_owner}}</td>
+                  <td>{{getTotalReservation400(room.reservation_transaction)[0].total | number:'.2'}}</td>
+                  <td>
+                      <clr-button-group class="btn-primary btn-sm">
+                          <clr-button [clrInMenu]="true"  class="btn" (click)="onEditReserved_Room(room)">Edit</clr-button>
+                          <clr-button [clrInMenu]="true" class="btn btn-success">Change Owner</clr-button>
+                          <clr-button [clrInMenu]="true" class="btn btn-danger">Delete</clr-button>
+                      </clr-button-group>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
         
   
           </div>

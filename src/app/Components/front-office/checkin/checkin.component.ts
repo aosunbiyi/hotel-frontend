@@ -1,26 +1,34 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { ClrWizard, ClrForm, ClrWizardPage } from '@clr/angular';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { LocalDate, LocalTime } from 'js-joda';
+import * as lodash from 'lodash';
 import { ReservationsService } from '../../../services/reservations.service';
 import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-checkin',
   templateUrl: './checkin.component.html',
-  styleUrls: ['./checkin.component.css']
+  styleUrls: ['./checkin.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckinComponent implements OnInit {
-
+  @ViewChild('wizardxl') wizardExtraLarge: ClrWizard;
+  @ViewChild('page1') page1: ClrWizardPage;
   criteriaList = [];
   inputType = 'text';
   optionList: SearchParameter[] = [];
   reservations = [];
   open_wizard = false;
-  selectedReservation = { accounts_: null };
+  selectedReservation = { accounts_: null, account_id: 0, reserved_rooms: [] };
   loadingAccount = false;
 
 
   constructor(private elementRef: ElementRef,
     private reservationsService: ReservationsService,
-    private accountService: AccountsService) { }
+    private accountService: AccountsService,
+    private formBuilder: FormBuilder,
+    private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
@@ -113,6 +121,7 @@ export class CheckinComponent implements OnInit {
     const t2 = v.toString().split('|')[1];
     const count = v.toString().split('|')[2];
     this.elementRef.nativeElement.querySelector('.v' + count.toString()).type = t2;
+    this.refresh();
   }
 
   onCheckInClicked(reservation) {
@@ -126,10 +135,75 @@ export class CheckinComponent implements OnInit {
       this.accountService.getAccountById(this.selectedReservation.account_id).subscribe(data => {
         vm.selectedReservation.accounts_ = data;
         vm.loadingAccount = false;
+        this.refresh();
       });
     }, 1000);
 
 
+  }
+
+  onNumberOfChildChange(event, room) {
+    const reservation_id = room.reservation_id;
+    const reserved_room_id = room.id;
+    const change_value = event.target.value;
+    const type = 'child';
+
+    const editData = {
+      reservation_id: reservation_id,
+      reserved_room_id: reserved_room_id,
+      change_value: change_value,
+      type: type
+    };
+
+    this.reservationsService.edit_reserved_room(editData).subscribe(data => {
+      this.selectedReservation = data;
+    });
+  }
+
+  onNumberOfAdultChange(event, room) {
+    const reservation_id = room.reservation_id;
+    const reserved_room_id = room.id;
+    const change_value = event.target.value;
+    const type = 'adult';
+
+    const editData = {
+      reservation_id: reservation_id,
+      reserved_room_id: reserved_room_id,
+      change_value: change_value,
+      type: type
+    };
+
+    this.reservationsService.edit_reserved_room(editData).subscribe(data => {
+      this.selectedReservation = data;
+    });
+  }
+
+  onEditReserved_Room(room) {
+    console.log(room);
+    // tslint:disable-next-line:no-unused-expression
+    this.elementRef.nativeElement.querySelector('.r' + room.id).readOnly = false;
+    this.elementRef.nativeElement.querySelector('.rr' + room.id).readOnly = false;
+  }
+
+  onFinish() {
+    this.wizardExtraLarge.navService.setCurrentPage(this.page1);
+    this.open_wizard = false;
+  }
+
+  getTotalReservation400(reservation_transaction: any) {
+    const output = lodash(reservation_transaction)
+      .groupBy('reservation_id')
+      .map((objs, key) => ({
+        'reservation_id': key,
+        'total': lodash.sumBy(objs, 'total')
+      }))
+      .value();
+
+    return output;
+  }
+
+  refresh() {
+    this.cd.detectChanges();
   }
 
 }

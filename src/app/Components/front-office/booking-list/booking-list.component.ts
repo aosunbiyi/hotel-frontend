@@ -42,18 +42,6 @@ export class BookingListComponent implements OnInit {
   selectedRoom: any;
   selectedReservation: any;
 
-  // sumary info
-  total_charges = 0.0;
-  discount_charges = 0.0;
-  total_tax = 0.0;
-  total_rate = 0.0;
-  total = 0.0;
-  amount_paid = 0.0;
-  deposit = 0.0;
-  balance = 0.0;
-  total_extra_adult = 0.0;
-  total_extra_children = 0.0;
-
 
   dropdownList = [];
   selectedItems = [];
@@ -519,13 +507,6 @@ export class BookingListComponent implements OnInit {
     const id = parseInt(event.target.value);
     this.roomtypeService.getRoomTypeRates(id).subscribe(data => {
       this.roomRate = data;
-      console.log(data);
-      this.total_charges = this.roomRate.rate_.amount * this.bookingForm.value.num_of_night;
-      this.total_extra_adult = this.roomRate.rate_.extra_adult * this.bookingForm.value.num_of_adult;
-      this.total_extra_children = this.roomRate.rate_.extra_child * this.bookingForm.value.num_of_children;
-
-      this.total_rate = this.total_charges + this.total_extra_adult + this.total_extra_children;
-      this.total = this.total_rate;
     });
 
     this.roomTypes.forEach(rt => {

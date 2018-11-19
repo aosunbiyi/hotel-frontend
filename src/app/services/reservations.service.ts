@@ -21,9 +21,19 @@ export class ReservationsService {
     return this.http.get(`${environment.baseUrl}ReservationTransaction/GetReservationDetailsByReservationId/${id}`).pipe(map(this.extractData));
   }
 
+
   getReservationById(id: number): Observable<any> {
     return this.http.get(`${environment.baseUrl}Reservations/${id}`).pipe(map(this.extractData));
   }
+
+  edit_reserved_room(EditReservationData): Observable<any> {
+    console.log(JSON.stringify(EditReservationData));
+    return this.http.post<any>(`${environment.baseUrl}Reservations/edit_reserved_room`, JSON.stringify(EditReservationData)).pipe(
+      tap((ac) => console.log(`edit_reserved_room w/ id=${ac.id}`)),
+      catchError(this.handleError<any>('edit_reserved_room'))
+    );
+  }
+
 
   searchReservationWithParam(searchData): Observable<any> {
     console.log(JSON.stringify(searchData));
