@@ -21,6 +21,10 @@ export class SchedularComponent implements OnInit {
     this.body.reSetDate(date);
   }
 
+  onRoomChange(rooms) {
+    this.body.resetRoom(rooms);
+  }
+
   ngOnInit() {
   }
 

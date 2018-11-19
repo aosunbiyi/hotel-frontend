@@ -1,0 +1,815 @@
+
+
+<clr-modal [(clrModalOpen)]="selectedReservation" [clrModalSize]="'xl'" [clrModalClosable]="false">
+  <h3 class="modal-title">Reservation Details</h3>
+  <div class="modal-body">
+    <div *ngIf="selectedReservation">
+      <div class="clr-row">
+        <div class="clr-col-md-6">
+
+          <h5>Reservation Summary</h5>
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>
+                  Reservation Number
+                </th>
+                <td>{{selectedReservation.reservation_number}}</td>
+                <th>
+                  Reservation Status
+                </th>
+                <td>{{selectedReservation.reservation_status}}</td>
+              </tr>
+              <tr>
+                <th>
+                  Booked On
+                </th>
+                <td>{{selectedReservation.book_on | date:'longDate'}}</td>
+                <th>
+                  Booked By
+                </th>
+                <td>{{selectedReservation.book_by}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Arrival Date
+                </th>
+                <td>{{selectedReservation.arrival | date:'longDate'}}</td>
+                <th>
+                  Arrival Time
+                </th>
+                <td>{{selectedReservation.arrival_time}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Departure Date
+                </th>
+                <td>{{selectedReservation.departure | date:'longDate'}}</td>
+                <th>
+                  Departure Time
+                </th>
+                <td>{{selectedReservation.departure_time}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="clr-col-md-6">
+          <h5>Account Summary</h5>
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>
+                  Account Number
+                </th>
+                <td>{{selectedReservation.account_.account_number}}</td>
+                <th>
+                  Account Name
+                </th>
+                <td>{{selectedReservation.account_.first_name}} {{selectedReservation.account_.last_name}}</td>
+              </tr>
+              <tr>
+                <th>
+                  Credit Limit
+                </th>
+                <td>{{selectedReservation.account_.credit_limit}}</td>
+                <th>
+                  Email Address
+                </th>
+                <td>{{selectedReservation.account_.email}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Address
+                </th>
+                <td>{{selectedReservation.account_.address1}} , {{selectedReservation.account_.address2}}</td>
+                <th>
+                  City
+                </th>
+                <td>{{selectedReservation.account_.city}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Postal Code
+                </th>
+                <td>{{selectedReservation.account_.postal_code}}</td>
+                <th>
+                  Phone Number
+                </th>
+                <td>{{selectedReservation.account_.phone}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  State
+                </th>
+                <td>{{selectedReservation.account_.state}}</td>
+                <th>
+                  Country
+                </th>
+                <td>{{selectedReservation.account_.country}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="clr-col-md-12">
+          <h5>Reserved Rooms</h5>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Serial Number</th>
+                <th>Room Type</th>
+                <th>Room Name</th>
+                <th>Extra Adult</th>
+                <th>Extra Child</th>
+                <th>Original Owner</th>
+                <th>Details</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor=" let room of selectedReservation.reserved_rooms">
+                <td>{{room.serial_number}}</td>
+                <td> {{room.room_type_name}}</td>
+                <td> {{room.room_name}} </td>
+                <td> {{room.num_of_adult}} </td>
+                <td> {{room.num_of_children}} </td>
+                <td> {{room.original_owner}}</td>
+                <td>
+                  <table *ngIf="room.reservation_transaction.length > 0" class="table">
+                    <thead>
+                      <tr>
+                        <th>day</th>
+                        <th>rate</th>
+                        <th>Amount</th>
+                        <th>Extra Adult</th>
+                        <th>Extra Child</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let n of room.reservation_transaction">
+                        <td>{{n.transaction_date | date:'short'}}</td>
+                        <td>{{n.rate_name}}</td>
+                        <td>{{n.total_reservation | number:'.2'}}</td>
+                        <td>{{n.total_adult | number:'.2'}}</td>
+                        <td>{{n.total_children | number:'.2'}}</td>
+                      </tr>
+                    </tbody>
+
+                    <tfoot>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th> {{getTotalReservation(room.reservation_transaction)[0].total_reservation | number:'.2'}}</th>
+                        <th> {{getTotalExtraAdult(room.reservation_transaction)[0].total_adult | number:'.2'}}</th>
+                        <th> {{getTotalExtraChildren(room.reservation_transaction)[0].total_children | number:'.2'}}</th>
+                      </tr>
+                    </tfoot>
+
+                  </table>
+                </td>
+                <td> <button class="btn btn-danger-outline btn-sm" style="height:22px!important;margin-top:-4px;"
+                    (click)="showTransactionDetails(room)">show details</button> </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+
+    <button type="button" class="btn btn-danger" (click)="selectedReservation = null">Close</button>
+  </div>
+</clr-modal>
+
+
+<clr-wizard #wizardxl [(clrWizardOpen)]="open_wizard">
+  <clr-wizard-title>New Booking</clr-wizard-title>
+
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'" (click)="onFinish()">Finish</clr-wizard-button>
+
+
+  
+ 
+  <clr-wizard-page #page1>
+    <ng-template clrPageTitle>Welcome</ng-template>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div style="width:780px; height:380px; background:url(assets/images/banner1.png)"></div>
+      </div>
+
+
+
+
+    </div>
+  </clr-wizard-page>
+
+  <clr-wizard-page [clrWizardPageNextDisabled]="!bookingForm.valid">
+    <ng-template clrPageTitle>Booking Information</ng-template>
+    <ng-template clrPageNavTitle>Booking Info</ng-template>
+
+    <form [formGroup]="bookingForm" class="clr-form clr-form-horizontal" #formPageTwo="ngForm">
+      <div class="row">
+        <div class="clr-col-md-12">
+
+          <clr-input-container>
+            <label>Arrival Date</label>
+            <input clrInput type="date" formControlName="arrival" #arrivalData [(clrDate)]="arrival_date" />
+            <clr-control-error>Arrival Data cannot be empty.</clr-control-error>
+          </clr-input-container>
+
+          <clr-input-container>
+            <label>Arrival Time</label>
+            <input clrInput type="time" formControlName="arrival_time" #arrival_time />
+            <clr-control-error>Arrival Time cannot be empty.</clr-control-error>
+          </clr-input-container>
+
+          <clr-input-container>
+            <label>Number Of Nights Time</label>
+            <input clrInput type="number" formControlName="num_of_night" (change)="onNightChange($event)" />
+            <clr-control-error>Number of Night cannot be empty.</clr-control-error>
+          </clr-input-container>
+
+          <clr-input-container>
+            <label>Departure Date</label>
+            <input clrInput type="date" formControlName="departure" readonly #departureDate />
+          </clr-input-container>
+
+          <clr-input-container>
+            <label>Departure Time</label>
+            <input clrInput type="time" formControlName="departure_time" #departure_time />
+          </clr-input-container>
+
+  
+
+
+
+
+
+
+        </div>
+
+      </div>
+    </form>
+
+
+  </clr-wizard-page>
+
+
+
+  <clr-wizard-page [clrWizardPageNextDisabled]="!businessForm.valid">
+    <ng-template clrPageTitle>Business Source</ng-template>
+
+    <form [formGroup]="businessForm" class="clr-form clr-form-horizontal">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Business Source Type:</label>
+            <div class="select">
+              <select name="select" id="select" (change)="onBusinessSourceChanged($event)">
+                <option>--select--</option>
+                <option value="{{f.id}}" *ngFor="let f of businessSourceTypes">{{f.business_source_type_name}}</option>
+              </select>
+            </div>
+          </div>
+          <br>
+        </div>
+        <br><br>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Business Source:</label>
+            <div class="select">
+              <select name="select" id="select" formControlName="business_source_id">
+                <option value="{{f.id}}" *ngFor="let f of businessSources">{{f.business_source_name }}</option>
+              </select>
+            </div>
+          </div>
+          <br>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="">Room Types</label>
+            <div class="select">
+              <select name="select" id="select" (change)="onRoomTypeselected($event)" formControlName="room_type_id">
+                <option value="">--select--</option>
+                <option value="{{f.id}}" *ngFor="let f of roomTypes">{{f.room_type_name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-6">
+
+
+          <div class="row">
+            <div class="col-md-10">
+
+              <div class="form-group">
+                <label for="">Select your room</label>
+
+
+
+
+                <div class="select">
+                  <select name="select" id="select" (change)="onRoomselected($event)" formControlName="room_type_id">
+                    <option value="">--select--</option>
+                    <option value="{{f.id}}" *ngFor="let f of rooms">{{f.room_name}}</option>
+                  </select>
+                </div>
+
+
+
+
+
+
+
+              </div>
+
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-default btn-sm" (click)="addRoom()">Add </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+
+    <div class="row">
+
+
+      <div class="col-md-12">
+        <div class="row">
+          <table class="table table-active table-bordered table-hover clr-form clr-form-horizontal">
+            <thead>
+              <tr>
+                <td>Room Name</td>
+                <td>Room Type</td>
+                <td>Extra Adult</td>
+                <td>Extra Children</td>
+                
+                <td style="width:10%;"></td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let room of selectedRooms">
+                <td>
+
+                  {{room.room_name}}
+
+
+                </td>
+                <td>
+
+                  {{room.room_type_name}}
+
+
+                </td>
+
+                <td>
+
+                  <input type="text" style="width:60px;" [(ngModel)]="room.extra_adult">
+
+
+                </td>
+                <td>
+
+                  <input type="text" style="width:60px;" [(ngModel)]="room.extra_children">
+
+
+                </td>
+              
+             
+                <td>
+
+                  <button class="btn btn-sm btn-danger" style="width:50px;" (click)="deleteRoom(room)">x</button>
+
+
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </clr-wizard-page>
+
+
+  <clr-wizard-page [clrWizardPageNextDisabled]="!userForm.valid"  (clrWizardPageCustomButton)="doCustomClick3($event)">
+      <ng-template clrPageTitle>General Information</ng-template>
+
+    
+  
+      <form [formGroup]="userForm" class="clr-form clr-form-horizontal">
+        <div class="row">
+          <div class="clr-col-md-6">
+
+              <clr-input-container>
+                  <label>Phone </label>
+                  <input clrInput type="text" formControlName="phone" #phone
+                  (keyup.enter)="onPhoneLeave(phone.value)"
+                  (blur)="onPhoneLeave(phone.value)"/>
+                  <clr-control-error>Phone cannot be empty.</clr-control-error>
+               
+                </clr-input-container>
+      
+      
+                <clr-input-container>
+                  <label>Email </label>
+                  <input clrInput type="email" formControlName="email"  #email
+                  (keyup.enter)="onEmailLeave(email.value)"
+                  (blur)="onEmailLeave(email.value)" />
+                  <clr-control-error>Email cannot be empty.</clr-control-error>
+                </clr-input-container>
+  
+            <clr-input-container>
+              <label>First Name</label>
+              <input clrInput type="text" formControlName="first_name" />
+              <clr-control-error>First Name cannot be empty.</clr-control-error>
+            </clr-input-container>
+  
+            <clr-input-container>
+              <label>Last Name</label>
+              <input clrInput type="text" formControlName="last_name" />
+              <clr-control-error>Last Name cannot be empty.</clr-control-error>
+            </clr-input-container>
+  
+            <clr-input-container>
+              <label>Address 1</label>
+              <input clrInput type="text" formControlName="address1" />
+              <clr-control-error>Address cannot be empty.</clr-control-error>
+            </clr-input-container>
+  
+            <clr-input-container>
+                <label>Address 2</label>
+                <input clrInput type="text" formControlName="address2" />
+              </clr-input-container>
+    
+  
+  
+  
+          </div>
+  
+          <div class="clr col-md-6">
+
+       
+                <clr-input-container>
+                  <label>City</label>
+                  <input clrInput type="text" formControlName="city" />
+                  <clr-control-error>City cannot be empty.</clr-control-error>
+                </clr-input-container>
+      
+      
+                <clr-input-container>
+                  <label>Postal Code</label>
+                  <input clrInput type="text" formControlName="postal_code" />
+                  <clr-control-error>Postal Code cannot be empty.</clr-control-error>
+                </clr-input-container>
+  
+                
+            <clr-input-container>
+              <label>Country</label>
+              <input clrInput type="text" formControlName="country" />
+              <clr-control-error>Country cannot be empty.</clr-control-error>
+            </clr-input-container>
+  
+  
+            <clr-input-container>
+              <label>State </label>
+              <input clrInput type="text" formControlName="state" />
+              <clr-control-error>State cannot be empty.</clr-control-error>
+            </clr-input-container>
+  
+  
+         
+  
+  
+            <clr-input-container>
+              <label>Fax </label>
+              <input clrInput type="text" formControlName="fax" />
+              <clr-control-error>Fax cannot be empty.</clr-control-error>
+            </clr-input-container>
+  
+  
+  
+  
+          </div>
+  
+        </div>
+      </form>
+  
+
+      <ng-template clrPageButtons>
+          <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+          <clr-wizard-button [type]="'custom-previous'">Back</clr-wizard-button>
+          <clr-wizard-button [type]="'custom-next'">Next</clr-wizard-button>
+      </ng-template>
+
+    </clr-wizard-page>
+ 
+
+
+
+
+
+  <clr-wizard-page  (clrWizardPageCustomButton)="doCustomClick2($event)">
+    <ng-template clrPageTitle>Booking Summary</ng-template>
+
+   
+      <div class="row">
+        <div class="clr-col-md-12">
+          <h4>Transaction Breakdown</h4>
+          <table class=" table table-bordered table-primary ">
+               <thead>
+                 <tr>
+                   <th>Transaction Date</th>
+                   <th>Room Name</th>
+                   <th>Rate Name</th>
+                   <th>Rate</th>
+                   <th>Amount</th>
+                   <th>Extra Adult</th>
+                   <th>Extra Child</th>
+                   <th>Total</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr *ngFor="let r of reservation_transaction_list">
+                    <td>{{r.transaction_date | date:'short'}}</td>
+                     <td>{{r.reserved_room_.room_name}}</td>
+                     <td>{{r.rate_name}}</td>
+                     <td>{{r.rate | number:'.2'}}</td>
+                     <td>{{r.total_reservation | number:'.2'}}</td>
+                     <td>{{r.total_adult | number:'.2'}}</td>
+                     <td>{{r.total_children | number:'.2'}}</td>
+                     <td>{{r.total | number:'.2'}}</td>
+                 </tr>
+               </tbody>
+
+               <tfoot *ngIf="reservation_transaction_list.length> 0">
+                  <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th> </th>
+                    <th> {{getTotalReservation400(reservation_transaction_list)[0].total | number:'.2'}}</th>
+                  </tr>
+                </tfoot>
+
+              
+          </table>
+         
+
+        </div>   
+
+      </div>
+ 
+
+    <ng-template clrPageButtons>
+        <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+        <clr-wizard-button [type]="'custom-previous'">Back</clr-wizard-button>
+        <clr-wizard-button [type]="'custom-next'">Proceed to Payment</clr-wizard-button>
+    </ng-template>
+
+  </clr-wizard-page>
+
+
+  <clr-wizard-page [clrWizardPageNextDisabled]="!paymentForm.valid"  (clrWizardPageCustomButton)="doCustomClick($event)">
+      <ng-template clrPageTitle>Reservation Payment</ng-template>
+      <ng-template clrPageNavTitle>Make Payment</ng-template>
+  
+      <form [formGroup]="paymentForm" class="clr-form clr-form-horizontal" #formPageTwo="ngForm">
+        <div class="row">
+          <div class="clr-col-md-12">
+  
+            <div class="row">
+              <div class="col-md-12">
+                <div style="width:770px; height:120px; background:url(assets/images/payments.png)"></div>
+              </div>
+  
+            </div>
+  
+            <h4>Select your payment method.</h4>
+  
+            <div class="row">
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Payment Methods</label>
+                  <select formControlName="payment_method" clrInput  (change)="onPaymentMethodChange($event)">
+
+                    <option value="Cash" >Cash</option>
+                    <option value="Cheque" >Cheque</option>
+                    <option value="Transfer" >Transfer</option>
+                    <option value="Credit Card" >Credit Card</option>
+                  </select>
+                </clr-input-container>
+              </div>
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Total Amount</label>
+                  <input clrInput type="number" formControlName="total_amount"   readonly />
+                </clr-input-container>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Amount</label>
+                  <input clrInput type="number" formControlName="amount" #amount
+                  (keyup.enter)="onAmountLeave(amount.value)"
+                  (blur)="onAmountLeave(amount.value)"/>
+                  <clr-control-error>Amount cannot be empty.</clr-control-error>
+                </clr-input-container>
+              </div>
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Balance</label>
+                  <input clrInput type="number" formControlName="balance"  readonly/>
+                </clr-input-container>
+              </div>
+            </div>
+  
+  
+            <div class="row"  *ngIf="isCheque">
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Cheque Number</label>
+                  <input clrInput type="text" formControlName="cheque" />
+                </clr-input-container>
+              </div>
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Account Number</label>
+                  <input clrInput type="text" formControlName="account_number" />
+                </clr-input-container>
+              </div>
+              <div class="clr-col-md-6">
+                <clr-input-container>
+                  <label>Bank Name</label>
+                  <input clrInput type="text" formControlName="bank_name" />
+                </clr-input-container>
+              </div>
+              <div class="clr-col-md-6">
+                  <clr-input-container>
+                    <label>Branch Name</label>
+                    <input clrInput type="text" formControlName="branch_name" />
+                  </clr-input-container>
+                </div>
+            </div>
+  
+            <div class="row">
+                <div class="clr-col-12">
+                    <h3>Apply Discount <input type="checkbox"  (change)="onDiscountChange($event)" formControlName="apply_discount"> </h3>
+                  </div>
+            </div>
+  
+            <div class="row" *ngIf="applyDiscount">           
+                <div class="clr-col-md-6">
+                  <clr-input-container>
+                    <label>Discount</label> 
+               
+                        <select name="" id="" formControlName="discount_plan" clrInput>
+                          <option value="">--select--</option>
+                          <option value="{{d.id}}" *ngFor="let d of discountList"> {{d.plan_name}}</option>
+                        </select>
+                   
+                  </clr-input-container>
+                </div>
+                <div class="clr-col-md-6">
+                  <clr-input-container>
+                    <label>Discount Value </label>
+                    <input clrInput type="number" formControlName="discount_value" />
+                  </clr-input-container>
+                </div>
+
+                <div class="clr-col-md-6">
+                    <clr-input-container>
+                      <label>Discount Authorization Code </label>
+                      <input clrInput type="password" formControlName="discount_code" />
+                    </clr-input-container>
+                  </div>
+              </div>
+  
+  
+  
+  
+  
+  
+          </div>
+  
+        </div>
+      </form>
+  
+  
+      <ng-template clrPageButtons>
+          <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+          <clr-wizard-button [type]="'custom-previous'">Back</clr-wizard-button>
+          <clr-wizard-button [type]="'custom-danger'">Post Payment</clr-wizard-button>
+      </ng-template>
+    </clr-wizard-page>
+  
+
+</clr-wizard>
+
+
+<div class="clr-row">
+  <div class="clr-md-12 right-content">
+    &nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+
+<div class="clr-row">
+  <div class="clr-col-1"></div>
+  <div class="clr-col-10">
+    <button class="btn btn-default btn-sm" (click)="onNew()">New Booking</button>
+
+    <clr-datagrid style=" height:100%;" [(clrDgSingleSelected)]="selectedReservation">
+
+      <clr-dg-column [ngClass]="{'header1':true}" [clrDgField]="'reservation_number'">Reservation Number
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Account
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Number of Nights
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Transaction Date
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Total Amount
+          <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+        </clr-dg-column>
+        <clr-dg-column [ngClass]="{'header1':true}">Amount Paid
+            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+          </clr-dg-column>
+          <clr-dg-column [ngClass]="{'header1':true}">Balance
+              <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+            </clr-dg-column>
+      <clr-dg-column [ngClass]="{'header1':true}">Reservation Status
+        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
+      </clr-dg-column>
+
+
+      <clr-dg-placeholder>We couldn't find any Hotel Reservation!</clr-dg-placeholder>
+
+      <clr-dg-row *ngFor="let g of reservationList; let  even=even; let odd=odd;" [clrDgItem]="g" (click)="onReservationSelected($event)">
+
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.reservation_number}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.account_.first_name}} {{g.account_.last_name}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.num_of_night}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.book_on | date:'medium'}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.total_booking  | number:'.2'}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.amount_paid  | number:'.2'}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.balance  | number:'.2'}}</clr-dg-cell>
+        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.reservation_status}}</clr-dg-cell>
+
+      </clr-dg-row>
+
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} reservations
+        </clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+
+
+  </div>
+  <div class="clr-col-1"></div>
+</div>

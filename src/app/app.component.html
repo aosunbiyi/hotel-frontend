@@ -1,6 +1,7 @@
+
+
 <div class="main-container">
   <div class="alert alert-app-level">
-    &nbsp;&nbsp;&nbsp;&nbsp;alert message
   </div>
   <nav class="subnav" style="overflow:hidden!important;">
     <app-ticker [tickers]="tickers"></app-ticker>
@@ -14,10 +15,13 @@
     </div>
     <div class="header-nav">
       <a href="javascript://" [routerLink]="['/']" class="  nav-link nav-text">Dashboard</a>
+      <a href="javascript://" [routerLink]="['/front-office']" class="nav-link nav-text" (click)="setNull(1)">Front
+        Office</a>
       <a href="javascript://" class="nav-link nav-text" (click)="on_open_out_of_order()">Out of Order</a>
       <a href="javascript://" [routerLink]="['/guest-profile']" class="nav-link nav-text">Guest Profile</a>
       <a href="javascript://" [routerLink]="['/hotel-walkin']" class="nav-link nav-text">Hotel Walkin</a>
-      <a href="javascript://" class="nav-link nav-text">Reports</a>
+      <a href="javascript://" [routerLink]="['/room-lookup']" class="nav-link nav-text">Room Lookup</a>
+
       <a href="javascript://" class="nav-link nav-text">Inventory</a>
       <a href="javascript://" class="nav-link nav-text">Calendar</a>
       <a href="javascript://" class="nav-link nav-text">Manage</a>
@@ -30,40 +34,48 @@
     </div>
   </header>
   <nav class="subnav little-links">
-    <ul class="nav">
+    <ul class="nav" *ngIf="menu_front_office">
+        <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/front-office']">Reservation List</a>
+          </li>
+
+ 
       <li class="nav-item">
-        <a class="nav-link active" href="#">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" >Management</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cloud</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Tenants</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Select</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Guests</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Archives</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Financials</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cashbook</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Prices</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Extras</a>
-      </li>
+          <a class="nav-link" href="#" [routerLink]="['/front-office/checkin']">ChecK In</a>
+        </li>
+
+      
+
+        <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/front-office/reservation-list']">Reservation List</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="#" [routerLink]="['/front-office/out-of-order']">Out Of Order</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/front-office/guest-ledger']">Guest Ledger</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/front-office/arrival-list']">Arrival List</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/front-office/departure-list']">Departure List</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/front-office/guest-database']">guest-database</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/front-office/guest-messages']">guest-messages</a>
+            </li>
+
+
+
     </ul>
   </nav>
   <div class="content-container">
@@ -95,7 +107,8 @@
           <thead>
             <tr>
               <th colspan="7" style="text-align:left!important;">
-                <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search Criteria</button>
+                <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search
+                  Criteria</button>
               </th>
               <th colspan="1" style="text-align:right!important;">
                 <button type="button" class="btn btn-info btn-sm">Search</button>
@@ -108,22 +121,22 @@
               <th>Room Type</th>
               <th>
                 <div class="form-group">
-                    <div class="select">
-                  <select name="select" id="select"  (change)="onRoomTypeChanged($event)">
-                  
-                    <option  value="{{rt.id}}" *ngFor="let rt of roomTypes" >{{rt.room_type_name}}</option>
-                  </select>
+                  <div class="select">
+                    <select name="select" id="select" (change)="onRoomTypeChanged($event)">
+
+                      <option value="{{rt.id}}" *ngFor="let rt of roomTypes">{{rt.room_type_name}}</option>
+                    </select>
                   </div>
                 </div>
               </th>
               <th>Room</th>
               <th>
                 <div class="form-group">
-                    <div class="select">
-                  <select name="select" id="select" >
-                   
-                    <option  value="{{rm.id}}" *ngFor="let rm of rooms" >{{rm.room_name}}</option>
-                  </select>
+                  <div class="select">
+                    <select name="select" id="select">
+
+                      <option value="{{rm.id}}" *ngFor="let rm of rooms">{{rm.room_name}}</option>
+                    </select>
                   </div>
                 </div>
               </th>
@@ -165,7 +178,7 @@
               <td style="text-align:left!important;">201</td>
               <td style="text-align:left!important;">Remark</td>
             </tr>
-        
+
           </tbody>
         </table>
       </div>
@@ -214,13 +227,13 @@
       <div class="col-md-4 toper">
         <div class="form-group">
           <label for="">Start Date:</label>
-          <input type="date" name="out_of_order_start_date" clrDate [(ngModel)]="out_of_order_start_date" >
+          <input type="date" name="out_of_order_start_date" clrDate [(ngModel)]="out_of_order_start_date">
         </div>
-        
+
         <div class="form-group">
-            <label for="">End Date:</label>
-            <input type="date" name="out_of_order_end_date" clrDate [(ngModel)]="out_of_order_end_date"  >
-          </div>
+          <label for="">End Date:</label>
+          <input type="date" name="out_of_order_end_date" clrDate [(ngModel)]="out_of_order_end_date">
+        </div>
       </div>
     </div>
   </clr-wizard-page>
@@ -230,89 +243,90 @@
 
     <div class="row">
 
-        <div class="col-md-12">
-          <table class="table btable">
-            <thead>
-              <tr>
-                <th colspan="7" style="text-align:left!important;">
-                  <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search Criteria</button>
-                </th>
-                <th colspan="1" style="text-align:right!important;">
-                  <button type="button" class="btn btn-info btn-sm">Search</button>
-                </th>
-              </tr>
-  
-            </thead>
-            <tbody>
-              <tr>
-                  <th>Room Type</th>
-                  <th>
-                    <div class="form-group">
-                        <div class="select">
-                      <select name="select" id="select"  (change)="onRoomTypeChanged2($event)">
-                       <option> -- select -- </option>
-                        <option  value="{{rt.id}}" *ngFor="let rt of roomTypes2" >{{rt.room_type_name}}</option>
-                      </select>
-                      </div>
-                    </div>
-                  </th>
-           
-           
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="col-md-12">
+        <table class="table btable">
+          <thead>
+            <tr>
+              <th colspan="7" style="text-align:left!important;">
+                <button type="button" class="btn btn-default btn-sm" disabled syle="color:black!important;">Search
+                  Criteria</button>
+              </th>
+              <th colspan="1" style="text-align:right!important;">
+                <button type="button" class="btn btn-info btn-sm">Search</button>
+              </th>
+            </tr>
+
+          </thead>
+          <tbody>
+            <tr>
+              <th>Room Type</th>
+              <th>
+                <div class="form-group">
+                  <div class="select">
+                    <select name="select" id="select" (change)="onRoomTypeChanged2($event)">
+                      <option> -- select -- </option>
+                      <option value="{{rt.id}}" *ngFor="let rt of roomTypes2">{{rt.room_type_name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </th>
+
+
+            </tr>
+          </tbody>
+        </table>
       </div>
-    
+    </div>
+
     <div class="row">
-        <div class="col-md-12">
-          <table class="table table-primary">
-            <thead>
-              <tr>
-                <th style="text-align:left!important;">
-                  <input type="checkbox" name="" id=""> </th>
-                <th style="text-align:left!important;">Room Type</th>
-                <th style="text-align:left!important;">Room Name</th>
-                <th style="text-align:left!important;">Floor</th>
-                <th style="text-align:left!important;">Room Owner</th>
-   
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let room of rooms2">
+      <div class="col-md-12">
+        <table class="table table-primary">
+          <thead>
+            <tr>
+              <th style="text-align:left!important;">
+                <input type="checkbox" name="" id=""> </th>
+              <th style="text-align:left!important;">Room Type</th>
+              <th style="text-align:left!important;">Room Name</th>
+              <th style="text-align:left!important;">Floor</th>
+              <th style="text-align:left!important;">Room Owner</th>
 
-                <td style="text-align:left!important;">
-                  <input type="checkbox"  [(ngModel)]="room.selected"> </td>
-                <td style="text-align:left!important;">{{room.room_type.room_type_name}} </td>
-                <td style="text-align:left!important;">{{room.room_name}}</td>
-                <td style="text-align:left!important;">{{room.floor.floor_name}}</td>
-                <td style="text-align:left!important;">{{room.room_owner.first_name}} {{room.room_owner.last_name}}</td>
-           
-              </tr>
-         
-            </tbody>
-          </table>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let room of rooms2">
 
-          <br>
-          <div class="row">
-            <div class="col-md-3">From</div>
-            <div class="col-md-3">{{out_of_order_start_date}}</div>
-            <div class="col-md-3">To</div>
-            <div class="col-md-3">{{out_of_order_end_date}}</div>
-          </div>
+              <td style="text-align:left!important;">
+                <input type="checkbox" [(ngModel)]="room.selected"> </td>
+              <td style="text-align:left!important;">{{room.room_type.room_type_name}} </td>
+              <td style="text-align:left!important;">{{room.room_name}}</td>
+              <td style="text-align:left!important;">{{room.floor.floor_name}}</td>
+              <td style="text-align:left!important;">{{room.room_owner.first_name}} {{room.room_owner.last_name}}</td>
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label class="col-md-2">Reason</label>
-                <textarea rows="2" cols="5" [(ngModel)]="out_of_order_reason"></textarea>
-              </div>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <br>
+        <div class="row">
+          <div class="col-md-3">From</div>
+          <div class="col-md-3">{{out_of_order_start_date}}</div>
+          <div class="col-md-3">To</div>
+          <div class="col-md-3">{{out_of_order_end_date}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="col-md-2">Reason</label>
+              <textarea rows="2" cols="5" [(ngModel)]="out_of_order_reason"></textarea>
             </div>
           </div>
-
-        
         </div>
+
+
       </div>
+    </div>
 
   </clr-wizard-page>
 

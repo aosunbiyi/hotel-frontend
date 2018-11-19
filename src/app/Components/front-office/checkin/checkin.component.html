@@ -1,0 +1,123 @@
+<div class="clr-row">
+  <div class="clr-col-md-2"></div>
+  <div class="clr-col-md-8">
+    <h2 style="margin-top:5px!important;" class="label label-primary">Check In - Search Panel</h2>
+    <table class="table">
+      <thead>
+        <th>Search Field</th>
+        <th>Search Condition</th>
+        <th>Value</th>
+        <th>Action</th>
+
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select class="clr-col-md-12 ss0" (change)="onSearchFieldChange($event)">
+              <option value="select">--select--</option>
+              <option value="reservation_number|text">Reservation Number</option>
+              <option value="book_on|date">Booked On</option>
+              <option value="arrival|date">Arrival Date</option>
+              <option value="departure|date">Departure Date</option>
+              <option value="reservation_status|text">Reservation Status</option>
+            </select>
+          </td>
+          <td>
+            <select class="clr-col-md-12  cc0">
+              <option value="=">Equels To</option>
+              <option value=">">Greater Than</option>
+              <option value=">=">Greater Than Or equeals To</option>
+              <option value="<">Less Than</option>
+              <option value="<=">Less Than Or equeals To</option>
+              <option value="CN">Contains</option>
+            </select>
+          </td>
+          <td>
+            <input type="{{inputType}}" class="clr-col-md-12 vv0">
+          </td>
+          <td>
+            <div style="margin-top:-8px;">
+              <button class="btn btn-dark btn-sm" (click)="onReservationSearch($event)">Search<clr-icon shape="search"></clr-icon>
+              </button>
+              <button class="btn btn-success btn-sm" (click)="addCriterion($event)">add criterion<clr-icon shape="plus-circle"></clr-icon>
+              </button>
+            </div>
+
+          </td>
+        </tr>
+
+
+
+          
+<tr *ngFor="let g of criteriaList; let  index=index;">
+    <td>
+        <select class="clr-col-md-12 s{{index}}" (change)="onSearchFieldChange2($event)">
+          <option value="select">--select--</option>
+            <option value="reservation_number|number|{{index}}">Reservation Number</option>
+            <option value="book_on|date|{{index}}">Booked On</option>
+            <option value="arrival|date|{{index}}">Arrival Date</option>
+            <option value="departure|date|{{index}}">Departure Date</option>
+            <option value="reservation_status|text|{{index}}">Reservation Status</option>
+        </select>
+    </td>
+    <td>
+      <select class="clr-col-md-12 c{{index}}">
+        <option value="=">Equels To</option>
+        <option value=">">Greater Than</option>
+        <option value=">=">Greater Than Or equeals To</option>
+        <option value="<">Less Than</option>
+        <option value="<=">Less Than Or equeals To</option>
+        <option value="CN">Contains</option>
+      </select>
+    </td>
+    <td>
+    <input type="{{inputType}}"  class="clr-col-md-12 v{{index}}">
+    </td>
+    <td>
+        <div style="margin-top:-8px;"  *ngIf="criteriaList.length-1===index">
+               
+            <button class="btn btn-danger btn-sm clr-col-md-12 b{{index}}"  (click)="removeLast($event)">remove last criterion <clr-icon shape="times-circle"></clr-icon>
+            </button>
+          </div>
+    </td>
+  </tr>
+      </tbody>
+    </table>
+
+    <hr>
+    <h4>Search Result</h4>
+    <table class="table table-bordered table-primary">
+       <thead>
+         <tr>
+           <th>Reservation Number</th>           
+           <th>Book On</th>
+           <th>Arrival</th>
+           <th>Departure</th>
+           <th>Number Of Night</th>
+           <th>Total</th>
+           <th>Paid</th>
+           <th>Balance</th>
+           <th>Tools</th>
+
+         </tr>
+       </thead>
+       <tbody>
+           <tr *ngFor="let d of reservations">
+              <td>{{d.reservation_number}}</td>
+              
+              <td>{{d.book_on | date:'short'}}</td>
+              <td>{{d.arrival | date:'short'}}</td>
+              <td>{{d.departure | date:'short'}}</td>
+              <td>{{d.num_of_night}}</td>
+              <td>{{d.total_booking  | number:'.2'}}</td>
+              <td>{{d.amount_paid  | number:'.2'}}</td>
+              <td>{{d.balance  | number:'.2'}}</td>
+              <td> <button class="btn btn-sm btn-primary">Check In</button></td>
+         
+           </tr>
+         
+       </tbody>
+    </table>
+  </div>
+  <div class="clr-col-md-2"></div>
+</div>

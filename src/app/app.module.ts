@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ClarityModule, ClrFormsNextModule  } from '@clr/angular';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
 import { DashboardModule } from './Components/dashboard/dashboard.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BackendModule } from './backend/backend.module';
@@ -16,15 +17,19 @@ import { HeaderInterceptor } from './backend/header.interceptor';
 import { AppRoutes } from './app.routes';
 
 import { RoomtypeService } from './services/roomtype.service';
-import { RoomService } from './services/room.service';
 import { FloorService } from './services/floor.service';
 import { OutoforderService } from './services/outoforder.service';
-import { ReservationService } from './services/reservation.service';
 import { WingService } from './services/wing.service';
 import { GuestProfileComponent } from './Components/guest-profile/guest-profile.component';
 import { HomeComponent } from './Components/home/home.component';
 import { MainDashboardComponent } from './Components/main-dashboard/main-dashboard.component';
 import { HotelWalkinComponent } from './Components/hotel-walkin/hotel-walkin.component';
+import { AccountsService } from './services/accounts.service';
+
+import { RoomManagerModule } from './Components/room-manager/room-manager.module';
+import { FrontOfficeModule } from './Components/front-office/front-office.module';
+
+
 
 @NgModule({
   declarations: [
@@ -42,21 +47,24 @@ import { HotelWalkinComponent } from './Components/hotel-walkin/hotel-walkin.com
     RouterModule,
     BackendModule,
     ClarityModule,
-    ClrFormsNextModule ,
+    ClrFormsNextModule,
     DashboardModule,
     FormsModule,
-    AppRoutes
+    ReactiveFormsModule,
+    RoomManagerModule,
+    AppRoutes,
+    Ng4LoadingSpinnerModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
-    RoomService,
     RoomtypeService,
     FloorService,
     OutoforderService,
-    ReservationService,
-    WingService
+    WingService,
+    AccountsService
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,11 +27,11 @@ export class HotelWalkinComponent implements OnInit {
     { id: 3, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
     { id: 4, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
     { id: 5, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
-    { id: 1, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
-    { id: 2, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
-    { id: 3, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
-    { id: 4, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
-    { id: 5, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 }
+    { id: 6, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 7, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 8, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 9, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 },
+    { id: 10, guestName: 'fred amata', identity: 'passport', roomType: 'Special', room: 'Room B', rate: 3450 }
 
   ];
 
@@ -63,6 +63,7 @@ export class HotelWalkinComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onFinish() {
     this.open_wizard = false;
   }

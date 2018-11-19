@@ -1,0 +1,33 @@
+.summary_table tbody tr td {
+    text-align: left!important;
+}
+
+.even {
+    background: #0065AB;
+    color: white!important;
+}
+
+.odd {
+    background: #49AFD9;
+    color: white!important;
+}
+
+.header1 {
+    background-color: #C1CDD4;
+    color: white!important;
+}
+
+.taxExempt {
+    height: 40px;
+    background-color: #0065AB;
+    color: white;
+    padding-top: 7px;
+    text-align: center;
+}
+
+:host ::ng-deep .custom-spinner-template {
+    height: 50% !important;
+    width: 50% !important;
+    top: 26% !important;
+    left: 24% !important;
+}
