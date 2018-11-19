@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ReservationsService } from '../../../services/reservations.service';
+import { AccountsService } from '../../../services/accounts.service';
 
 @Component({
   selector: 'app-checkin',
@@ -12,9 +13,14 @@ export class CheckinComponent implements OnInit {
   inputType = 'text';
   optionList: SearchParameter[] = [];
   reservations = [];
+  open_wizard = false;
+  selectedReservation = { accounts_: null };
+  loadingAccount = false;
 
 
-  constructor(private elementRef: ElementRef, private reservationsService: ReservationsService) { }
+  constructor(private elementRef: ElementRef,
+    private reservationsService: ReservationsService,
+    private accountService: AccountsService) { }
 
   ngOnInit() {
   }
@@ -107,6 +113,23 @@ export class CheckinComponent implements OnInit {
     const t2 = v.toString().split('|')[1];
     const count = v.toString().split('|')[2];
     this.elementRef.nativeElement.querySelector('.v' + count.toString()).type = t2;
+  }
+
+  onCheckInClicked(reservation) {
+    const vm = this;
+    this.selectedReservation = reservation;
+    vm.selectedReservation.accounts_ = null;
+    this.loadingAccount = true;
+    this.open_wizard = true;
+    console.log(reservation);
+    setTimeout(() => {
+      this.accountService.getAccountById(this.selectedReservation.account_id).subscribe(data => {
+        vm.selectedReservation.accounts_ = data;
+        vm.loadingAccount = false;
+      });
+    }, 1000);
+
+
   }
 
 }

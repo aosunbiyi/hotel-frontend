@@ -48,76 +48,237 @@
 
 
 
-          
-<tr *ngFor="let g of criteriaList; let  index=index;">
-    <td>
-        <select class="clr-col-md-12 s{{index}}" (change)="onSearchFieldChange2($event)">
-          <option value="select">--select--</option>
-            <option value="reservation_number|number|{{index}}">Reservation Number</option>
-            <option value="book_on|date|{{index}}">Booked On</option>
-            <option value="arrival|date|{{index}}">Arrival Date</option>
-            <option value="departure|date|{{index}}">Departure Date</option>
-            <option value="reservation_status|text|{{index}}">Reservation Status</option>
-        </select>
-    </td>
-    <td>
-      <select class="clr-col-md-12 c{{index}}">
-        <option value="=">Equels To</option>
-        <option value=">">Greater Than</option>
-        <option value=">=">Greater Than Or equeals To</option>
-        <option value="<">Less Than</option>
-        <option value="<=">Less Than Or equeals To</option>
-        <option value="CN">Contains</option>
-      </select>
-    </td>
-    <td>
-    <input type="{{inputType}}"  class="clr-col-md-12 v{{index}}">
-    </td>
-    <td>
-        <div style="margin-top:-8px;"  *ngIf="criteriaList.length-1===index">
-               
-            <button class="btn btn-danger btn-sm clr-col-md-12 b{{index}}"  (click)="removeLast($event)">remove last criterion <clr-icon shape="times-circle"></clr-icon>
-            </button>
-          </div>
-    </td>
-  </tr>
+
+        <tr *ngFor="let g of criteriaList; let  index=index;">
+          <td>
+            <select class="clr-col-md-12 s{{index}}" (change)="onSearchFieldChange2($event)">
+              <option value="select">--select--</option>
+              <option value="reservation_number|number|{{index}}">Reservation Number</option>
+              <option value="book_on|date|{{index}}">Booked On</option>
+              <option value="arrival|date|{{index}}">Arrival Date</option>
+              <option value="departure|date|{{index}}">Departure Date</option>
+              <option value="reservation_status|text|{{index}}">Reservation Status</option>
+            </select>
+          </td>
+          <td>
+            <select class="clr-col-md-12 c{{index}}">
+              <option value="=">Equels To</option>
+              <option value=">">Greater Than</option>
+              <option value=">=">Greater Than Or equeals To</option>
+              <option value="<">Less Than</option>
+              <option value="<=">Less Than Or equeals To</option>
+              <option value="CN">Contains</option>
+            </select>
+          </td>
+          <td>
+            <input type="{{inputType}}" class="clr-col-md-12 v{{index}}">
+          </td>
+          <td>
+            <div style="margin-top:-8px;" *ngIf="criteriaList.length-1===index">
+
+              <button class="btn btn-danger btn-sm clr-col-md-12 b{{index}}" (click)="removeLast($event)">remove last
+                criterion <clr-icon shape="times-circle"></clr-icon>
+              </button>
+            </div>
+          </td>
+        </tr>
       </tbody>
     </table>
 
     <hr>
     <h4>Search Result</h4>
     <table class="table table-bordered table-primary">
-       <thead>
-         <tr>
-           <th>Reservation Number</th>           
-           <th>Book On</th>
-           <th>Arrival</th>
-           <th>Departure</th>
-           <th>Number Of Night</th>
-           <th>Total</th>
-           <th>Paid</th>
-           <th>Balance</th>
-           <th>Tools</th>
+      <thead>
+        <tr>
+          <th>Reservation Number</th>
+          <th>Book On</th>
+          <th>Arrival</th>
+          <th>Departure</th>
+          <th>Number Of Night</th>
+          <th>Total</th>
+          <th>Paid</th>
+          <th>Balance</th>
+          <th>Tools</th>
 
-         </tr>
-       </thead>
-       <tbody>
-           <tr *ngFor="let d of reservations">
-              <td>{{d.reservation_number}}</td>
-              
-              <td>{{d.book_on | date:'short'}}</td>
-              <td>{{d.arrival | date:'short'}}</td>
-              <td>{{d.departure | date:'short'}}</td>
-              <td>{{d.num_of_night}}</td>
-              <td>{{d.total_booking  | number:'.2'}}</td>
-              <td>{{d.amount_paid  | number:'.2'}}</td>
-              <td>{{d.balance  | number:'.2'}}</td>
-              <td> <button class="btn btn-sm btn-primary">Check In</button></td>
-         
-           </tr>
-         
-       </tbody>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of reservations">
+          <td>{{d.reservation_number}}</td>
+
+          <td>{{d.book_on | date:'short'}}</td>
+          <td>{{d.arrival | date:'short'}}</td>
+          <td>{{d.departure | date:'short'}}</td>
+          <td>{{d.num_of_night}}</td>
+          <td>{{d.total_booking | number:'.2'}}</td>
+          <td>{{d.amount_paid | number:'.2'}}</td>
+          <td>{{d.balance | number:'.2'}}</td>
+          <td> <button class="btn btn-sm btn-primary" (click)="onCheckInClicked(d)">Check In</button></td>
+
+        </tr>
+
+      </tbody>
     </table>
   </div>
   <div class="clr-col-md-2"></div>
 </div>
+
+
+<clr-wizard #wizardxl [(clrWizardOpen)]="open_wizard">
+  <clr-wizard-title>Reservation Check In</clr-wizard-title>
+
+  <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+  <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+  <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+  <clr-wizard-button [type]="'finish'" (click)="onFinish()">Finish</clr-wizard-button>
+
+
+  <clr-wizard-page #page1>
+    <ng-template clrPageTitle>Reservation Details</ng-template>
+    <ng-template clrPageNavTitle>Reservation</ng-template>
+
+    <div class="clr-row"  >
+        <div class="clr-col-md-12">
+
+          <h5>Reservation Summary</h5>
+          <span  *ngIf="loadingReservation"  class="spinner  spinner-md"  style="margin-left:50px; margin-top:-80px;"></span>  
+          <table class="table"  *ngIf="selectedReservation" style="margin-top:-3px;">
+            <tbody>
+              <tr>
+                <th>
+                  Reservation Number
+                </th>
+                <td>{{selectedReservation.reservation_number}}</td>
+                <th>
+                  Reservation Status
+                </th>
+                <td>{{selectedReservation.reservation_status}}</td>
+              </tr>
+              <tr>
+                <th>
+                  Booked On
+                </th>
+                <td>{{selectedReservation.book_on | date:'longDate'}}</td>
+                <th>
+                  Booked By
+                </th>
+                <td>{{selectedReservation.book_by}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Arrival Date
+                </th>
+                <td>{{selectedReservation.arrival | date:'longDate'}}</td>
+                <th>
+                  Arrival Time
+                </th>
+                <td>{{selectedReservation.arrival_time}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Departure Date
+                </th>
+                <td>{{selectedReservation.departure | date:'longDate'}}</td>
+                <th>
+                  Departure Time
+                </th>
+                <td>{{selectedReservation.departure_time}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="clr-col-md-12" >
+          <h5>Account Summary</h5>
+
+          <span  *ngIf="loadingAccount"  class="spinner  spinner-md"  style="margin-left:50px; margin-top:180px;"></span>      
+
+          <table class="table"  *ngIf="selectedReservation.accounts_" style="margin-top:-3px;">
+            <tbody>
+              <tr>
+                <th>
+                  Account Number
+                </th>
+                <td>{{selectedReservation.accounts_.account_number}}</td>
+                <th>
+                  Account Name
+                </th>
+                <td>{{selectedReservation.accounts_.first_name}} {{selectedReservation.accounts_.last_name}}</td>
+              </tr>
+              <tr>
+                <th>
+                  Credit Limit
+                </th>
+                <td>{{selectedReservation.accounts_.credit_limit}}</td>
+                <th>
+                  Email Address
+                </th>
+                <td>{{selectedReservation.accounts_.email}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Address
+                </th>
+                <td>{{selectedReservation.accounts_.address1}} , {{selectedReservation.accounts_.address2}}</td>
+                <th>
+                  City
+                </th>
+                <td>{{selectedReservation.accounts_.city}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  Postal Code
+                </th>
+                <td>{{selectedReservation.accounts_.postal_code}}</td>
+                <th>
+                  Phone Number
+                </th>
+                <td>{{selectedReservation.accounts_.phone}}</td>
+              </tr>
+
+              <tr>
+                <th>
+                  State
+                </th>
+                <td>{{selectedReservation.accounts_.state}}</td>
+                <th>
+                  Country
+                </th>
+                <td>{{selectedReservation.accounts_.country}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+    </div>
+  </clr-wizard-page>
+
+
+  
+  <clr-wizard-page #page2>
+      <ng-template clrPageTitle>Reserved Rooms</ng-template>
+      <ng-template clrPageNavTitle>Rooms</ng-template>
+  
+      <div class="clr-row"  >
+          <div class="clr-col-md-12">
+  
+            <h5>Reserved Rooms</h5>
+        
+  
+          </div>
+        
+      </div>
+    </clr-wizard-page>
+  
+
+
+
+
+</clr-wizard>
