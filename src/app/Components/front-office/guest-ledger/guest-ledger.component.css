@@ -1,0 +1,11 @@
+.newAccount tbody tr th {
+    text-align: right!important;
+    color: #25333D!important;
+    height: 10px!important;
+}
+
+.newAccount tbody tr td {
+    text-align: left!important;
+    height: 20px!important;
+ vertical-align: bottom!important;
+}

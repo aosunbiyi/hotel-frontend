@@ -175,6 +175,7 @@ export class CheckinComponent implements OnInit {
 
     this.reservationsService.edit_reserved_room(editData).subscribe(data => {
       this.selectedReservation = data;
+      console.log(data);
     });
   }
 

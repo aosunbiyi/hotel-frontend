@@ -1,5 +1,3 @@
-
-
 <div class="main-container">
   <div class="alert alert-app-level">
   </div>
@@ -17,14 +15,8 @@
       <a href="javascript://" [routerLink]="['/']" class="  nav-link nav-text">Dashboard</a>
       <a href="javascript://" [routerLink]="['/front-office']" class="nav-link nav-text" (click)="setNull(1)">Front
         Office</a>
-      <a href="javascript://" class="nav-link nav-text" (click)="on_open_out_of_order()">Out of Order</a>
-      <a href="javascript://" [routerLink]="['/guest-profile']" class="nav-link nav-text">Guest Profile</a>
-      <a href="javascript://" [routerLink]="['/hotel-walkin']" class="nav-link nav-text">Hotel Walkin</a>
-      <a href="javascript://" [routerLink]="['/room-lookup']" class="nav-link nav-text">Room Lookup</a>
+      <a href="javascript://" class="nav-link nav-text">Back Office</a>
 
-      <a href="javascript://" class="nav-link nav-text">Inventory</a>
-      <a href="javascript://" class="nav-link nav-text">Calendar</a>
-      <a href="javascript://" class="nav-link nav-text">Manage</a>
       <a href="javascript://" class="nav-link nav-text">Help</a>
     </div>
     <div class="header-actions">
@@ -35,44 +27,35 @@
   </header>
   <nav class="subnav little-links">
     <ul class="nav" *ngIf="menu_front_office">
-        <li class="nav-item">
-            <a class="nav-link" href="#" [routerLink]="['/front-office']">Reservation List</a>
-          </li>
-
- 
       <li class="nav-item">
-          <a class="nav-link" href="#" [routerLink]="['/front-office/checkin']">ChecK In</a>
+        <a class="nav-link" href="#" [routerLink]="['/front-office']">Reservation List</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/front-office/checkin']">ChecK In</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/front-office/guest-ledger']">Guest Ledger</a>
         </li>
 
-      
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/front-office/out-of-order']">Out Of Order</a>
+      </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="#" [routerLink]="['/front-office/reservation-list']">Reservation List</a>
-          </li>
+     
 
-          <li class="nav-item">
-              <a class="nav-link" href="#" [routerLink]="['/front-office/out-of-order']">Out Of Order</a>
-            </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/front-office/arrival-list']">Arrival List</a>
+      </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/front-office/guest-ledger']">Guest Ledger</a>
-            </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/front-office/departure-list']">Departure List</a>
+      </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/front-office/arrival-list']">Arrival List</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/front-office/departure-list']">Departure List</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/front-office/guest-database']">guest-database</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/front-office/guest-messages']">guest-messages</a>
-            </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/front-office/guest-messages']">guest-messages</a>
+      </li>
 
 
 

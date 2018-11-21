@@ -499,19 +499,28 @@
                 </clr-input-container>
   
                 
-            <clr-input-container>
-              <label>Country</label>
-              <input clrInput type="text" formControlName="country" />
-              <clr-control-error>Country cannot be empty.</clr-control-error>
-            </clr-input-container>
+       
+
+            <div class="form-group">
+                <label for="">Country:</label>
+                <div class="select">
+                    <select name="select" id="select" (change)="onCountryChange($event)" formControlName="country" >
+                      <option>--select--</option>
+                      <option value="{{f.shortName}}" *ngFor="let f of countries">{{f.name}}</option>
+                    </select>
+                  </div>
+              </div>
   
   
-            <clr-input-container>
-              <label>State </label>
-              <input clrInput type="text" formControlName="state" />
-              <clr-control-error>State cannot be empty.</clr-control-error>
-            </clr-input-container>
-  
+       
+              <div class="form-group">
+                  <label for="">State:</label>
+                  <div class="select">
+                      <select name="select" id="select" formControlName="state" >
+                        <option value="{{s}}" *ngFor="let s of states">{{s}}</option>
+                      </select>
+                    </div>
+                </div>
   
          
   

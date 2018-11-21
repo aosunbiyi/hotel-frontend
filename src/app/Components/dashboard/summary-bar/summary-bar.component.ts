@@ -30,7 +30,6 @@ export class SummaryBarComponent implements OnInit {
   ngOnInit() {
     this.wingService.getWings().subscribe(data => {
       this.wingList = data;
-      console.log(data);
     });
   }
 

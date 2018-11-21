@@ -1,3 +1,452 @@
-<p>
-  guest-ledger works!
-</p>
+<clr-modal [(clrModalOpen)]="addNew" [clrModalSize]="'xl'" [clrModalClosable]="false">
+  <h3 class="modal-title">New Account</h3>
+  <div class="modal-body">
+
+    <div class="clr-row">
+      <div class="clr-col-md-12">
+        <form [formGroup]="accountForm" class="clr-form clr-form-horizontal" #accountFormControl="ngForm">
+          <table class="table newAccount">
+            <tbody>
+              <tr>
+                <th style="width:15%!important;">Email</th>
+                <td style="width:35%!important;">
+                  <div class="clr-row">
+                    <div class="col-md-7">
+                      <clr-input-container>
+                        <input clrInput type="email" formControlName="email" #email (keyup.enter)="onEmailLeave(email.value)"
+                          (blur)="onEmailLeave(email.value)" />
+
+                        <clr-control-error>Email cannot be empty.</clr-control-error>
+                      </clr-input-container>
+                    </div>
+                    <div class="col-md-5" *ngIf="!valid_email">
+                      <div class="alert alert-danger alert-sm" role="alert" style="margin-top:20px!important;">
+                        <div class="alert-items">
+                          <div class="alert-item static">
+                            <div class="alert-icon-wrapper">
+                              <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                            </div>
+                            <span class="alert-text">
+                              Existing Email.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </td>
+                <th style="width:15%!important;">Phone Number</th>
+                <td style="width:35%!important;">
+
+
+
+                  <div class="clr-row">
+                    <div class="col-md-7">
+                      <clr-input-container>
+                        <input clrInput type="text" formControlName="phone" #phone (keyup.enter)="onPhoneLeave(phone.value)"
+                          (blur)="onPhoneLeave(phone.value)" />
+                        <clr-control-error>Phone cannot be empty.</clr-control-error>
+                      </clr-input-container>
+                    </div>
+                    <div class="col-md-5" *ngIf="!valid_phone">
+                      <div class="alert alert-danger alert-sm" role="alert" style="margin-top:20px!important;">
+                        <div class="alert-items">
+                          <div class="alert-item static">
+                            <div class="alert-icon-wrapper">
+                              <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                            </div>
+                            <span class="alert-text">
+                              Existing Email.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </td>
+              </tr>
+              <tr>
+                <th>Account Type</th>
+                <td>
+                  <div class="select">
+                    <select name="select" id="select" formControlName="account_type_id">
+                      <option>--select--</option>
+                      <option value="{{f.id}}" *ngFor="let f of account_types">{{f.account_type_name}}</option>
+                    </select>
+                  </div>
+                </td>
+                <th>Hotel Representative</th>
+                <td>
+                  <div class="select">
+                    <select name="select" id="select" formControlName="hotel_representative_id">
+                      <option>--select--</option>
+                      <option value="{{f.id}}" *ngFor="let f of hotel_reps">{{f.hotel_representative_name}}</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Last Name</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="last_name" />
+                    <clr-control-error>Last Name cannot be empty.</clr-control-error>
+                  </clr-input-container>
+                </td>
+                <th>First Name</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="first_name" />
+                    <clr-control-error>First Name cannot be empty.</clr-control-error>
+                  </clr-input-container>
+                </td>
+              </tr>
+              <tr>
+                <th>Credit Limit</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="number" formControlName="credit_limit" />
+                  </clr-input-container>
+                </td>
+                <th>Group Name</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="group_name" />
+                  </clr-input-container>
+                </td>
+              </tr>
+              <tr>
+                <th>Address 1</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="address1" />
+                    <clr-control-error>Address cannot be empty.</clr-control-error>
+                  </clr-input-container>
+                </td>
+                <th>Address 2</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="address2" />
+                  </clr-input-container>
+                </td>
+              </tr>
+              <tr>
+                <th>Postal Code</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="postal_code" />
+                  </clr-input-container>
+                </td>
+                <th>City</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="city" />
+                    <clr-control-error>City cannot be empty.</clr-control-error>
+                  </clr-input-container>
+                </td>
+              </tr>
+              <tr>
+                <th>Country</th>
+                <td>
+                  <div class="select">
+                    <select name="select" id="select" (change)="onCountryChange($event)" formControlName="country">
+                      <option>--select--</option>
+                      <option value="{{f.shortName}}" *ngFor="let f of countries">{{f.name}}</option>
+                    </select>
+                  </div>
+                </td>
+                <th>State</th>
+                <td>
+                  <div class="select">
+                    <select name="select" id="select" formControlName="state">
+                      <option>--select--</option>
+                      <option value="{{s}}" *ngFor="let s of states">{{s}}</option>
+                    </select>
+                  </div>
+                </td>
+
+              </tr>
+
+              <tr>
+                <th>Fax</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="fax" />
+                  </clr-input-container>
+                </td>
+                <th>Remark</th>
+                <td>
+                  <clr-input-container>
+                    <input clrInput type="text" formControlName="remark" />
+                  </clr-input-container>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="onSubmitPostAccount()" [disabled]="!valid_email || !valid_phone || !accountForm.valid">Create
+      Account</button>
+    <button type="button" class="btn btn-danger" (click)="addNew = false;">Close</button>
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="editOld" [clrModalSize]="'xl'" [clrModalClosable]="false">
+    <h3 class="modal-title">Edit Account</h3>
+    <div class="modal-body">
+  
+      <div class="clr-row">
+        <div class="clr-col-md-12">
+          <form [formGroup]="editAccountForm" class="clr-form clr-form-horizontal" #accountFormControl="ngForm">
+            <table class="table newAccount">
+              <tbody>
+                <tr>
+                  <th style="width:15%!important;">Email</th>
+                  <td style="width:35%!important;">
+                    <div class="clr-row">
+                      <div class="col-md-7">
+                        <clr-input-container>
+                          <input clrInput type="email" formControlName="email" #email (keyup.enter)="onEmailLeave(email.value)"
+                            (blur)="onEmailLeave(email.value)" />
+  
+                          <clr-control-error>Email cannot be empty.</clr-control-error>
+                        </clr-input-container>
+                      </div>
+                      <div class="col-md-5" *ngIf="!valid_email">
+                        <div class="alert alert-danger alert-sm" role="alert" style="margin-top:20px!important;">
+                          <div class="alert-items">
+                            <div class="alert-item static">
+                              <div class="alert-icon-wrapper">
+                                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                              </div>
+                              <span class="alert-text">
+                                Existing Email.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+  
+                  </td>
+                  <th style="width:15%!important;">Phone Number</th>
+                  <td style="width:35%!important;">
+  
+  
+  
+                    <div class="clr-row">
+                      <div class="col-md-7">
+                        <clr-input-container>
+                          <input clrInput type="text" formControlName="phone" #phone (keyup.enter)="onPhoneLeave(phone.value)"
+                            (blur)="onPhoneLeave(phone.value)" />
+                          <clr-control-error>Phone cannot be empty.</clr-control-error>
+                        </clr-input-container>
+                      </div>
+                      <div class="col-md-5" *ngIf="!valid_phone">
+                        <div class="alert alert-danger alert-sm" role="alert" style="margin-top:20px!important;">
+                          <div class="alert-items">
+                            <div class="alert-item static">
+                              <div class="alert-icon-wrapper">
+                                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                              </div>
+                              <span class="alert-text">
+                                Existing Email.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  
+  
+  
+                  </td>
+                </tr>
+                <tr>
+                  <th>Account Type</th>
+                  <td>
+                    <div class="select">
+                      <select name="select" id="select" formControlName="account_type_id">
+                        <option>--select--</option>
+                        <option value="{{f.id}}" *ngFor="let f of account_types">{{f.account_type_name}}</option>
+                      </select>
+                    </div>
+                  </td>
+                  <th>Hotel Representative</th>
+                  <td>
+                    <div class="select">
+                      <select name="select" id="select" formControlName="hotel_representative_id">
+                        <option>--select--</option>
+                        <option value="{{f.id}}" *ngFor="let f of hotel_reps">{{f.hotel_representative_name}}</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Last Name</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="last_name" />
+                      <clr-control-error>Last Name cannot be empty.</clr-control-error>
+                    </clr-input-container>
+                  </td>
+                  <th>First Name</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="first_name" />
+                      <clr-control-error>First Name cannot be empty.</clr-control-error>
+                    </clr-input-container>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Credit Limit</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="number" formControlName="credit_limit" />
+                    </clr-input-container>
+                  </td>
+                  <th>Group Name</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="group_name" />
+                    </clr-input-container>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Address 1</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="address1" />
+                      <clr-control-error>Address cannot be empty.</clr-control-error>
+                    </clr-input-container>
+                  </td>
+                  <th>Address 2</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="address2" />
+                    </clr-input-container>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Postal Code</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="postal_code" />
+                    </clr-input-container>
+                  </td>
+                  <th>City</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="city" />
+                      <clr-control-error>City cannot be empty.</clr-control-error>
+                    </clr-input-container>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Country</th>
+                  <td>
+                    <div class="select">
+                      <select name="select" id="select" (change)="onCountryChange($event)" formControlName="country">
+                        <option>--select--</option>
+                        <option value="{{f.shortName}}" *ngFor="let f of countries">{{f.name}}</option>
+                      </select>
+                    </div>
+                  </td>
+                  <th>State</th>
+                  <td>
+                    <div class="select">
+                      <select name="select" id="select" formControlName="state">
+                        <option>--select--</option>
+                        <option value="{{s}}" *ngFor="let s of states">{{s}}</option>
+                      </select>
+                    </div>
+                  </td>
+  
+                </tr>
+  
+                <tr>
+                  <th>Fax</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="fax" />
+                    </clr-input-container>
+                  </td>
+                  <th>Remark</th>
+                  <td>
+                    <clr-input-container>
+                      <input clrInput type="text" formControlName="remark" />
+                    </clr-input-container>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+  
+  
+  
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="onEditAccount()" [disabled]="!editAccountForm.valid">Update
+        Account</button>
+      <button type="button" class="btn btn-danger" (click)="editOld = false;">Close</button>
+    </div>
+  </clr-modal>
+
+
+
+<div class="clr-row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <br>
+      <button class="btn btn-success btn-sm" (click)="addNewAccount($event);"> Add New Account</button><br>
+
+      <span  *ngIf="isloading"  class="spinner"  style="margin-left:50px; margin-top:50px;"></span> 
+    <table class="table table-bordered table-responsive">
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Account Type</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Account Number</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Reservations</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ac of account_list; let index=index; let  even=even; let odd=odd;">
+          <td>{{index+1}}</td>
+          <td> <span class="label label-gray">{{ac.account_type_.account_type_name}}</span> </td>
+          <td>{{ac.first_name}}</td>
+          <td>{{ac.last_name}}</td>
+          <td><span class="label label-orange">{{ac.account_number}}</span></td>
+          <td>{{ac.phone}}</td>
+          <td>{{ac.email}}</td>
+          <td>{{ac.reservations.length}}</td>
+          <td>
+            <div class="btn-group btn-primary btn-sm">
+              <button class="btn" (click)="editAccount(ac)">Edit</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-1"></div>
+</div>

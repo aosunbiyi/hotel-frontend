@@ -3,6 +3,8 @@ import { ClrWizard, ClrForm, ClrWizardPage } from '@clr/angular';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { LocalDate, LocalTime } from 'js-joda';
 import * as lodash from 'lodash';
+import * as CN from 'countrycitystatejson';
+
 import { BusinessSourceTypesService } from '../../../services/business-source-types.service';
 import { BusinessSourceService } from '../../../services/business-source.service';
 import { RoomsService } from '../../../services/rooms.service';
@@ -52,6 +54,8 @@ export class BookingListComponent implements OnInit {
   reservationList = [];
   reservation_transactions = [];
   reservation_transaction_list = [];
+  countries = [];
+  states = [];
 
   isCheque = false;
   applyDiscount = false;
@@ -139,7 +143,6 @@ export class BookingListComponent implements OnInit {
 
     this.reservationsService.getReservations().subscribe(data => {
       this.reservationList = data;
-      console.log(data);
     });
 
 
@@ -152,6 +155,13 @@ export class BookingListComponent implements OnInit {
       itemsShowLimit: 10,
       allowSearchFilter: true
     };
+
+    this.countries = CN.getCountries();
+
+  }
+
+  onCountryChange(event) {
+    this.states = CN.getStatesByShort(event.target.value);
   }
 
   public doCustomClick(buttonType: string): void {
