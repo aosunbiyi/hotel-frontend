@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef, Renderer } from '@angular/core';
 import { ClrWizard, ClrForm, ClrWizardPage } from '@clr/angular';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { LocalDate, LocalTime } from 'js-joda';
@@ -22,15 +22,29 @@ export class CheckinComponent implements OnInit {
   open_wizard = false;
   selectedReservation = { accounts_: null, account_id: 0, reserved_rooms: [] };
   loadingAccount = false;
+  account_list = [];
+  selected_account;
+  transfer_mode = false;
+  search_data;
 
 
   constructor(private elementRef: ElementRef,
     private reservationsService: ReservationsService,
     private accountService: AccountsService,
     private formBuilder: FormBuilder,
-    private cd: ChangeDetectorRef) { }
+    private cd: ChangeDetectorRef,
+    public renderer: Renderer) { }
 
   ngOnInit() {
+    this.accountService.getAccounts().subscribe(data => {
+      this.account_list = data;
+      this.account_list.forEach(ac => {
+        ac.fullname = ac.first_name + ' ' + ac.last_name;
+      });
+      console.log(this.account_list);
+    });
+
+
   }
 
   addCriterion(event) {
@@ -104,6 +118,7 @@ export class CheckinComponent implements OnInit {
 
 
     }
+    this.search_data = this.optionList;
     this.reservationsService.searchReservationWithParam(this.optionList).subscribe(data => {
       this.reservations = data;
     });
@@ -140,6 +155,33 @@ export class CheckinComponent implements OnInit {
     }, 1000);
 
 
+  }
+
+  onRoomOwnerChanged(event, room) {
+    // console.log(event, room, this.selected_account);
+    const transferData = {
+      reserved_room_id: room.id,
+      new_account_id: this.selected_account
+    };
+    this.reservationsService.transfer_room(transferData).subscribe(data => {
+      delete room.transfer_mode;
+      this.reservationsService.searchReservationWithParam(this.optionList).subscribe(dd => {
+        this.reservations = dd;
+      });
+    });
+  }
+
+  onDeleteReservation(id) {
+    this.reservationsService.delete_reserved_room(id).subscribe(data => {
+      console.log(data);
+      this.reservationsService.searchReservationWithParam(this.optionList).subscribe(dd => {
+        this.reservations = dd;
+      });
+    });
+  }
+
+  onTransferMode(room) {
+    room.transfer_mode = true;
   }
 
   onNumberOfChildChange(event, room) {
@@ -189,6 +231,7 @@ export class CheckinComponent implements OnInit {
   onFinish() {
     this.wizardExtraLarge.navService.setCurrentPage(this.page1);
     this.open_wizard = false;
+    this.transfer_mode = false;
   }
 
   getTotalReservation400(reservation_transaction: any) {

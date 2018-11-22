@@ -144,6 +144,7 @@ export class GuestLedgerComponent implements OnInit {
     this.selected_account = data;
     this.editAccountForm.setValue(data);
     this.editOld = true;
+    this.states = CN.getStatesByShort(data.country);
   }
 
   onCountryChange(event) {

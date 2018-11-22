@@ -26,6 +26,19 @@ export class ReservationsService {
     return this.http.get(`${environment.baseUrl}Reservations/${id}`).pipe(map(this.extractData));
   }
 
+  delete_reserved_room(id: number): Observable<any> {
+    return this.http.get(`${environment.baseUrl}Reservations/delete_reserved_room/${id}`).pipe(map(this.extractData));
+  }
+
+  transfer_room(transferData): Observable<any> {
+    console.log(JSON.stringify(transferData));
+    return this.http.post<any>(`${environment.baseUrl}Reservations/transfer_room`, JSON.stringify(transferData)).pipe(
+      tap((ac) => console.log(`transfer_room w/ id=${ac.id}`)),
+      catchError(this.handleError<any>('transfer_room'))
+    );
+  }
+
+
   edit_reserved_room(EditReservationData): Observable<any> {
     console.log(JSON.stringify(EditReservationData));
     return this.http.post<any>(`${environment.baseUrl}Reservations/edit_reserved_room`, JSON.stringify(EditReservationData)).pipe(

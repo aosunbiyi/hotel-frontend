@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { FrontOfficeRoutingModule } from './front-office-routing.module';
 import { NewBookingComponent } from './new-booking/new-booking.component';
@@ -26,7 +27,8 @@ import { CheckinComponent } from './checkin/checkin.component';
     ClarityModule,
     ClrFormsNextModule,
     FormsModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    NgSelectModule
   ],
   // tslint:disable-next-line:max-line-length
   declarations: [NewBookingComponent, BookingListComponent, WalkinComponent, ReservationComponent,

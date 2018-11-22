@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
 import { DashboardModule } from './Components/dashboard/dashboard.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { BackendModule } from './backend/backend.module';
 
 
@@ -53,7 +53,7 @@ import { FrontOfficeModule } from './Components/front-office/front-office.module
     ReactiveFormsModule,
     RoomManagerModule,
     AppRoutes,
-    Ng4LoadingSpinnerModule.forRoot()
+    NgSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -64,7 +64,7 @@ import { FrontOfficeModule } from './Components/front-office/front-office.module
     WingService,
     AccountsService
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

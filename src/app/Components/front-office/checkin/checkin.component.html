@@ -137,181 +137,194 @@
     <ng-template clrPageTitle>Reservation Details</ng-template>
     <ng-template clrPageNavTitle>Reservation</ng-template>
 
-    <div class="clr-row"  >
-        <div class="clr-col-md-12">
+    <div class="clr-row">
+      <div class="clr-col-md-12">
 
-          <h5>Reservation Summary</h5>
-          <span  *ngIf="loadingReservation"  class="spinner  spinner-md"  style="margin-left:50px; margin-top:-80px;"></span>  
-          <table class="table"  *ngIf="selectedReservation" style="margin-top:-3px;">
-            <tbody>
-              <tr>
-                <th>
-                  Reservation Number
-                </th>
-                <td>{{selectedReservation.reservation_number}}</td>
-                <th>
-                  Reservation Status
-                </th>
-                <td>{{selectedReservation.reservation_status}}</td>
-              </tr>
-              <tr>
-                <th>
-                  Booked On
-                </th>
-                <td>{{selectedReservation.book_on | date:'longDate'}}</td>
-                <th>
-                  Booked By
-                </th>
-                <td>{{selectedReservation.book_by}}</td>
-              </tr>
+        <h5>Reservation Summary</h5>
+        <span *ngIf="loadingReservation" class="spinner  spinner-md" style="margin-left:50px; margin-top:-80px;"></span>
+        <table class="table" *ngIf="selectedReservation" style="margin-top:-3px;">
+          <tbody>
+            <tr>
+              <th>
+                Reservation Number
+              </th>
+              <td>{{selectedReservation.reservation_number}}</td>
+              <th>
+                Reservation Status
+              </th>
+              <td>{{selectedReservation.reservation_status}}</td>
+            </tr>
+            <tr>
+              <th>
+                Booked On
+              </th>
+              <td>{{selectedReservation.book_on | date:'longDate'}}</td>
+              <th>
+                Booked By
+              </th>
+              <td>{{selectedReservation.book_by}}</td>
+            </tr>
 
-              <tr>
-                <th>
-                  Arrival Date
-                </th>
-                <td>{{selectedReservation.arrival | date:'longDate'}}</td>
-                <th>
-                  Arrival Time
-                </th>
-                <td>{{selectedReservation.arrival_time}}</td>
-              </tr>
+            <tr>
+              <th>
+                Arrival Date
+              </th>
+              <td>{{selectedReservation.arrival | date:'longDate'}}</td>
+              <th>
+                Arrival Time
+              </th>
+              <td>{{selectedReservation.arrival_time}}</td>
+            </tr>
 
-              <tr>
-                <th>
-                  Departure Date
-                </th>
-                <td>{{selectedReservation.departure | date:'longDate'}}</td>
-                <th>
-                  Departure Time
-                </th>
-                <td>{{selectedReservation.departure_time}}</td>
-              </tr>
+            <tr>
+              <th>
+                Departure Date
+              </th>
+              <td>{{selectedReservation.departure | date:'longDate'}}</td>
+              <th>
+                Departure Time
+              </th>
+              <td>{{selectedReservation.departure_time}}</td>
+            </tr>
 
-            </tbody>
-          </table>
+          </tbody>
+        </table>
 
 
-        </div>
-        <div class="clr-col-md-12" >
-          <h5>Account Summary</h5>
+      </div>
+      <div class="clr-col-md-12">
+        <h5>Account Summary</h5>
 
-          <span  *ngIf="loadingAccount"  class="spinner  spinner-md"  style="margin-left:50px; margin-top:180px;"></span>      
+        <span *ngIf="loadingAccount" class="spinner  spinner-md" style="margin-left:50px; margin-top:180px;"></span>
 
-          <table class="table"  *ngIf="selectedReservation.accounts_" style="margin-top:-3px;">
-            <tbody>
-              <tr>
-                <th>
-                  Account Number
-                </th>
-                <td>{{selectedReservation.accounts_.account_number}}</td>
-                <th>
-                  Account Name
-                </th>
-                <td>{{selectedReservation.accounts_.first_name}} {{selectedReservation.accounts_.last_name}}</td>
-              </tr>
-              <tr>
-                <th>
-                  Credit Limit
-                </th>
-                <td>{{selectedReservation.accounts_.credit_limit}}</td>
-                <th>
-                  Email Address
-                </th>
-                <td>{{selectedReservation.accounts_.email}}</td>
-              </tr>
+        <table class="table" *ngIf="selectedReservation.accounts_" style="margin-top:-3px;">
+          <tbody>
+            <tr>
+              <th>
+                Account Number
+              </th>
+              <td>{{selectedReservation.accounts_.account_number}}</td>
+              <th>
+                Account Name
+              </th>
+              <td>{{selectedReservation.accounts_.first_name}} {{selectedReservation.accounts_.last_name}}</td>
+            </tr>
+            <tr>
+              <th>
+                Credit Limit
+              </th>
+              <td>{{selectedReservation.accounts_.credit_limit}}</td>
+              <th>
+                Email Address
+              </th>
+              <td>{{selectedReservation.accounts_.email}}</td>
+            </tr>
 
-              <tr>
-                <th>
-                  Address
-                </th>
-                <td>{{selectedReservation.accounts_.address1}} , {{selectedReservation.accounts_.address2}}</td>
-                <th>
-                  City
-                </th>
-                <td>{{selectedReservation.accounts_.city}}</td>
-              </tr>
+            <tr>
+              <th>
+                Address
+              </th>
+              <td>{{selectedReservation.accounts_.address1}} , {{selectedReservation.accounts_.address2}}</td>
+              <th>
+                City
+              </th>
+              <td>{{selectedReservation.accounts_.city}}</td>
+            </tr>
 
-              <tr>
-                <th>
-                  Postal Code
-                </th>
-                <td>{{selectedReservation.accounts_.postal_code}}</td>
-                <th>
-                  Phone Number
-                </th>
-                <td>{{selectedReservation.accounts_.phone}}</td>
-              </tr>
+            <tr>
+              <th>
+                Postal Code
+              </th>
+              <td>{{selectedReservation.accounts_.postal_code}}</td>
+              <th>
+                Phone Number
+              </th>
+              <td>{{selectedReservation.accounts_.phone}}</td>
+            </tr>
 
-              <tr>
-                <th>
-                  State
-                </th>
-                <td>{{selectedReservation.accounts_.state}}</td>
-                <th>
-                  Country
-                </th>
-                <td>{{selectedReservation.accounts_.country}}</td>
-              </tr>
+            <tr>
+              <th>
+                State
+              </th>
+              <td>{{selectedReservation.accounts_.state}}</td>
+              <th>
+                Country
+              </th>
+              <td>{{selectedReservation.accounts_.country}}</td>
+            </tr>
 
-            </tbody>
-          </table>
+          </tbody>
+        </table>
 
-        </div>
+      </div>
     </div>
   </clr-wizard-page>
 
 
-  
-  <clr-wizard-page #page2>
-      <ng-template clrPageTitle>Reserved Rooms</ng-template>
-      <ng-template clrPageNavTitle>Rooms</ng-template>
-  
-      <div class="clr-row"  >
-          <div class="clr-col-md-12">
-  
-            <h5>Reserved Rooms</h5>
 
-            <table class="table table-bordered table-responsive">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Serial Number</th>
-                  <th>Room Type</th>
-                  <th>Room Name</th>
-                  <th>Extra Adult</th>
-                  <th>Extra Child</th>
-                  <th>Owner</th>
-                  <th>Total Charges</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr  *ngFor="let room of selectedReservation.reserved_rooms">
-                  <td><clr-icon shape="home" class="is-solid"></clr-icon></td>
-                  <td>{{room.serial_number}}</td>
-                  <td> {{room.room_type_name}}</td>
-                  <td> {{room.room_name}} </td>
-                  <td> <input type="number"  value="{{room.num_of_adult}}" style="width:50px!important;" readonly class="r{{room.id}}" (change)="onNumberOfAdultChange($event,room)"> </td>
-                  <td>  <input type="number"  value="{{room.num_of_children}}"  style="width:50px!important;" readonly  class="rr{{room.id}}"  (change)="onNumberOfChildChange($event,room)">  </td>
-                  <td> {{room.original_owner}}</td>
-                  <td>{{getTotalReservation400(room.reservation_transaction)[0].total | number:'.2'}}</td>
-                  <td>
-                      <clr-button-group class="btn-primary btn-sm">
-                          <clr-button [clrInMenu]="true"  class="btn" (click)="onEditReserved_Room(room)">Edit</clr-button>
-                          <clr-button [clrInMenu]="true" class="btn btn-success">Change Owner</clr-button>
-                          <clr-button [clrInMenu]="true" class="btn btn-danger">Delete</clr-button>
-                      </clr-button-group>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-        
-  
-          </div>
-        
+  <clr-wizard-page #page2>
+    <ng-template clrPageTitle>Reserved Rooms</ng-template>
+    <ng-template clrPageNavTitle>Rooms</ng-template>
+
+    <div class="clr-row">
+      <div class="clr-col-md-12">
+
+        <h5>Reserved Rooms</h5>
+
+        <table class="table table-bordered table-responsive">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Serial Number</th>
+              <th>Room Type</th>
+              <th>Room Name</th>
+              <th>Extra Adult</th>
+              <th>Extra Child</th>
+              <th>Owner</th>
+              <th>Total Charges</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let room of selectedReservation.reserved_rooms">
+              <td>
+                <clr-icon shape="home" class="is-solid"></clr-icon>
+              </td>
+              <td>{{room.serial_number}}</td>
+              <td> {{room.room_type_name}}</td>
+              <td> {{room.room_name}} </td>
+              <td> <input type="number" value="{{room.num_of_adult}}" style="width:50px!important;" readonly class="r{{room.id}}"
+                  (change)="onNumberOfAdultChange($event,room)"> </td>
+              <td> <input type="number" value="{{room.num_of_children}}" style="width:50px!important;" readonly class="rr{{room.id}}"
+                  (change)="onNumberOfChildChange($event,room)"> </td>
+              <td>
+                <span *ngIf="!room.transfer_owner">   {{room.original_owner}}</span>
+                <span *ngIf="room.transfer_owner && !room.transfer_mode" >   {{room.transfer_owner}}</span>      
+                
+                    <ng-select *ngIf="room.transfer_mode" [items]="account_list"  bindLabel="fullname" bindValue="id" [(ngModel)]="selected_account" style="width:150px!important;"
+                    (change)="onRoomOwnerChanged($event,room)">
+                    </ng-select>
+       
+           
+              </td>
+              <td style="font-size:10px!important;">{{getTotalReservation400(room.reservation_transaction)[0].total | number:'.2'}}</td>
+              <td>
+                <clr-button-group class="btn-primary btn-sm">
+                  <clr-button [clrInMenu]="true" class="btn" (click)="onEditReserved_Room(room)">Edit</clr-button>
+                  <clr-button [clrInMenu]="true" class="btn btn-success" (click)="onTransferMode(room)">Change Owner</clr-button>
+                  <clr-button [clrInMenu]="true" class="btn btn-danger" (click)="onDeleteReservation(room.id)">Delete</clr-button>
+                </clr-button-group>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
       </div>
-    </clr-wizard-page>
-  
+
+    </div>
+  </clr-wizard-page>
+
 
 
 
