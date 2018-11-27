@@ -14,6 +14,8 @@ import { DiscountService } from '../../../services/discount.service';
 import { PaymentMethodService } from '../../../services/payment-method.service';
 import { AccountsService } from '../../../services/accounts.service';
 
+import { FieldTypeFilter } from '../../../Utils/Util_Filter';
+
 
 @Component({
   selector: 'app-booking-list',
@@ -25,8 +27,7 @@ export class BookingListComponent implements OnInit {
   @ViewChild('page1') page1: ClrWizardPage;
   @ViewChild('arrivalData') arrivalData;
   @ViewChild('departureDate') departureDate;
-  @ViewChild('departure_time') departure_time;
-  @ViewChild('arrival_time') arrival_time;
+  fieldTypeFilter = new FieldTypeFilter;
 
   open_wizard = false;
   model: any;
@@ -92,9 +93,7 @@ export class BookingListComponent implements OnInit {
 
     this.bookingForm = this.formBuilder.group({
       arrival: ['', Validators.required],
-      arrival_time: ['', Validators.required],
       departure: [''],
-      departure_time: [''],
       num_of_night: ['', Validators.required],
       account_id: [''],
       book_by: [''],
@@ -143,6 +142,10 @@ export class BookingListComponent implements OnInit {
 
     this.reservationsService.getReservations().subscribe(data => {
       this.reservationList = data;
+      this.reservationList.forEach((dt) => {
+        dt.fullname = dt.account_.first_name + ' ' + dt.account_.last_name;
+      });
+      console.log(this.reservationList);
     });
 
 
@@ -277,6 +280,7 @@ export class BookingListComponent implements OnInit {
       delete data.reg_number2;
       delete data.remark;
       delete data.reservations;
+      this.states = CN.getStatesByShort(data.country);
       this.userForm.setValue(data);
     });
   }
@@ -307,6 +311,7 @@ export class BookingListComponent implements OnInit {
       delete data.reg_number2;
       delete data.remark;
       delete data.reservations;
+      this.states = CN.getStatesByShort(data.country);
       this.userForm.setValue(data);
     });
   }
@@ -321,8 +326,9 @@ export class BookingListComponent implements OnInit {
     }
   }
 
-  onReservationSelected(event) {
-    console.log(this.selectedReservation);
+  onReservationSelected(rs) {
+    console.log(rs);
+    this.selectedReservation = rs;
   }
 
   onDiscountChange(event) {
@@ -446,7 +452,6 @@ export class BookingListComponent implements OnInit {
     // tslint:disable-next-line:radix
     const datet2 = datet1.plusDays(parseInt(total_days));
     this.departureDate.nativeElement.value = datet2;
-    this.departure_time.nativeElement.value = this.arrival_time.nativeElement.value;
 
   }
 
@@ -541,7 +546,27 @@ export class BookingListComponent implements OnInit {
 
   }
 
+
+  getDiscountStatus(onDiscount, sl) {
+    if (onDiscount === 1) {
+      return '<a  class="label label-purple clickable">Yes<span class="badge">' + sl.discount_amount + '</span></a>';
+    } else {
+      return '<span class="label label-warning">No</span>';
+    }
+  }
+
+  getReservationStatus(status) {
+
+    if (status === 'Open') {
+      return '<span class="label label-success">Open</span>';
+    } else {
+      return '<span class="label label-info">Close</span>';
+    }
+  }
+
 }
+
+
 
 
 export interface Walkin {

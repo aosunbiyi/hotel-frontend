@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ClarityModule, ClrFormsNextModule } from '@clr/angular';
@@ -18,6 +18,7 @@ import { DepartureListComponent } from './departure-list/departure-list.componen
 import { GuestDataBaseComponent } from './guest-data-base/guest-data-base.component';
 import { GuestMessageComponent } from './guest-message/guest-message.component';
 import { CheckinComponent } from './checkin/checkin.component';
+import { Filter200Pipe } from './Filters/filter200.pipe';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { CheckinComponent } from './checkin/checkin.component';
   // tslint:disable-next-line:max-line-length
   declarations: [NewBookingComponent, BookingListComponent, WalkinComponent, ReservationComponent,
     ReservationListComponent, OutOfOrderComponent, GuestLedgerComponent, ArrivalListComponent,
-    DepartureListComponent, GuestDataBaseComponent, GuestMessageComponent, CheckinComponent]
+    DepartureListComponent, GuestDataBaseComponent, GuestMessageComponent, CheckinComponent, Filter200Pipe],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class FrontOfficeModule { }

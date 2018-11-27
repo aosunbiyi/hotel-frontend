@@ -238,11 +238,6 @@
             <clr-control-error>Arrival Data cannot be empty.</clr-control-error>
           </clr-input-container>
 
-          <clr-input-container>
-            <label>Arrival Time</label>
-            <input clrInput type="time" formControlName="arrival_time" #arrival_time />
-            <clr-control-error>Arrival Time cannot be empty.</clr-control-error>
-          </clr-input-container>
 
           <clr-input-container>
             <label>Number Of Nights Time</label>
@@ -255,10 +250,7 @@
             <input clrInput type="date" formControlName="departure" readonly #departureDate />
           </clr-input-container>
 
-          <clr-input-container>
-            <label>Departure Time</label>
-            <input clrInput type="time" formControlName="departure_time" #departure_time />
-          </clr-input-container>
+        
 
   
 
@@ -766,57 +758,78 @@
 <div class="clr-row">
   <div class="clr-col-1"></div>
   <div class="clr-col-10">
-    <button class="btn btn-default btn-sm" (click)="onNew()">New Booking</button>
+    
 
-    <clr-datagrid style=" height:100%;" [(clrDgSingleSelected)]="selectedReservation">
+    <table class="table table-striped table-responsive" >
+      <thead>
+          <tr>
+              <th colspan="4">
+                    <button class="btn btn-default btn-sm btn-block" (click)="onNew()">New Booking</button>
+              </th>
+              <th>
+                Account Name
+              </th>
+              <th>
+                <input type="text" [(ngModel)]="searchString">
+              </th>
+           
+            <th>
+                Reservation Number
+              </th>
+              <th>
+                <input type="text" [(ngModel)]="searchString2">
+              </th>
+            </tr>
+        <tr>
+          <th>S/N</th>
+          <th>Reservation Number</th>
+          <th>Account Name</th>
+          <th>Nights</th>
+          <th>Date</th>
+          <th>Total</th>
+          <th>Paid</th>
+          <th>Balance</th>
+          <th>On Discount</th>
+          <th>Status</th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+      <tbody  style=" height:100%!important;" *ngIf="reservationList">
+        <tr *ngFor="let g of reservationList | filter200 :  'fullname' : searchString | filter200 : 'reservation_number': searchString2 ; let  even=even; let odd=odd; let index= index;"  >
+          <td>{{index+1}}</td>
+          <td>{{g.reservation_number}}</td>
+          <td>      
+                  {{g.fullname}} 
+                 
+          </td>
+          <td>{{g.num_of_night}}</td>
+          <td>{{g.book_on | date:'medium'}}</td>
+          <td *ngIf="g.apply_discount===0">{{g.total_booking  | number:'.2'}}</td>
+          <td *ngIf="g.apply_discount===1">{{g.total_amount_with_discount  | number:'.2'}} <br> 
+            <span style="font-size:0.8em!important;color:red;"> <strike>{{g.total_booking  | number:'.2'}}</strike>
+            </span>
+          </td>
+          <td>{{g.amount_paid  | number:'.2'}}</td>
+          <td>{{g.balance  | number:'.2'}}</td>
+          <td [innerHTML]="getDiscountStatus(g.apply_discount, g)"> </td>
+          <td [innerHTML]="getReservationStatus(g.reservation_status)"></td>
+          <td>
+            <button class="btn btn-primary btn-sm"  (click)="onReservationSelected(g)" style="margin-top:-5px!important;font-size:9px;">view details</button>
+          </td>
+        </tr>
+      </tbody>
 
-      <clr-dg-column [ngClass]="{'header1':true}" [clrDgField]="'reservation_number'">Reservation Number
-      </clr-dg-column>
-      <clr-dg-column [ngClass]="{'header1':true}">Account
-        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-      </clr-dg-column>
-      <clr-dg-column [ngClass]="{'header1':true}">Number of Nights
-        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-      </clr-dg-column>
-      <clr-dg-column [ngClass]="{'header1':true}">Transaction Date
-        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-      </clr-dg-column>
-      <clr-dg-column [ngClass]="{'header1':true}">Total Amount
-          <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-        </clr-dg-column>
-        <clr-dg-column [ngClass]="{'header1':true}">Amount Paid
-            <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-          </clr-dg-column>
-          <clr-dg-column [ngClass]="{'header1':true}">Balance
-              <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-            </clr-dg-column>
-      <clr-dg-column [ngClass]="{'header1':true}">Reservation Status
-        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>
-      </clr-dg-column>
+      <tbody  style=" height:100%!important;"  *ngIf="reservationList.length <= 0">
+        <tr>
+          <td colspan="9" style="height:200px!important; padding-top:60px!important;">
+            <h3>No record was found!</h3>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-
-      <clr-dg-placeholder>We couldn't find any Hotel Reservation!</clr-dg-placeholder>
-
-      <clr-dg-row *ngFor="let g of reservationList; let  even=even; let odd=odd;" [clrDgItem]="g" (click)="onReservationSelected($event)">
-
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.reservation_number}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.account_.first_name}} {{g.account_.last_name}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.num_of_night}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.book_on | date:'medium'}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.total_booking  | number:'.2'}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.amount_paid  | number:'.2'}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.balance  | number:'.2'}}</clr-dg-cell>
-        <clr-dg-cell [ngClass]="{'odd':odd, 'even':even}">{{g.reservation_status}}</clr-dg-cell>
-
-      </clr-dg-row>
-
-      <clr-dg-footer>
-        <clr-dg-pagination #pagination [clrDgPageSize]="10">
-          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
-          of {{pagination.totalItems}} reservations
-        </clr-dg-pagination>
-      </clr-dg-footer>
-    </clr-datagrid>
+   
 
 
   </div>

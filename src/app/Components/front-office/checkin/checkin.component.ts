@@ -5,6 +5,7 @@ import { LocalDate, LocalTime } from 'js-joda';
 import * as lodash from 'lodash';
 import { ReservationsService } from '../../../services/reservations.service';
 import { AccountsService } from '../../../services/accounts.service';
+import { DiscountService } from '../../../services/discount.service';
 
 @Component({
   selector: 'app-checkin',
@@ -20,12 +21,16 @@ export class CheckinComponent implements OnInit {
   optionList: SearchParameter[] = [];
   reservations = [];
   open_wizard = false;
-  selectedReservation = { accounts_: null, account_id: 0, reserved_rooms: [] };
+  selectedReservation = { accounts_: null, account_id: 0, reserved_rooms: [], id: 0 };
   loadingAccount = false;
   account_list = [];
   selected_account;
   transfer_mode = false;
   search_data;
+  paymentForm: FormGroup;
+  isCheque = false;
+  applyDiscount = false;
+  discountList = [];
 
 
   constructor(private elementRef: ElementRef,
@@ -33,7 +38,8 @@ export class CheckinComponent implements OnInit {
     private accountService: AccountsService,
     private formBuilder: FormBuilder,
     private cd: ChangeDetectorRef,
-    public renderer: Renderer) { }
+    public renderer: Renderer,
+    private discountService: DiscountService) { }
 
   ngOnInit() {
     this.accountService.getAccounts().subscribe(data => {
@@ -41,8 +47,28 @@ export class CheckinComponent implements OnInit {
       this.account_list.forEach(ac => {
         ac.fullname = ac.first_name + ' ' + ac.last_name;
       });
-      console.log(this.account_list);
     });
+
+    this.paymentForm = this.formBuilder.group({
+      payment_method: ['', Validators.required],
+      total_amount: ['', Validators.required],
+      amount: ['', Validators.required],
+      balance: [''],
+      cheque: [''],
+      account_number: [''],
+      bank_name: [''],
+      branch_name: [''],
+      discount_plan: [''],
+      discount_value: [''],
+      discount_code: [''],
+      apply_discount: ['']
+    });
+
+
+    this.discountService.getDiscounts().subscribe(data => {
+      this.discountList = data;
+    });
+
 
 
   }
@@ -121,6 +147,7 @@ export class CheckinComponent implements OnInit {
     this.search_data = this.optionList;
     this.reservationsService.searchReservationWithParam(this.optionList).subscribe(data => {
       this.reservations = data;
+      console.log(data);
     });
 
   }
@@ -140,6 +167,22 @@ export class CheckinComponent implements OnInit {
   }
 
   onCheckInClicked(reservation) {
+
+    this.paymentForm.setValue({
+      payment_method: '',
+      total_amount: reservation.balance,
+      amount: 0,
+      balance: 0,
+      cheque: '',
+      account_number: '',
+      bank_name: '',
+      branch_name: '',
+      discount_plan: 0,
+      discount_value: 0,
+      discount_code: '',
+      apply_discount: false
+    });
+
     const vm = this;
     this.selectedReservation = reservation;
     vm.selectedReservation.accounts_ = null;
@@ -149,6 +192,7 @@ export class CheckinComponent implements OnInit {
     setTimeout(() => {
       this.accountService.getAccountById(this.selectedReservation.account_id).subscribe(data => {
         vm.selectedReservation.accounts_ = data;
+        console.log(data);
         vm.loadingAccount = false;
         this.refresh();
       });
@@ -232,6 +276,22 @@ export class CheckinComponent implements OnInit {
     this.wizardExtraLarge.navService.setCurrentPage(this.page1);
     this.open_wizard = false;
     this.transfer_mode = false;
+
+    const data = {
+      reservation_id: this.selectedReservation.id,
+      paymentForm: this.paymentForm.value
+    };
+
+    this.reservationsService.post_reservation_payment(data).subscribe(r => {
+      console.log(r);
+      this.reservationsService.getReservations().subscribe(data2 => {
+        this.wizardExtraLarge.navService.setCurrentPage(this.page1);
+        this.open_wizard = false;
+      });
+
+    });
+
+
   }
 
   getTotalReservation400(reservation_transaction: any) {
@@ -249,6 +309,98 @@ export class CheckinComponent implements OnInit {
   refresh() {
     this.cd.detectChanges();
   }
+
+  public doCustomClick(buttonType: string): void {
+    if ('custom-finish' === buttonType) {
+      this.wizardExtraLarge.next();
+    }
+
+    if ('custom-previous' === buttonType) {
+      this.wizardExtraLarge.previous();
+    }
+
+    if ('custom-danger' === buttonType) {
+      this.onFinish();
+      console.log(this.paymentForm.value);
+    }
+  }
+
+  onPaymentMethodChange(event) {
+    if (event.target.value === 'Cheque') {
+      this.isCheque = true;
+    } else {
+      this.isCheque = false;
+    }
+  }
+
+
+  onDiscountChange(event) {
+    this.applyDiscount = event.target.checked;
+    this.paymentForm.setValue({
+      payment_method: this.paymentForm.value.payment_method,
+      total_amount: this.paymentForm.value.total_amount,
+      amount: this.paymentForm.value.amount,
+      balance: this.paymentForm.value.balance,
+      cheque: '',
+      account_number: '',
+      bank_name: '',
+      branch_name: '',
+      discount_plan: 0,
+      discount_value: 0,
+      discount_code: '',
+      apply_discount: this.applyDiscount
+    });
+
+  }
+
+  onAmountLeave(value: string) {
+    const amount = parseFloat(value);
+    const total = this.paymentForm.value.total_amount;
+    const balance = total - amount;
+
+    this.paymentForm.setValue({
+      payment_method: this.paymentForm.value.payment_method,
+      total_amount: this.paymentForm.value.total_amount,
+      amount: amount,
+      balance: balance,
+      cheque: '',
+      account_number: '',
+      bank_name: '',
+      branch_name: '',
+      discount_plan: 0,
+      discount_value: 0,
+      discount_code: '',
+      apply_discount: this.applyDiscount
+    });
+
+  }
+
+  getDiscountStatus(onDiscount, sl) {
+    if (onDiscount === 1) {
+      return '<a  class="label label-purple clickable">Yes<span class="badge">' + sl.discount_amount + '</span></a>';
+    } else {
+      return '<span class="label label-warning">No</span>';
+    }
+  }
+
+  getReservationStatus(status) {
+
+    if (status === 'Open') {
+      return '<span class="label label-success">Open</span>';
+    } else {
+      return '<span class="label label-info">Close</span>';
+    }
+  }
+
+
+  checkPaymentVisibility(status) {
+    if (status === 'Completed') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 
 }
 
