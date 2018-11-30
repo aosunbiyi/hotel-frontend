@@ -112,17 +112,21 @@
           <td>{{d.arrival | date:'short'}}</td>
           <td>{{d.departure | date:'short'}}</td>
           <td>{{d.num_of_night}}</td>
-          <td *ngIf="d.apply_discount===0">{{d.total_booking  | number:'.2'}}</td>
-          <td *ngIf="d.apply_discount===1">{{d.total_amount_with_discount  | number:'.2'}} <br> 
-            <span style="font-size:0.8em!important;color:red;"> <strike>{{d.total_booking  | number:'.2'}}</strike>
+          <td *ngIf="d.apply_discount===0">{{d.total_booking | number:'.2'}}</td>
+          <td *ngIf="d.apply_discount===1">{{d.total_amount_with_discount | number:'.2'}} <br>
+            <span style="font-size:0.8em!important;color:red;"> <strike>{{d.total_booking | number:'.2'}}</strike>
             </span>
           </td>
           <td>{{d.amount_paid | number:'.2'}}</td>
           <td>{{d.balance | number:'.2'}}</td>
           <td [innerHTML]="getDiscountStatus(d.apply_discount, d)"> </td>
           <td [innerHTML]="getReservationStatus(d.reservation_status)"></td>
-          <td > <button class="btn btn-sm btn-primary" (click)="onCheckInClicked(d)">Check In </button>
-                <button *ngIf="checkPaymentVisibility(d.payment_status)" button class="btn btn-danger btn-sm">Print Invoice</button>
+          <td>
+            <clr-button-group  class="btn-sm"  style="margin-top:-5px!important;font-size:9px!important;">
+              <clr-button  class="btn-danger" style="font-size:9px!important;"    (click)="onPaymentCliked(d)"  *ngIf="!checkPaymentVisibility(d.payment_status)" >Make Payment</clr-button>
+              <clr-button class="btn-primary"    *ngIf="checkPaymentCheckinVisibility(d)" (click)="onCheckInClicked(d)">Check In</clr-button>
+              <clr-button  class="btn-success"  *ngIf="checkPaymentVisibility(d.payment_status)">Print Invoice</clr-button>
+            </clr-button-group>
           </td>
 
         </tr>
@@ -338,116 +342,214 @@
 
 
 
-   <clr-wizard-page [clrWizardPageNextDisabled]="!paymentForm.valid"  (clrWizardPageCustomButton)="doCustomClick($event)">
-      <ng-template clrPageTitle>Reservation Payment</ng-template>
-      <ng-template clrPageNavTitle>Make Payment</ng-template>
-  
-      <form [formGroup]="paymentForm" class="clr-form clr-form-horizontal" #formPageTwo="ngForm">
-        <div class="row">
-          <div class="clr-col-md-12">
-  
-            <div class="row">
-              <div class="col-md-12">
-                <div style="width:770px; height:120px; background:url(assets/images/payments.png)"></div>
-              </div>
-  
-            </div>
-  
-            <h4>Select your payment method.</h4>
-  
-            <div class="row">
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Payment Methods</label>
-                  <select formControlName="payment_method" clrInput  (change)="onPaymentMethodChange($event)">
+  <clr-wizard-page [clrWizardPageNextDisabled]="!paymentForm.valid" (clrWizardPageCustomButton)="doCustomClick($event)">
+    <ng-template clrPageTitle>Reservation Payment</ng-template>
+    <ng-template clrPageNavTitle>Make Payment</ng-template>
 
-                    <option value="Cash" >Cash</option>
-                    <option value="Cheque" >Cheque</option>
-                    <option value="Transfer" >Transfer</option>
-                    <option value="Credit Card" >Credit Card</option>
-                  </select>
-                </clr-input-container>
-              </div>
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Total Amount</label>
-                  <input clrInput type="number" formControlName="total_amount"   readonly />
-                </clr-input-container>
-              </div>
+    <form [formGroup]="paymentForm" class="clr-form clr-form-horizontal" #formPageTwo="ngForm">
+      <div class="row">
+        <div class="clr-col-md-12">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div style="width:770px; height:120px; background:url(assets/images/payments.png)"></div>
             </div>
-  
-            <div class="row">
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Amount</label>
-                  <input clrInput type="number" formControlName="amount" #amount
-                  (keyup.enter)="onAmountLeave(amount.value)"
-                  (blur)="onAmountLeave(amount.value)"/>
-                  <clr-control-error>Amount cannot be empty.</clr-control-error>
-                </clr-input-container>
-              </div>
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Balance</label>
-                  <input clrInput type="number" formControlName="balance"  readonly/>
-                </clr-input-container>
-              </div>
-            </div>
-  
-  
-            <div class="row"  *ngIf="isCheque">
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Cheque Number</label>
-                  <input clrInput type="text" formControlName="cheque" />
-                </clr-input-container>
-              </div>
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Account Number</label>
-                  <input clrInput type="text" formControlName="account_number" />
-                </clr-input-container>
-              </div>
-              <div class="clr-col-md-6">
-                <clr-input-container>
-                  <label>Bank Name</label>
-                  <input clrInput type="text" formControlName="bank_name" />
-                </clr-input-container>
-              </div>
-              <div class="clr-col-md-6">
-                  <clr-input-container>
-                    <label>Branch Name</label>
-                    <input clrInput type="text" formControlName="branch_name" />
-                  </clr-input-container>
-                </div>
-            </div>
-  
-            <div class="row">
-                <div class="clr-col-12">
-                    <h3>Apply Discount <input type="checkbox"  (change)="onDiscountChange($event)" formControlName="apply_discount"> </h3>
-                  </div>
-            </div>
-  
-        
-  
-  
-  
-  
-  
-  
+
           </div>
-  
+
+          <h4>Select your payment method.</h4>
+
+          <div class="row">
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Payment Methods</label>
+                <select formControlName="payment_method" clrInput (change)="onPaymentMethodChange($event)">
+
+                  <option value="Cash">Cash</option>
+                  <option value="Cheque">Cheque</option>
+                  <option value="Transfer">Transfer</option>
+                  <option value="Credit Card">Credit Card</option>
+                </select>
+              </clr-input-container>
+            </div>
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Total Amount</label>
+                <input clrInput type="number" formControlName="total_amount" readonly />
+              </clr-input-container>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Amount</label>
+                <input clrInput type="number" formControlName="amount" #amount (keyup.enter)="onAmountLeave(amount.value)"
+                  (blur)="onAmountLeave(amount.value)" />
+                <clr-control-error>Amount cannot be empty.</clr-control-error>
+              </clr-input-container>
+            </div>
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Balance</label>
+                <input clrInput type="number" formControlName="balance" readonly />
+              </clr-input-container>
+            </div>
+          </div>
+
+
+          <div class="row" *ngIf="isCheque">
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Cheque Number</label>
+                <input clrInput type="text" formControlName="cheque" />
+              </clr-input-container>
+            </div>
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Account Number</label>
+                <input clrInput type="text" formControlName="account_number" />
+              </clr-input-container>
+            </div>
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Bank Name</label>
+                <input clrInput type="text" formControlName="bank_name" />
+              </clr-input-container>
+            </div>
+            <div class="clr-col-md-6">
+              <clr-input-container>
+                <label>Branch Name</label>
+                <input clrInput type="text" formControlName="branch_name" />
+              </clr-input-container>
+            </div>
+          </div>
+
+
+
         </div>
-      </form>
-  
-  
-      <ng-template clrPageButtons>
-          <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
-          <clr-wizard-button [type]="'custom-previous'">Back</clr-wizard-button>
-          <clr-wizard-button [type]="'custom-danger'">Post Payment</clr-wizard-button>
-      </ng-template>
-    </clr-wizard-page>
+
+      </div>
+    </form>
+
+
+    <ng-template clrPageButtons>
+      <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+      <clr-wizard-button [type]="'custom-previous'">Back</clr-wizard-button>
+      <clr-wizard-button [type]="'custom-danger'">Post Payment</clr-wizard-button>
+    </ng-template>
+  </clr-wizard-page>
 
 
 
 </clr-wizard>
+
+
+<clr-modal [(clrModalOpen)]="onCheckinMode" [clrModalSize]="'xl'" [clrModalClosable]="false">
+    <h3 class="modal-title">Check In</h3>
+    <div class="modal-body">
+      <div *ngIf="selectedReservation">
+        <div class="clr-row">
+          <div class="clr-col-md-12">
+  
+           <table class="table table-striped"  *ngIf="checkinReservation">
+             <thead>
+               <tr>
+                 <th colspan="8">
+                   <h3 >Reservation Details</h3>
+                 </th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Reservation Number</td>
+                 <td>{{checkinReservation.reservation_number}}</td>
+                 <td>Booked On </td>
+                 <td>{{checkinReservation.book_on  | date: 'dd/MM/yyyy'}}</td>
+                 <td>Arrival Date</td>
+                 <td>{{checkinReservation.arrival  | date: 'dd/MM/yyyy'}}</td>
+                 <td>Departure Date</td>
+                 <td>{{checkinReservation.departure  | date: 'dd/MM/yyyy'}}</td>
+               </tr>
+             </tbody>
+           </table>        
+
+           <table *ngIf="checkinReservation"  class="table table-striped">
+              <thead>
+                <tr>
+                  <td colspan="6">
+                    <h3>Reserved Rooms</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <th>S/N</th>
+                  <th>Room Name</th>
+                  <th>Room Type</th>
+                  <th>Number of Nights</th>
+                  <th>Number of Adult</th>
+                  <th>Number Of Children</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let d  of checkinReservation.reserved_rooms">
+                  <td>{{d.serial_number}}</td>
+                  <td>{{d.room_name}}</td>
+                  <td>{{d.room_type_name}}</td>
+                  <td>{{d.num_of_night}}</td>
+                  <td>{{d.num_of_adult}}</td>
+                  <td>{{d.num_of_children}}</td>
+                </tr>
+              </tbody>
+           </table>
+
+           <table *ngIf="checkinReservation"  class="table table-striped">
+              <thead>
+                <tr>
+                  <td colspan="6">
+                    <h3>Payments</h3>
+                  </td>
+                </tr>
+                <tr>
+                  <th>S/N</th>
+                  <th>Payment Method</th>
+                  <th>Total Amount</th>
+                  <th>Paid</th>
+                  <th>Balance</th>
+                  <th>Transaction Date</th>
+                  <th>On Discount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let d  of checkinReservation.reservation_payments; let index= index;">
+                  <td>{{index+1}}</td>
+                  <td>{{d.payment_method}}</td>
+                  <td  *ngIf="d.on_discount===0">{{d.total_amount | number:'.2'}}</td>
+                  <td *ngIf="d.on_discount > 0">{{d.total_amount_with_discount | number:'.2'}} <br>
+                     
+                  </td>
+                  <td>{{d.paid  | number:'.2'}}</td>
+                  <td>{{d.balance  | number:'.2'}}</td>
+                  <td>{{d.created | date: 'dd/MM/yyyy'}}</td>
+                  <td [innerHTML]="getDiscountStatus(d.on_discount, d)"> </td>
+                </tr>
+              </tbody>
+           </table>
+                  
+  
+          </div> 
+          <div class="clr-col-4"></div> 
+          <div class="clr-col-4">
+            <button class="btn btn-primary btn-block"  (click)="onCheckInClicked2(checkinReservation)"> Check In</button>
+          </div> 
+          <div class="clr-col-4"></div>    
+        </div>
+      </div>
+  
+  
+    </div>
+    <div class="modal-footer">
+  
+      <button type="button" class="btn btn-danger" (click)="onCheckinMode = false">Close</button>
+    </div>
+  </clr-modal>
+  

@@ -1,0 +1,2302 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hotel-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hotel-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>BodyComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Components/dashboard/schedular/body/body.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-body</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./body.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./body.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#date">date</a>
+                            </li>
+                            <li>
+                                <a href="#DAYS">DAYS</a>
+                            </li>
+                            <li>
+                                <a href="#endingDay">endingDay</a>
+                            </li>
+                            <li>
+                                <a href="#expectedTotalDay">expectedTotalDay</a>
+                            </li>
+                            <li>
+                                <a href="#jodalLib">jodalLib</a>
+                            </li>
+                            <li>
+                                <a href="#labels">labels</a>
+                            </li>
+                            <li>
+                                <a href="#lengthOfMonth">lengthOfMonth</a>
+                            </li>
+                            <li>
+                                <a href="#room_labels">room_labels</a>
+                            </li>
+                            <li>
+                                <a href="#roomlist">roomlist</a>
+                            </li>
+                            <li>
+                                <a href="#rooms">rooms</a>
+                            </li>
+                            <li>
+                                <a href="#rowIndex">rowIndex</a>
+                            </li>
+                            <li>
+                                <a href="#startingDay">startingDay</a>
+                            </li>
+                            <li>
+                                <a href="#totalDays">totalDays</a>
+                            </li>
+                            <li>
+                                <a href="#totalNeededDays">totalNeededDays</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkBooking">checkBooking</a>
+                            </li>
+                            <li>
+                                <a href="#checkMultipleBookings">checkMultipleBookings</a>
+                            </li>
+                            <li>
+                                <a href="#checkMultipleBookings2">checkMultipleBookings2</a>
+                            </li>
+                            <li>
+                                <a href="#generateBody">generateBody</a>
+                            </li>
+                            <li>
+                                <a href="#generateBody2">generateBody2</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#reSetDate">reSetDate</a>
+                            </li>
+                            <li>
+                                <a href="#resetRoom">resetRoom</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="292" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:292</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkBooking"></a>
+                        <span class="name">
+                            <b>
+                            checkBooking
+                            </b>
+                            <a href="#checkBooking"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>checkBooking(date2, date1, date3, booking)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="449" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:449</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date2</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>date1</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>date3</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>booking</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkMultipleBookings"></a>
+                        <span class="name">
+                            <b>
+                            checkMultipleBookings
+                            </b>
+                            <a href="#checkMultipleBookings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>checkMultipleBookings(date3, bookings, room_labels, rowIndex)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="412" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:412</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date3</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>bookings</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>room_labels</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>rowIndex</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkMultipleBookings2"></a>
+                        <span class="name">
+                            <b>
+                            checkMultipleBookings2
+                            </b>
+                            <a href="#checkMultipleBookings2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>checkMultipleBookings2(date3, bookings, room_labels, rowIndex)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="559" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:559</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date3</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>bookings</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>room_labels</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>rowIndex</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="generateBody"></a>
+                        <span class="name">
+                            <b>
+                            generateBody
+                            </b>
+                            <a href="#generateBody"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>generateBody()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="320" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:320</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="generateBody2"></a>
+                        <span class="name">
+                            <b>
+                            generateBody2
+                            </b>
+                            <a href="#generateBody2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>generateBody2()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="469" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:469</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="303" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:303</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reSetDate"></a>
+                        <span class="name">
+                            <b>
+                            reSetDate
+                            </b>
+                            <a href="#reSetDate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reSetDate(date)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="306" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:306</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>date</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resetRoom"></a>
+                        <span class="name">
+                            <b>
+                            resetRoom
+                            </b>
+                            <a href="#resetRoom"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>resetRoom(rooms)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="313" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:313</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>rooms</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="date"></a>
+                        <span class="name">
+                            <b>
+                            date
+                            </b>
+                            <a href="#date"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>date:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="281" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:281</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DAYS"></a>
+                        <span class="name">
+                            <b>
+                            DAYS
+                            </b>
+                            <a href="#DAYS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>DAYS:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>30</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="290" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:290</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="endingDay"></a>
+                        <span class="name">
+                            <b>
+                            endingDay
+                            </b>
+                            <a href="#endingDay"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>endingDay:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:286</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expectedTotalDay"></a>
+                        <span class="name">
+                            <b>
+                            expectedTotalDay
+                            </b>
+                            <a href="#expectedTotalDay"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>expectedTotalDay:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="287" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:287</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="jodalLib"></a>
+                        <span class="name">
+                            <b>
+                            jodalLib
+                            </b>
+                            <a href="#jodalLib"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>jodalLib:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>LocalDate.now()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="288" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:288</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="labels"></a>
+                        <span class="name">
+                            <b>
+                            labels
+                            </b>
+                            <a href="#labels"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>labels:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lengthOfMonth"></a>
+                        <span class="name">
+                            <b>
+                            lengthOfMonth
+                            </b>
+                            <a href="#lengthOfMonth"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>lengthOfMonth:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:283</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="room_labels"></a>
+                        <span class="name">
+                            <b>
+                            room_labels
+                            </b>
+                            <a href="#room_labels"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>room_labels:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="roomlist"></a>
+                        <span class="name">
+                            <b>
+                            roomlist
+                            </b>
+                            <a href="#roomlist"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>roomlist:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="292" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:292</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rooms"></a>
+                        <span class="name">
+                            <b>
+                            rooms
+                            </b>
+                            <a href="#rooms"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>rooms:     <code>any[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 1&#x27;, short_name: &#x27;RM1&#x27;,
+      details: [
+
+      ],
+      bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-01&#x27;, to: &#x27;2018-11-05&#x27;, oc: &#x27;Fred&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 2&#x27;, short_name: &#x27;RM2&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-03&#x27;, to: &#x27;2018-11-04&#x27;, oc: &#x27;G2&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      // tslint:disable-next-line:max-line-length
+      name: &#x27;Room 3&#x27;, short_name: &#x27;RM3&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-03&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Samsung&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 4&#x27;, short_name: &#x27;RM4&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-05&#x27;, to: &#x27;2018-11-05&#x27;, oc: &#x27;KC&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      // tslint:disable-next-line:max-line-length
+      name: &#x27;Room 5&#x27;, short_name: &#x27;RM5&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-02&#x27;, to: &#x27;2018-11-04&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 6&#x27;, short_name: &#x27;RM6&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-01&#x27;, to: &#x27;2018-11-01&#x27;, oc: &#x27;Willi&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 7&#x27;, short_name: &#x27;RM7&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-02&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Dada&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 8&#x27;, short_name: &#x27;RM8&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-02&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Yemi&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 9&#x27;, short_name: &#x27;RM9&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-05&#x27;, to: &#x27;2018-11-05&#x27;, oc: &#x27;Kingson&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 10&#x27;, short_name: &#x27;RM10&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-03&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Benson&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-09-04&#x27;, to: &#x27;2018-09-8&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-09-18&#x27;, to: &#x27;2018-10-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rowIndex"></a>
+                        <span class="name">
+                            <b>
+                            rowIndex
+                            </b>
+                            <a href="#rowIndex"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>rowIndex:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="289" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:289</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="startingDay"></a>
+                        <span class="name">
+                            <b>
+                            startingDay
+                            </b>
+                            <a href="#startingDay"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>startingDay:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="285" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:285</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="totalDays"></a>
+                        <span class="name">
+                            <b>
+                            totalDays
+                            </b>
+                            <a href="#totalDays"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>totalDays:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="282" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:282</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="totalNeededDays"></a>
+                        <span class="name">
+                            <b>
+                            totalNeededDays
+                            </b>
+                            <a href="#totalNeededDays"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>totalNeededDays:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="284" class="link-to-prism">src/app/Components/dashboard/schedular/body/body.component.ts:284</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { LocalDate, LocalTime } from &#x27;js-joda&#x27;;
+
+@Component({
+  selector: &#x27;app-body&#x27;,
+  templateUrl: &#x27;./body.component.html&#x27;,
+  styleUrls: [&#x27;./body.component.css&#x27;]
+})
+export class BodyComponent implements OnInit {
+
+  labels: any[] &#x3D; [];
+  room_labels: any[] &#x3D; [];
+  rooms: any[] &#x3D; [
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 1&#x27;, short_name: &#x27;RM1&#x27;,
+      details: [
+
+      ],
+      bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-01&#x27;, to: &#x27;2018-11-05&#x27;, oc: &#x27;Fred&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 2&#x27;, short_name: &#x27;RM2&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-03&#x27;, to: &#x27;2018-11-04&#x27;, oc: &#x27;G2&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      // tslint:disable-next-line:max-line-length
+      name: &#x27;Room 3&#x27;, short_name: &#x27;RM3&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-03&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Samsung&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 4&#x27;, short_name: &#x27;RM4&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-05&#x27;, to: &#x27;2018-11-05&#x27;, oc: &#x27;KC&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      // tslint:disable-next-line:max-line-length
+      name: &#x27;Room 5&#x27;, short_name: &#x27;RM5&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-02&#x27;, to: &#x27;2018-11-04&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 6&#x27;, short_name: &#x27;RM6&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-01&#x27;, to: &#x27;2018-11-01&#x27;, oc: &#x27;Willi&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 7&#x27;, short_name: &#x27;RM7&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-02&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Dada&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 8&#x27;, short_name: &#x27;RM8&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-02&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Yemi&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 9&#x27;, short_name: &#x27;RM9&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-05&#x27;, to: &#x27;2018-11-05&#x27;, oc: &#x27;Kingson&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-26&#x27;, to: &#x27;2018-11-27&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-28&#x27;, to: &#x27;2018-11-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    },
+    // tslint:disable-next-line:max-line-length
+    {
+      name: &#x27;Room 10&#x27;, short_name: &#x27;RM10&#x27;, bookings: [
+        {
+          transaction_type: 1, from: &#x27;2018-11-03&#x27;, to: &#x27;2018-11-03&#x27;, oc: &#x27;Benson&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-07&#x27;, to: &#x27;2018-11-11&#x27;, oc: &#x27;Ben&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-12&#x27;, to: &#x27;2018-11-15&#x27;, oc: &#x27;Mr King&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-20&#x27;, to: &#x27;2018-11-20&#x27;, oc: &#x27;Allen&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-11-22&#x27;, to: &#x27;2018-11-25&#x27;, oc: &#x27;Greg&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-09-04&#x27;, to: &#x27;2018-09-8&#x27;, oc: &#x27;Prince&#x27;
+        },
+        {
+          transaction_type: 1, from: &#x27;2018-09-18&#x27;, to: &#x27;2018-10-30&#x27;, oc: &#x27;Unknown&#x27;
+        }
+      ]
+    }
+  ];
+  date: any;
+  totalDays: any;
+  lengthOfMonth: any;
+  totalNeededDays: any;
+  startingDay: any;
+  endingDay: any;
+  expectedTotalDay: any;
+  jodalLib &#x3D; LocalDate.now();
+  rowIndex &#x3D; 0;
+  DAYS &#x3D; 30;
+
+  roomlist &#x3D; [];
+
+  constructor() {
+
+    this.jodalLib &#x3D; LocalDate.now();
+    this.date &#x3D; LocalDate.now();
+    this.room_labels &#x3D; [];
+    this.generateBody();
+
+  }
+
+  ngOnInit() {
+  }
+
+  reSetDate(date) {
+    this.date &#x3D; LocalDate.parse(date);
+    this.jodalLib &#x3D; LocalDate.parse(date);
+    this.room_labels &#x3D; [];
+    this.generateBody();
+  }
+
+  resetRoom(rooms) {
+    this.roomlist &#x3D; rooms;
+    console.log(rooms);
+    this.room_labels &#x3D; [];
+    this.generateBody2();
+  }
+
+  generateBody() {
+
+
+    this.lengthOfMonth &#x3D; this.date.lengthOfMonth();
+    this.totalNeededDays &#x3D; this.DAYS;
+    this.startingDay &#x3D; this.date.dayOfMonth();
+    this.endingDay &#x3D; this.startingDay + this.totalNeededDays;
+
+
+    this.rooms.forEach(room &#x3D;&gt; {
+      this.room_labels[this.rowIndex] &#x3D; new Array();
+      this.totalNeededDays &#x3D; this.DAYS;
+
+      const rm &#x3D; &#x60;${room.name}-5-room&#x60;;
+      this.room_labels[this.rowIndex].push(rm);
+
+
+
+      if (this.endingDay &gt; this.lengthOfMonth) {
+        const newEndingDay &#x3D; this.endingDay - this.lengthOfMonth;
+
+
+        for (let i &#x3D; this.startingDay; i &lt;&#x3D; this.lengthOfMonth; i++) {
+          const parseDate &#x3D; this.jodalLib.withDayOfMonth(i);
+          const year &#x3D; this.jodalLib.year();
+          const month &#x3D; this.jodalLib.monthValue();
+          const monthName &#x3D; this.jodalLib.month();
+          const fulldate &#x3D; &#x60;${year}-${month}-${i}&#x60;;
+
+
+          this.checkMultipleBookings(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+
+
+
+          // &#x60;${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}&#x60;;
+          // const rr &#x3D; &#x60;${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}&#x60;;
+          // console.log(rr);
+
+          this.totalNeededDays &#x3D; this.totalNeededDays - 1;
+        }
+
+
+
+        const localJodaLib &#x3D; this.jodalLib.plusMonths(1);
+        for (let i &#x3D; 1; i &lt;&#x3D; this.totalNeededDays; i++) {
+          const parseDate &#x3D; localJodaLib.withDayOfMonth(i);
+          const year &#x3D; localJodaLib.year();
+          const month &#x3D; localJodaLib.monthValue();
+          const monthName &#x3D; localJodaLib.month();
+          const fulldate &#x3D; &#x60;${year}-${month}-${i}&#x60;;
+
+          this.checkMultipleBookings(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+
+          // room.bookings.forEach(booking &#x3D;&gt; {
+          //   const strDate &#x3D; this.checkBooking(booking.to, booking.from, parseDate.toString(), booking);
+          //   this.room_labels[this.rowIndex].push(strDate);
+          // });
+        }
+
+
+      } else {
+        const localJodaLib &#x3D; this.jodalLib.plusMonths(0);
+        for (let i &#x3D; 1; i &lt;&#x3D; this.totalNeededDays; i++) {
+          const parseDate &#x3D; localJodaLib.withDayOfMonth(i);
+          const year &#x3D; localJodaLib.year();
+          const month &#x3D; localJodaLib.monthValue();
+          const monthName &#x3D; localJodaLib.month();
+          const fulldate &#x3D; &#x60;${year}-${month}-${i}&#x60;;
+
+
+          this.checkMultipleBookings(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+          // const strDate &#x3D; this.checkBooking(room.to, room.from, parseDate.toString(), room);
+          // this.room_labels[this.rowIndex].push(strDate);
+
+          // room.bookings.forEach(booking &#x3D;&gt; {
+          //   const strDate &#x3D; this.checkBooking(booking.to, booking.from, parseDate.toString(), booking);
+          //   this.room_labels[this.rowIndex].push(strDate);
+          // });
+
+        }
+      }
+
+      this.rowIndex +&#x3D; 1;
+
+
+
+
+    });
+
+
+  }
+
+  checkMultipleBookings(date3, bookings, room_labels, rowIndex) {
+    let seen &#x3D; false;
+    bookings.forEach(booking &#x3D;&gt; {
+      const d1 &#x3D; new Date(booking.from);
+      const d2 &#x3D; new Date(booking.to);
+      const timeDiff &#x3D; Math.abs(d2.getTime() - d1.getTime());
+      const diffDays &#x3D; Math.ceil(timeDiff / (1000 * 3600 * 24));
+      const currentDate &#x3D; LocalDate.parse(booking.from);
+      for (let i &#x3D; 0; i &lt;&#x3D; diffDays; i++) {
+        const dt &#x3D; currentDate.plusDays(i);
+        const d33 &#x3D; LocalDate.parse(date3).minusMonths(0);
+        if (d33.equals(dt)) {
+          const temp &#x3D; &#x60;${booking.oc}-${booking.transaction_type}-booking&#x60;;
+          room_labels[rowIndex].push(temp);
+          seen &#x3D; true;
+          break;
+        }
+      }
+
+    });
+
+
+
+    if (seen) {
+      return;
+    } else {
+
+      room_labels[rowIndex].push(&#x27;&#x27;);
+      return;
+    }
+
+
+
+
+
+  }
+
+  checkBooking(date2, date1, date3, booking) {
+    const d1 &#x3D; new Date(date1);
+    const d2 &#x3D; new Date(date2);
+    const timeDiff &#x3D; Math.abs(d2.getTime() - d1.getTime());
+    const diffDays &#x3D; Math.ceil(timeDiff / (1000 * 3600 * 24));
+    const currentDate &#x3D; LocalDate.parse(date1);
+    for (let i &#x3D; 0; i &lt;&#x3D; diffDays; i++) {
+      const dt &#x3D; currentDate.plusDays(i);
+      const d33 &#x3D; LocalDate.parse(date3).minusMonths(0);
+      if (d33.equals(dt)) {
+        return &#x60;${booking.oc}-${booking.transaction_type}-${booking.wing}-${booking.floor}&#x60;;
+      }
+    }
+    return &#x27;&#x27;;
+
+
+
+  }
+
+
+  generateBody2() {
+    this.lengthOfMonth &#x3D; this.date.lengthOfMonth();
+    this.totalNeededDays &#x3D; this.DAYS;
+    this.startingDay &#x3D; this.date.dayOfMonth();
+    this.endingDay &#x3D; this.startingDay + this.totalNeededDays;
+
+
+    this.roomlist.forEach(room &#x3D;&gt; {
+      this.room_labels[this.rowIndex] &#x3D; new Array();
+      this.totalNeededDays &#x3D; this.DAYS;
+
+      const rm &#x3D; &#x60;${room.room_name}-5-room&#x60;;
+      this.room_labels[this.rowIndex].push(rm);
+
+
+
+      if (this.endingDay &gt; this.lengthOfMonth) {
+        const newEndingDay &#x3D; this.endingDay - this.lengthOfMonth;
+
+
+        for (let i &#x3D; this.startingDay; i &lt;&#x3D; this.lengthOfMonth; i++) {
+          const parseDate &#x3D; this.jodalLib.withDayOfMonth(i);
+          const year &#x3D; this.jodalLib.year();
+          const month &#x3D; this.jodalLib.monthValue();
+          const monthName &#x3D; this.jodalLib.month();
+          const fulldate &#x3D; &#x60;${year}-${month}-${i}&#x60;;
+
+
+          this.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, this.room_labels, this.rowIndex);
+
+
+
+          // &#x60;${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}&#x60;;
+          // const rr &#x3D; &#x60;${monthName.toString().substr(0, 3)}  ${i}  ${parseDate.dayOfWeek().toString().substring(0, 3)}&#x60;;
+          // console.log(rr);
+
+          this.totalNeededDays &#x3D; this.totalNeededDays - 1;
+        }
+
+
+
+        const localJodaLib &#x3D; this.jodalLib.plusMonths(1);
+        for (let i &#x3D; 1; i &lt;&#x3D; this.totalNeededDays; i++) {
+          const parseDate &#x3D; localJodaLib.withDayOfMonth(i);
+          const year &#x3D; localJodaLib.year();
+          const month &#x3D; localJodaLib.monthValue();
+          const monthName &#x3D; localJodaLib.month();
+          const fulldate &#x3D; &#x60;${year}-${month}-${i}&#x60;;
+
+          this.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, this.room_labels, this.rowIndex);
+
+          // room.bookings.forEach(booking &#x3D;&gt; {
+          //   const strDate &#x3D; this.checkBooking(booking.to, booking.from, parseDate.toString(), booking);
+          //   this.room_labels[this.rowIndex].push(strDate);
+          // });
+        }
+
+
+      } else {
+        const localJodaLib &#x3D; this.jodalLib.plusMonths(0);
+        for (let i &#x3D; 1; i &lt;&#x3D; this.totalNeededDays; i++) {
+          const parseDate &#x3D; localJodaLib.withDayOfMonth(i);
+          const year &#x3D; localJodaLib.year();
+          const month &#x3D; localJodaLib.monthValue();
+          const monthName &#x3D; localJodaLib.month();
+          const fulldate &#x3D; &#x60;${year}-${month}-${i}&#x60;;
+
+
+          this.checkMultipleBookings2(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+          // const strDate &#x3D; this.checkBooking(room.to, room.from, parseDate.toString(), room);
+          // this.room_labels[this.rowIndex].push(strDate);
+
+          // room.bookings.forEach(booking &#x3D;&gt; {
+          //   const strDate &#x3D; this.checkBooking(booking.to, booking.from, parseDate.toString(), booking);
+          //   this.room_labels[this.rowIndex].push(strDate);
+          // });
+
+        }
+      }
+
+      this.rowIndex +&#x3D; 1;
+
+
+
+
+    });
+
+
+  }
+
+  checkMultipleBookings2(date3, bookings, room_labels, rowIndex) {
+    let seen &#x3D; false;
+    bookings.forEach(booking &#x3D;&gt; {
+      const t1 &#x3D; booking.arrival.toString().split(&#x27;T&#x27;)[0];
+      const t2 &#x3D; booking.departure.toString().split(&#x27;T&#x27;)[0];
+      const tempDate &#x3D; LocalDate.parse(t1).plusDays(booking.num_of_night);
+      console.log(&#x27;Nigths&#x3D;&#x27; + booking.num_of_night);
+      const d1 &#x3D; new Date(t1);
+      const d2 &#x3D; new Date(d1.getFullYear(), d1.getMonth(), d1.getDate() + booking.num_of_night);
+
+      const timeDiff &#x3D; Math.abs(d2.getTime() - d1.getTime());
+      const diffDays &#x3D; Math.ceil(timeDiff / (1000 * 3600 * 24));
+      const currentDate &#x3D; LocalDate.parse(t1);
+      for (let i &#x3D; 0; i &lt;&#x3D; diffDays; i++) {
+        const dt &#x3D; currentDate.plusDays(i);
+        const d33 &#x3D; LocalDate.parse(date3).minusMonths(0);
+        if (d33.equals(dt)) {
+          const temp &#x3D; &#x60;${booking.original_owner}-${booking.reserved_status}-booking&#x60;;
+          room_labels[rowIndex].push(temp);
+          seen &#x3D; true;
+          break;
+        }
+      }
+    });
+    if (seen) {
+      return;
+    } else {
+      room_labels[rowIndex].push(&#x27;&#x27;);
+      return;
+    }
+  }
+
+
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+
+&lt;tbody&gt;
+    &lt;tr *ngFor&#x3D;&quot;let room_label of room_labels&quot;&gt;
+      
+      &lt;td  *ngFor&#x3D;&quot;let label of room_label&quot; &gt; 
+
+        &lt;div class&#x3D;&quot;x80&quot;&gt;
+          &lt;app-book-status [label]&#x3D;&quot;label&quot;&gt;&lt;/app-book-status&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+   
+    &lt;/tr&gt;
+  &lt;/tbody&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./body.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.box-dt{
+   
+    height: 30px;
+}
+
+.red{
+    background-color:#CD3517;
+}
+
+.green{
+    background-color:#1D5100;
+}
+
+.x40{
+    width: 40px;
+}
+
+.x80{
+    width: 80px;
+}
+
+.x120{
+    width: 120px;
+}
+
+tbody{
+    border:solid 1px #0065AB!important;
+}
+td{
+    border:solid 1px #0065AB!important;
+    width:45px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><tbody>    <tr *ngFor="let room_label of room_labels">            <td  *ngFor="let label of room_label" >         <div class="x80">          <app-book-status [label]="label"></app-book-status>        </div>      </td>       </tr>  </tbody></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArrivalListComponent', 'selector': 'app-arrival-list'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BookingListComponent', 'selector': 'app-booking-list'},{'name': 'BookStatusComponent', 'selector': 'app-book-status'},{'name': 'CheckinComponent', 'selector': 'app-checkin'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DateBarComponent', 'selector': 'app-date-bar'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'GuestDataBaseComponent', 'selector': 'app-guest-data-base'},{'name': 'GuestLedgerComponent', 'selector': 'app-guest-ledger'},{'name': 'GuestMessageComponent', 'selector': 'app-guest-message'},{'name': 'GuestProfileComponent', 'selector': 'app-guest-profile'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HotelWalkinComponent', 'selector': 'app-hotel-walkin'},{'name': 'MainDashboardComponent', 'selector': 'app-main-dashboard'},{'name': 'NewBookingComponent', 'selector': 'app-new-booking'},{'name': 'OutOfOrderComponent', 'selector': 'app-out-of-order'},{'name': 'ReservationComponent', 'selector': 'app-reservation'},{'name': 'ReservationListComponent', 'selector': 'app-reservation-list'},{'name': 'RoomLookUpComponent', 'selector': 'app-room-look-up'},{'name': 'RoomStatusComponent', 'selector': 'app-room-status'},{'name': 'SchedularComponent', 'selector': 'app-schedular'},{'name': 'SummaryBarComponent', 'selector': 'app-summary-bar'},{'name': 'TickerComponent', 'selector': 'app-ticker'},{'name': 'WalkinComponent', 'selector': 'app-walkin'}];
+    var DIRECTIVES = [{'name': 'CardHoverDirective', 'selector': '[appCardHover]'}];
+    var ACTUAL_COMPONENT = {'name': 'BodyComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BodyComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

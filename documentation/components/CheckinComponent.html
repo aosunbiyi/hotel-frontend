@@ -1,0 +1,3514 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hotel-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hotel-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CheckinComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Components/front-office/checkin/checkin.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-checkin</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./checkin.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./checkin.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#account_list">account_list</a>
+                            </li>
+                            <li>
+                                <a href="#applyDiscount">applyDiscount</a>
+                            </li>
+                            <li>
+                                <a href="#criteriaList">criteriaList</a>
+                            </li>
+                            <li>
+                                <a href="#discountList">discountList</a>
+                            </li>
+                            <li>
+                                <a href="#inputType">inputType</a>
+                            </li>
+                            <li>
+                                <a href="#isCheque">isCheque</a>
+                            </li>
+                            <li>
+                                <a href="#loadingAccount">loadingAccount</a>
+                            </li>
+                            <li>
+                                <a href="#open_wizard">open_wizard</a>
+                            </li>
+                            <li>
+                                <a href="#optionList">optionList</a>
+                            </li>
+                            <li>
+                                <a href="#page1">page1</a>
+                            </li>
+                            <li>
+                                <a href="#paymentForm">paymentForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#renderer">renderer</a>
+                            </li>
+                            <li>
+                                <a href="#reservations">reservations</a>
+                            </li>
+                            <li>
+                                <a href="#search_data">search_data</a>
+                            </li>
+                            <li>
+                                <a href="#selected_account">selected_account</a>
+                            </li>
+                            <li>
+                                <a href="#selectedReservation">selectedReservation</a>
+                            </li>
+                            <li>
+                                <a href="#transfer_mode">transfer_mode</a>
+                            </li>
+                            <li>
+                                <a href="#wizardExtraLarge">wizardExtraLarge</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addCriterion">addCriterion</a>
+                            </li>
+                            <li>
+                                <a href="#checkPaymentVisibility">checkPaymentVisibility</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#doCustomClick">doCustomClick</a>
+                            </li>
+                            <li>
+                                <a href="#getDiscountStatus">getDiscountStatus</a>
+                            </li>
+                            <li>
+                                <a href="#getReservationStatus">getReservationStatus</a>
+                            </li>
+                            <li>
+                                <a href="#getTotalReservation400">getTotalReservation400</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAmountLeave">onAmountLeave</a>
+                            </li>
+                            <li>
+                                <a href="#onCheckInClicked">onCheckInClicked</a>
+                            </li>
+                            <li>
+                                <a href="#onDeleteReservation">onDeleteReservation</a>
+                            </li>
+                            <li>
+                                <a href="#onDiscountChange">onDiscountChange</a>
+                            </li>
+                            <li>
+                                <a href="#onEditReserved_Room">onEditReserved_Room</a>
+                            </li>
+                            <li>
+                                <a href="#onFinish">onFinish</a>
+                            </li>
+                            <li>
+                                <a href="#onNumberOfAdultChange">onNumberOfAdultChange</a>
+                            </li>
+                            <li>
+                                <a href="#onNumberOfChildChange">onNumberOfChildChange</a>
+                            </li>
+                            <li>
+                                <a href="#onPaymentMethodChange">onPaymentMethodChange</a>
+                            </li>
+                            <li>
+                                <a href="#onReservationSearch">onReservationSearch</a>
+                            </li>
+                            <li>
+                                <a href="#onRoomOwnerChanged">onRoomOwnerChanged</a>
+                            </li>
+                            <li>
+                                <a href="#onSearchFieldChange">onSearchFieldChange</a>
+                            </li>
+                            <li>
+                                <a href="#onSearchFieldChange2">onSearchFieldChange2</a>
+                            </li>
+                            <li>
+                                <a href="#onTransferMode">onTransferMode</a>
+                            </li>
+                            <li>
+                                <a href="#refresh">refresh</a>
+                            </li>
+                            <li>
+                                <a href="#removeLast">removeLast</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(elementRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, reservationsService: <a href="../injectables/ReservationsService.html">ReservationsService</a>, accountService: <a href="../injectables/AccountsService.html">AccountsService</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, cd: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, renderer: <a href="https://angular.io/api/core/Renderer" target="_blank">Renderer</a>, discountService: <a href="../injectables/DiscountService.html">DiscountService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>elementRef</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>reservationsService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ReservationsService.html" target="_self" >ReservationsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>accountService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/AccountsService.html" target="_self" >AccountsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cd</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/Renderer" target="_blank" >Renderer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>discountService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/DiscountService.html" target="_self" >DiscountService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addCriterion"></a>
+                        <span class="name">
+                            <b>
+                            addCriterion
+                            </b>
+                            <a href="#addCriterion"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addCriterion(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkPaymentVisibility"></a>
+                        <span class="name">
+                            <b>
+                            checkPaymentVisibility
+                            </b>
+                            <a href="#checkPaymentVisibility"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>checkPaymentVisibility(status)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="396" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:396</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>status</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="doCustomClick"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            doCustomClick
+                            </b>
+                            <a href="#doCustomClick"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>doCustomClick(buttonType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="313" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:313</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>buttonType</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDiscountStatus"></a>
+                        <span class="name">
+                            <b>
+                            getDiscountStatus
+                            </b>
+                            <a href="#getDiscountStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getDiscountStatus(onDiscount, sl)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="378" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:378</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>onDiscount</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>sl</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getReservationStatus"></a>
+                        <span class="name">
+                            <b>
+                            getReservationStatus
+                            </b>
+                            <a href="#getReservationStatus"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getReservationStatus(status)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="386" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:386</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>status</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>&quot;&lt;span class&#x3D;\&quot;label label-success\&quot;&gt;Open&lt;/span&gt;&quot; | &quot;&lt;span class&#x3D;\&quot;label label-info\&quot;&gt;Close&lt;/span&gt;&quot;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getTotalReservation400"></a>
+                        <span class="name">
+                            <b>
+                            getTotalReservation400
+                            </b>
+                            <a href="#getTotalReservation400"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getTotalReservation400(reservation_transaction: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="297" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:297</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reservation_transaction</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onAmountLeave"></a>
+                        <span class="name">
+                            <b>
+                            onAmountLeave
+                            </b>
+                            <a href="#onAmountLeave"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onAmountLeave(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="356" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:356</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>value</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onCheckInClicked"></a>
+                        <span class="name">
+                            <b>
+                            onCheckInClicked
+                            </b>
+                            <a href="#onCheckInClicked"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onCheckInClicked(reservation)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="169" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:169</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>reservation</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onDeleteReservation"></a>
+                        <span class="name">
+                            <b>
+                            onDeleteReservation
+                            </b>
+                            <a href="#onDeleteReservation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onDeleteReservation(id)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="218" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:218</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onDiscountChange"></a>
+                        <span class="name">
+                            <b>
+                            onDiscountChange
+                            </b>
+                            <a href="#onDiscountChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onDiscountChange(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="337" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:337</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onEditReserved_Room"></a>
+                        <span class="name">
+                            <b>
+                            onEditReserved_Room
+                            </b>
+                            <a href="#onEditReserved_Room"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onEditReserved_Room(room)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="268" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:268</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>room</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onFinish"></a>
+                        <span class="name">
+                            <b>
+                            onFinish
+                            </b>
+                            <a href="#onFinish"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onFinish()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:275</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onNumberOfAdultChange"></a>
+                        <span class="name">
+                            <b>
+                            onNumberOfAdultChange
+                            </b>
+                            <a href="#onNumberOfAdultChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onNumberOfAdultChange(event, room)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="249" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:249</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>room</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onNumberOfChildChange"></a>
+                        <span class="name">
+                            <b>
+                            onNumberOfChildChange
+                            </b>
+                            <a href="#onNumberOfChildChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onNumberOfChildChange(event, room)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="231" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:231</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>room</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onPaymentMethodChange"></a>
+                        <span class="name">
+                            <b>
+                            onPaymentMethodChange
+                            </b>
+                            <a href="#onPaymentMethodChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onPaymentMethodChange(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="328" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:328</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onReservationSearch"></a>
+                        <span class="name">
+                            <b>
+                            onReservationSearch
+                            </b>
+                            <a href="#onReservationSearch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onReservationSearch(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:95</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onRoomOwnerChanged"></a>
+                        <span class="name">
+                            <b>
+                            onRoomOwnerChanged
+                            </b>
+                            <a href="#onRoomOwnerChanged"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onRoomOwnerChanged(event, room)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="204" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:204</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>room</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSearchFieldChange"></a>
+                        <span class="name">
+                            <b>
+                            onSearchFieldChange
+                            </b>
+                            <a href="#onSearchFieldChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onSearchFieldChange(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSearchFieldChange2"></a>
+                        <span class="name">
+                            <b>
+                            onSearchFieldChange2
+                            </b>
+                            <a href="#onSearchFieldChange2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onSearchFieldChange2(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="156" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:156</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onTransferMode"></a>
+                        <span class="name">
+                            <b>
+                            onTransferMode
+                            </b>
+                            <a href="#onTransferMode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onTransferMode(room)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:227</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>room</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="refresh"></a>
+                        <span class="name">
+                            <b>
+                            refresh
+                            </b>
+                            <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>refresh()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="309" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:309</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeLast"></a>
+                        <span class="name">
+                            <b>
+                            removeLast
+                            </b>
+                            <a href="#removeLast"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>removeLast(event)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account_list"></a>
+                        <span class="name">
+                            <b>
+                            account_list
+                            </b>
+                            <a href="#account_list"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>account_list:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="applyDiscount"></a>
+                        <span class="name">
+                            <b>
+                            applyDiscount
+                            </b>
+                            <a href="#applyDiscount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>applyDiscount:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="criteriaList"></a>
+                        <span class="name">
+                            <b>
+                            criteriaList
+                            </b>
+                            <a href="#criteriaList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>criteriaList:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="discountList"></a>
+                        <span class="name">
+                            <b>
+                            discountList
+                            </b>
+                            <a href="#discountList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>discountList:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputType"></a>
+                        <span class="name">
+                            <b>
+                            inputType
+                            </b>
+                            <a href="#inputType"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>inputType:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;text&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isCheque"></a>
+                        <span class="name">
+                            <b>
+                            isCheque
+                            </b>
+                            <a href="#isCheque"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isCheque:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadingAccount"></a>
+                        <span class="name">
+                            <b>
+                            loadingAccount
+                            </b>
+                            <a href="#loadingAccount"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>loadingAccount:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="open_wizard"></a>
+                        <span class="name">
+                            <b>
+                            open_wizard
+                            </b>
+                            <a href="#open_wizard"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>open_wizard:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="optionList"></a>
+                        <span class="name">
+                            <b>
+                            optionList
+                            </b>
+                            <a href="#optionList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>optionList:     <code><a href="../classes/SearchParameter.html" target="_self" >SearchParameter[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/SearchParameter.html" target="_self" >SearchParameter[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="page1"></a>
+                        <span class="name">
+                            <b>
+                            page1
+                            </b>
+                            <a href="#page1"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>page1:     <code>ClrWizardPage</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ClrWizardPage</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;page1&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paymentForm"></a>
+                        <span class="name">
+                            <b>
+                            paymentForm
+                            </b>
+                            <a href="#paymentForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>paymentForm:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="renderer"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            renderer
+                            </b>
+                            <a href="#renderer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>renderer:     <code><a href="https://angular.io/api/core/Renderer" target="_blank" >Renderer</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/core/Renderer" target="_blank" >Renderer</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reservations"></a>
+                        <span class="name">
+                            <b>
+                            reservations
+                            </b>
+                            <a href="#reservations"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>reservations:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="search_data"></a>
+                        <span class="name">
+                            <b>
+                            search_data
+                            </b>
+                            <a href="#search_data"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>search_data:     <code></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected_account"></a>
+                        <span class="name">
+                            <b>
+                            selected_account
+                            </b>
+                            <a href="#selected_account"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>selected_account:     <code></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedReservation"></a>
+                        <span class="name">
+                            <b>
+                            selectedReservation
+                            </b>
+                            <a href="#selectedReservation"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>selectedReservation:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{ accounts_: null, account_id: 0, reserved_rooms: [], id: 0 }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="transfer_mode"></a>
+                        <span class="name">
+                            <b>
+                            transfer_mode
+                            </b>
+                            <a href="#transfer_mode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>transfer_mode:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="wizardExtraLarge"></a>
+                        <span class="name">
+                            <b>
+                            wizardExtraLarge
+                            </b>
+                            <a href="#wizardExtraLarge"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>wizardExtraLarge:     <code>ClrWizard</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ClrWizard</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;wizardxl&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/Components/front-office/checkin/checkin.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ElementRef, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef, Renderer } from &#x27;@angular/core&#x27;;
+import { ClrWizard, ClrForm, ClrWizardPage } from &#x27;@clr/angular&#x27;;
+import { FormGroup, FormControl, Validators, FormBuilder } from &#x27;@angular/forms&#x27;;
+import { LocalDate, LocalTime } from &#x27;js-joda&#x27;;
+import * as lodash from &#x27;lodash&#x27;;
+import { ReservationsService } from &#x27;../../../services/reservations.service&#x27;;
+import { AccountsService } from &#x27;../../../services/accounts.service&#x27;;
+import { DiscountService } from &#x27;../../../services/discount.service&#x27;;
+
+@Component({
+  selector: &#x27;app-checkin&#x27;,
+  templateUrl: &#x27;./checkin.component.html&#x27;,
+  styleUrls: [&#x27;./checkin.component.css&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class CheckinComponent implements OnInit {
+  @ViewChild(&#x27;wizardxl&#x27;) wizardExtraLarge: ClrWizard;
+  @ViewChild(&#x27;page1&#x27;) page1: ClrWizardPage;
+  criteriaList &#x3D; [];
+  inputType &#x3D; &#x27;text&#x27;;
+  optionList: SearchParameter[] &#x3D; [];
+  reservations &#x3D; [];
+  open_wizard &#x3D; false;
+  selectedReservation &#x3D; { accounts_: null, account_id: 0, reserved_rooms: [], id: 0 };
+  loadingAccount &#x3D; false;
+  account_list &#x3D; [];
+  selected_account;
+  transfer_mode &#x3D; false;
+  search_data;
+  paymentForm: FormGroup;
+  isCheque &#x3D; false;
+  applyDiscount &#x3D; false;
+  discountList &#x3D; [];
+
+
+  constructor(private elementRef: ElementRef,
+    private reservationsService: ReservationsService,
+    private accountService: AccountsService,
+    private formBuilder: FormBuilder,
+    private cd: ChangeDetectorRef,
+    public renderer: Renderer,
+    private discountService: DiscountService) { }
+
+  ngOnInit() {
+    this.accountService.getAccounts().subscribe(data &#x3D;&gt; {
+      this.account_list &#x3D; data;
+      this.account_list.forEach(ac &#x3D;&gt; {
+        ac.fullname &#x3D; ac.first_name + &#x27; &#x27; + ac.last_name;
+      });
+    });
+
+    this.paymentForm &#x3D; this.formBuilder.group({
+      payment_method: [&#x27;&#x27;, Validators.required],
+      total_amount: [&#x27;&#x27;, Validators.required],
+      amount: [&#x27;&#x27;, Validators.required],
+      balance: [&#x27;&#x27;],
+      cheque: [&#x27;&#x27;],
+      account_number: [&#x27;&#x27;],
+      bank_name: [&#x27;&#x27;],
+      branch_name: [&#x27;&#x27;],
+      discount_plan: [&#x27;&#x27;],
+      discount_value: [&#x27;&#x27;],
+      discount_code: [&#x27;&#x27;],
+      apply_discount: [&#x27;&#x27;]
+    });
+
+
+    this.discountService.getDiscounts().subscribe(data &#x3D;&gt; {
+      this.discountList &#x3D; data;
+    });
+
+
+
+  }
+
+  addCriterion(event) {
+    this.criteriaList.push(1);
+  }
+
+  removeLast(event) {
+    this.criteriaList.pop();
+  }
+
+  onSearchFieldChange(event) {
+    const v &#x3D; event.target.value;
+    if (v &#x3D;&#x3D;&#x3D; &#x27;select&#x27;) {
+      this.inputType &#x3D; &#x27;text&#x27;;
+      return;
+    }
+    const t1 &#x3D; v.toString().split(&#x27;|&#x27;)[0];
+    const t2 &#x3D; v.toString().split(&#x27;|&#x27;)[1];
+    this.elementRef.nativeElement.querySelector(&#x27;.vv0&#x27;).type &#x3D; t2;
+  }
+
+  onReservationSearch(event) {
+    this.optionList &#x3D; [];
+    const field1: string &#x3D; this.elementRef.nativeElement.querySelector(&#x27;.ss0&#x27;).value;
+    const field2: string &#x3D; this.elementRef.nativeElement.querySelector(&#x27;.cc0&#x27;).value;
+    const field3: string &#x3D; this.elementRef.nativeElement.querySelector(&#x27;.vv0&#x27;).value;
+
+    if (field1 &#x3D;&#x3D;&#x3D; &#x27;&#x27; || field1.toString().length &lt;&#x3D; 0 || field1 &#x3D;&#x3D;&#x3D; &#x27;select&#x27;) {
+      alert(&#x27;Search Field cannot be empty!&#x27;);
+      return;
+    }
+
+    if (field2 &#x3D;&#x3D;&#x3D; &#x27;&#x27; || field2.toString().length &lt;&#x3D; 0) {
+      alert(&#x27;Search Condition cannot be empty!&#x27;);
+      return;
+    }
+
+    if (field3 &#x3D;&#x3D;&#x3D; &#x27;&#x27; || field3.toString().length &lt;&#x3D; 0) {
+      alert(&#x27;Search Value cannot be empty!&#x27;);
+      return;
+    }
+    const param: SearchParameter &#x3D; new SearchParameter();
+    param.Field &#x3D; field1;
+    param.Condition &#x3D; field2;
+    param.Value &#x3D; field3;
+    this.optionList.push(param);
+
+    let i &#x3D; 0;
+    for (i &#x3D; 0; i &lt; this.criteriaList.length; i++) {
+      const field: string &#x3D; this.elementRef.nativeElement.querySelector(&#x27;.s&#x27; + i.toString()).value;
+      const condition: string &#x3D; this.elementRef.nativeElement.querySelector(&#x27;.c&#x27; + i.toString()).value;
+      const value: string &#x3D; this.elementRef.nativeElement.querySelector(&#x27;.v&#x27; + i.toString()).value;
+
+      if (field &#x3D;&#x3D;&#x3D; &#x27;&#x27; || field1.toString().length &lt;&#x3D; 0 || field1 &#x3D;&#x3D;&#x3D; &#x27;select&#x27;) {
+        continue;
+      }
+
+      if (condition &#x3D;&#x3D;&#x3D; &#x27;&#x27; || field2.toString().length &lt;&#x3D; 0) {
+        continue;
+      }
+
+      if (value &#x3D;&#x3D;&#x3D; &#x27;&#x27; || field3.toString().length &lt;&#x3D; 0) {
+        continue;
+      }
+
+      const param2: SearchParameter &#x3D; new SearchParameter();
+      param2.Field &#x3D; field;
+      param2.Condition &#x3D; condition;
+      param2.Value &#x3D; value;
+      this.optionList.push(param2);
+
+
+    }
+    this.search_data &#x3D; this.optionList;
+    this.reservationsService.searchReservationWithParam(this.optionList).subscribe(data &#x3D;&gt; {
+      this.reservations &#x3D; data;
+      console.log(data);
+    });
+
+  }
+
+
+  onSearchFieldChange2(event) {
+    const v &#x3D; event.target.value;
+    if (v &#x3D;&#x3D;&#x3D; &#x27;select&#x27;) {
+      this.inputType &#x3D; &#x27;text&#x27;;
+      return;
+    }
+    const t1 &#x3D; v.toString().split(&#x27;|&#x27;)[0];
+    const t2 &#x3D; v.toString().split(&#x27;|&#x27;)[1];
+    const count &#x3D; v.toString().split(&#x27;|&#x27;)[2];
+    this.elementRef.nativeElement.querySelector(&#x27;.v&#x27; + count.toString()).type &#x3D; t2;
+    this.refresh();
+  }
+
+  onCheckInClicked(reservation) {
+
+    this.paymentForm.setValue({
+      payment_method: &#x27;&#x27;,
+      total_amount: reservation.balance,
+      amount: 0,
+      balance: 0,
+      cheque: &#x27;&#x27;,
+      account_number: &#x27;&#x27;,
+      bank_name: &#x27;&#x27;,
+      branch_name: &#x27;&#x27;,
+      discount_plan: 0,
+      discount_value: 0,
+      discount_code: &#x27;&#x27;,
+      apply_discount: false
+    });
+
+    const vm &#x3D; this;
+    this.selectedReservation &#x3D; reservation;
+    vm.selectedReservation.accounts_ &#x3D; null;
+    this.loadingAccount &#x3D; true;
+    this.open_wizard &#x3D; true;
+    console.log(reservation);
+    setTimeout(() &#x3D;&gt; {
+      this.accountService.getAccountById(this.selectedReservation.account_id).subscribe(data &#x3D;&gt; {
+        vm.selectedReservation.accounts_ &#x3D; data;
+        console.log(data);
+        vm.loadingAccount &#x3D; false;
+        this.refresh();
+      });
+    }, 1000);
+
+
+  }
+
+  onRoomOwnerChanged(event, room) {
+    // console.log(event, room, this.selected_account);
+    const transferData &#x3D; {
+      reserved_room_id: room.id,
+      new_account_id: this.selected_account
+    };
+    this.reservationsService.transfer_room(transferData).subscribe(data &#x3D;&gt; {
+      delete room.transfer_mode;
+      this.reservationsService.searchReservationWithParam(this.optionList).subscribe(dd &#x3D;&gt; {
+        this.reservations &#x3D; dd;
+      });
+    });
+  }
+
+  onDeleteReservation(id) {
+    this.reservationsService.delete_reserved_room(id).subscribe(data &#x3D;&gt; {
+      console.log(data);
+      this.reservationsService.searchReservationWithParam(this.optionList).subscribe(dd &#x3D;&gt; {
+        this.reservations &#x3D; dd;
+      });
+    });
+  }
+
+  onTransferMode(room) {
+    room.transfer_mode &#x3D; true;
+  }
+
+  onNumberOfChildChange(event, room) {
+    const reservation_id &#x3D; room.reservation_id;
+    const reserved_room_id &#x3D; room.id;
+    const change_value &#x3D; event.target.value;
+    const type &#x3D; &#x27;child&#x27;;
+
+    const editData &#x3D; {
+      reservation_id: reservation_id,
+      reserved_room_id: reserved_room_id,
+      change_value: change_value,
+      type: type
+    };
+
+    this.reservationsService.edit_reserved_room(editData).subscribe(data &#x3D;&gt; {
+      this.selectedReservation &#x3D; data;
+    });
+  }
+
+  onNumberOfAdultChange(event, room) {
+    const reservation_id &#x3D; room.reservation_id;
+    const reserved_room_id &#x3D; room.id;
+    const change_value &#x3D; event.target.value;
+    const type &#x3D; &#x27;adult&#x27;;
+
+    const editData &#x3D; {
+      reservation_id: reservation_id,
+      reserved_room_id: reserved_room_id,
+      change_value: change_value,
+      type: type
+    };
+
+    this.reservationsService.edit_reserved_room(editData).subscribe(data &#x3D;&gt; {
+      this.selectedReservation &#x3D; data;
+      console.log(data);
+    });
+  }
+
+  onEditReserved_Room(room) {
+    console.log(room);
+    // tslint:disable-next-line:no-unused-expression
+    this.elementRef.nativeElement.querySelector(&#x27;.r&#x27; + room.id).readOnly &#x3D; false;
+    this.elementRef.nativeElement.querySelector(&#x27;.rr&#x27; + room.id).readOnly &#x3D; false;
+  }
+
+  onFinish() {
+    this.wizardExtraLarge.navService.setCurrentPage(this.page1);
+    this.open_wizard &#x3D; false;
+    this.transfer_mode &#x3D; false;
+
+    const data &#x3D; {
+      reservation_id: this.selectedReservation.id,
+      paymentForm: this.paymentForm.value
+    };
+
+    this.reservationsService.post_reservation_payment(data).subscribe(r &#x3D;&gt; {
+      console.log(r);
+      this.reservationsService.getReservations().subscribe(data2 &#x3D;&gt; {
+        this.wizardExtraLarge.navService.setCurrentPage(this.page1);
+        this.open_wizard &#x3D; false;
+      });
+
+    });
+
+
+  }
+
+  getTotalReservation400(reservation_transaction: any) {
+    const output &#x3D; lodash(reservation_transaction)
+      .groupBy(&#x27;reservation_id&#x27;)
+      .map((objs, key) &#x3D;&gt; ({
+        &#x27;reservation_id&#x27;: key,
+        &#x27;total&#x27;: lodash.sumBy(objs, &#x27;total&#x27;)
+      }))
+      .value();
+
+    return output;
+  }
+
+  refresh() {
+    this.cd.detectChanges();
+  }
+
+  public doCustomClick(buttonType: string): void {
+    if (&#x27;custom-finish&#x27; &#x3D;&#x3D;&#x3D; buttonType) {
+      this.wizardExtraLarge.next();
+    }
+
+    if (&#x27;custom-previous&#x27; &#x3D;&#x3D;&#x3D; buttonType) {
+      this.wizardExtraLarge.previous();
+    }
+
+    if (&#x27;custom-danger&#x27; &#x3D;&#x3D;&#x3D; buttonType) {
+      this.onFinish();
+      console.log(this.paymentForm.value);
+    }
+  }
+
+  onPaymentMethodChange(event) {
+    if (event.target.value &#x3D;&#x3D;&#x3D; &#x27;Cheque&#x27;) {
+      this.isCheque &#x3D; true;
+    } else {
+      this.isCheque &#x3D; false;
+    }
+  }
+
+
+  onDiscountChange(event) {
+    this.applyDiscount &#x3D; event.target.checked;
+    this.paymentForm.setValue({
+      payment_method: this.paymentForm.value.payment_method,
+      total_amount: this.paymentForm.value.total_amount,
+      amount: this.paymentForm.value.amount,
+      balance: this.paymentForm.value.balance,
+      cheque: &#x27;&#x27;,
+      account_number: &#x27;&#x27;,
+      bank_name: &#x27;&#x27;,
+      branch_name: &#x27;&#x27;,
+      discount_plan: 0,
+      discount_value: 0,
+      discount_code: &#x27;&#x27;,
+      apply_discount: this.applyDiscount
+    });
+
+  }
+
+  onAmountLeave(value: string) {
+    const amount &#x3D; parseFloat(value);
+    const total &#x3D; this.paymentForm.value.total_amount;
+    const balance &#x3D; total - amount;
+
+    this.paymentForm.setValue({
+      payment_method: this.paymentForm.value.payment_method,
+      total_amount: this.paymentForm.value.total_amount,
+      amount: amount,
+      balance: balance,
+      cheque: &#x27;&#x27;,
+      account_number: &#x27;&#x27;,
+      bank_name: &#x27;&#x27;,
+      branch_name: &#x27;&#x27;,
+      discount_plan: 0,
+      discount_value: 0,
+      discount_code: &#x27;&#x27;,
+      apply_discount: this.applyDiscount
+    });
+
+  }
+
+  getDiscountStatus(onDiscount, sl) {
+    if (onDiscount &#x3D;&#x3D;&#x3D; 1) {
+      return &#x27;&lt;a  class&#x3D;&quot;label label-purple clickable&quot;&gt;Yes&lt;span class&#x3D;&quot;badge&quot;&gt;&#x27; + sl.discount_amount + &#x27;&lt;/span&gt;&lt;/a&gt;&#x27;;
+    } else {
+      return &#x27;&lt;span class&#x3D;&quot;label label-warning&quot;&gt;No&lt;/span&gt;&#x27;;
+    }
+  }
+
+  getReservationStatus(status) {
+
+    if (status &#x3D;&#x3D;&#x3D; &#x27;Open&#x27;) {
+      return &#x27;&lt;span class&#x3D;&quot;label label-success&quot;&gt;Open&lt;/span&gt;&#x27;;
+    } else {
+      return &#x27;&lt;span class&#x3D;&quot;label label-info&quot;&gt;Close&lt;/span&gt;&#x27;;
+    }
+  }
+
+
+  checkPaymentVisibility(status) {
+    if (status &#x3D;&#x3D;&#x3D; &#x27;Completed&#x27;) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+}
+
+class SearchParameter {
+  public Field: String;
+  public Condition: String;
+  public Value: String;
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;clr-row&quot;&gt;
+  &lt;div class&#x3D;&quot;clr-col-md-1&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;clr-col-md-10&quot;&gt;
+    &lt;h2 style&#x3D;&quot;margin-top:5px!important;&quot; class&#x3D;&quot;label label-primary&quot;&gt;Check In - Search Panel&lt;/h2&gt;
+    &lt;table class&#x3D;&quot;table&quot;&gt;
+      &lt;thead&gt;
+        &lt;th&gt;Search Field&lt;/th&gt;
+        &lt;th&gt;Search Condition&lt;/th&gt;
+        &lt;th&gt;Value&lt;/th&gt;
+        &lt;th&gt;Action&lt;/th&gt;
+
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;select class&#x3D;&quot;clr-col-md-12 ss0&quot; (change)&#x3D;&quot;onSearchFieldChange($event)&quot;&gt;
+              &lt;option value&#x3D;&quot;select&quot;&gt;--select--&lt;/option&gt;
+              &lt;option value&#x3D;&quot;reservation_number|text&quot;&gt;Reservation Number&lt;/option&gt;
+              &lt;option value&#x3D;&quot;book_on|date&quot;&gt;Booked On&lt;/option&gt;
+              &lt;option value&#x3D;&quot;arrival|date&quot;&gt;Arrival Date&lt;/option&gt;
+              &lt;option value&#x3D;&quot;departure|date&quot;&gt;Departure Date&lt;/option&gt;
+              &lt;option value&#x3D;&quot;reservation_status|text&quot;&gt;Reservation Status&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;select class&#x3D;&quot;clr-col-md-12  cc0&quot;&gt;
+              &lt;option value&#x3D;&quot;&#x3D;&quot;&gt;Equels To&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&gt;&quot;&gt;Greater Than&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&gt;&#x3D;&quot;&gt;Greater Than Or equeals To&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&lt;&quot;&gt;Less Than&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&lt;&#x3D;&quot;&gt;Less Than Or equeals To&lt;/option&gt;
+              &lt;option value&#x3D;&quot;CN&quot;&gt;Contains&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;input type&#x3D;&quot;{{inputType}}&quot; class&#x3D;&quot;clr-col-md-12 vv0&quot;&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;div style&#x3D;&quot;margin-top:-8px;&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-dark btn-sm&quot; (click)&#x3D;&quot;onReservationSearch($event)&quot;&gt;Search&lt;clr-icon shape&#x3D;&quot;search&quot;&gt;&lt;/clr-icon&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;btn btn-success btn-sm&quot; (click)&#x3D;&quot;addCriterion($event)&quot;&gt;add criterion&lt;clr-icon shape&#x3D;&quot;plus-circle&quot;&gt;&lt;/clr-icon&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+
+          &lt;/td&gt;
+        &lt;/tr&gt;
+
+
+
+
+        &lt;tr *ngFor&#x3D;&quot;let g of criteriaList; let  index&#x3D;index;&quot;&gt;
+          &lt;td&gt;
+            &lt;select class&#x3D;&quot;clr-col-md-12 s{{index}}&quot; (change)&#x3D;&quot;onSearchFieldChange2($event)&quot;&gt;
+              &lt;option value&#x3D;&quot;select&quot;&gt;--select--&lt;/option&gt;
+              &lt;option value&#x3D;&quot;reservation_number|number|{{index}}&quot;&gt;Reservation Number&lt;/option&gt;
+              &lt;option value&#x3D;&quot;book_on|date|{{index}}&quot;&gt;Booked On&lt;/option&gt;
+              &lt;option value&#x3D;&quot;arrival|date|{{index}}&quot;&gt;Arrival Date&lt;/option&gt;
+              &lt;option value&#x3D;&quot;departure|date|{{index}}&quot;&gt;Departure Date&lt;/option&gt;
+              &lt;option value&#x3D;&quot;reservation_status|text|{{index}}&quot;&gt;Reservation Status&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;select class&#x3D;&quot;clr-col-md-12 c{{index}}&quot;&gt;
+              &lt;option value&#x3D;&quot;&#x3D;&quot;&gt;Equels To&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&gt;&quot;&gt;Greater Than&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&gt;&#x3D;&quot;&gt;Greater Than Or equeals To&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&lt;&quot;&gt;Less Than&lt;/option&gt;
+              &lt;option value&#x3D;&quot;&lt;&#x3D;&quot;&gt;Less Than Or equeals To&lt;/option&gt;
+              &lt;option value&#x3D;&quot;CN&quot;&gt;Contains&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;input type&#x3D;&quot;{{inputType}}&quot; class&#x3D;&quot;clr-col-md-12 v{{index}}&quot;&gt;
+          &lt;/td&gt;
+          &lt;td&gt;
+            &lt;div style&#x3D;&quot;margin-top:-8px;&quot; *ngIf&#x3D;&quot;criteriaList.length-1&#x3D;&#x3D;&#x3D;index&quot;&gt;
+
+              &lt;button class&#x3D;&quot;btn btn-danger btn-sm clr-col-md-12 b{{index}}&quot; (click)&#x3D;&quot;removeLast($event)&quot;&gt;remove last
+                criterion &lt;clr-icon shape&#x3D;&quot;times-circle&quot;&gt;&lt;/clr-icon&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;hr&gt;
+    &lt;h4&gt;Search Result&lt;/h4&gt;
+    &lt;table class&#x3D;&quot;table table-bordered table-primary&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Reservation Number&lt;/th&gt;
+          &lt;th&gt;Book On&lt;/th&gt;
+          &lt;th&gt;Arrival&lt;/th&gt;
+          &lt;th&gt;Departure&lt;/th&gt;
+          &lt;th&gt;Number Of Night&lt;/th&gt;
+          &lt;th&gt;Total&lt;/th&gt;
+          &lt;th&gt;Paid&lt;/th&gt;
+          &lt;th&gt;Balance&lt;/th&gt;
+          &lt;th&gt;On Discount&lt;/th&gt;
+          &lt;th&gt;Status&lt;/th&gt;
+          &lt;th&gt;Tools&lt;/th&gt;
+
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr *ngFor&#x3D;&quot;let d of reservations&quot;&gt;
+          &lt;td&gt;&lt;span class&#x3D;&quot;label label-info&quot;&gt;{{d.reservation_number}} &lt;/span&gt; &lt;/td&gt;
+
+          &lt;td&gt;{{d.book_on | date:&#x27;short&#x27;}}&lt;/td&gt;
+          &lt;td&gt;{{d.arrival | date:&#x27;short&#x27;}}&lt;/td&gt;
+          &lt;td&gt;{{d.departure | date:&#x27;short&#x27;}}&lt;/td&gt;
+          &lt;td&gt;{{d.num_of_night}}&lt;/td&gt;
+          &lt;td *ngIf&#x3D;&quot;d.apply_discount&#x3D;&#x3D;&#x3D;0&quot;&gt;{{d.total_booking  | number:&#x27;.2&#x27;}}&lt;/td&gt;
+          &lt;td *ngIf&#x3D;&quot;d.apply_discount&#x3D;&#x3D;&#x3D;1&quot;&gt;{{d.total_amount_with_discount  | number:&#x27;.2&#x27;}} &lt;br&gt; 
+            &lt;span style&#x3D;&quot;font-size:0.8em!important;color:red;&quot;&gt; &lt;strike&gt;{{d.total_booking  | number:&#x27;.2&#x27;}}&lt;/strike&gt;
+            &lt;/span&gt;
+          &lt;/td&gt;
+          &lt;td&gt;{{d.amount_paid | number:&#x27;.2&#x27;}}&lt;/td&gt;
+          &lt;td&gt;{{d.balance | number:&#x27;.2&#x27;}}&lt;/td&gt;
+          &lt;td [innerHTML]&#x3D;&quot;getDiscountStatus(d.apply_discount, d)&quot;&gt; &lt;/td&gt;
+          &lt;td [innerHTML]&#x3D;&quot;getReservationStatus(d.reservation_status)&quot;&gt;&lt;/td&gt;
+          &lt;td &gt; &lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; (click)&#x3D;&quot;onCheckInClicked(d)&quot;&gt;Check In &lt;/button&gt;
+                &lt;button *ngIf&#x3D;&quot;checkPaymentVisibility(d.payment_status)&quot; button class&#x3D;&quot;btn btn-danger btn-sm&quot;&gt;Print Invoice&lt;/button&gt;
+          &lt;/td&gt;
+
+        &lt;/tr&gt;
+
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;clr-col-md-1&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;clr-wizard #wizardxl [(clrWizardOpen)]&#x3D;&quot;open_wizard&quot;&gt;
+  &lt;clr-wizard-title&gt;Reservation Check In&lt;/clr-wizard-title&gt;
+
+  &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;cancel&#x27;&quot;&gt;Cancel&lt;/clr-wizard-button&gt;
+  &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;previous&#x27;&quot;&gt;Back&lt;/clr-wizard-button&gt;
+  &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;next&#x27;&quot;&gt;Next&lt;/clr-wizard-button&gt;
+  &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;finish&#x27;&quot; (click)&#x3D;&quot;onFinish()&quot;&gt;Finish&lt;/clr-wizard-button&gt;
+
+
+  &lt;clr-wizard-page #page1&gt;
+    &lt;ng-template clrPageTitle&gt;Reservation Details&lt;/ng-template&gt;
+    &lt;ng-template clrPageNavTitle&gt;Reservation&lt;/ng-template&gt;
+
+    &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+      &lt;div class&#x3D;&quot;clr-col-md-12&quot;&gt;
+
+        &lt;h5&gt;Reservation Summary&lt;/h5&gt;
+        &lt;span *ngIf&#x3D;&quot;loadingReservation&quot; class&#x3D;&quot;spinner  spinner-md&quot; style&#x3D;&quot;margin-left:50px; margin-top:-80px;&quot;&gt;&lt;/span&gt;
+        &lt;table class&#x3D;&quot;table&quot; *ngIf&#x3D;&quot;selectedReservation&quot; style&#x3D;&quot;margin-top:-3px;&quot;&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;th&gt;
+                Reservation Number
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.reservation_number}}&lt;/td&gt;
+              &lt;th&gt;
+                Reservation Status
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.reservation_status}}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;th&gt;
+                Booked On
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.book_on | date:&#x27;longDate&#x27;}}&lt;/td&gt;
+              &lt;th&gt;
+                Booked By
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.book_by}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;th&gt;
+                Arrival Date
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.arrival | date:&#x27;longDate&#x27;}}&lt;/td&gt;
+              &lt;th&gt;
+                Arrival Time
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.arrival_time}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;th&gt;
+                Departure Date
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.departure | date:&#x27;longDate&#x27;}}&lt;/td&gt;
+              &lt;th&gt;
+                Departure Time
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.departure_time}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+
+
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;clr-col-md-12&quot;&gt;
+        &lt;h5&gt;Account Summary&lt;/h5&gt;
+
+        &lt;span *ngIf&#x3D;&quot;loadingAccount&quot; class&#x3D;&quot;spinner  spinner-md&quot; style&#x3D;&quot;margin-left:50px; margin-top:180px;&quot;&gt;&lt;/span&gt;
+
+        &lt;table class&#x3D;&quot;table&quot; *ngIf&#x3D;&quot;selectedReservation.accounts_&quot; style&#x3D;&quot;margin-top:-3px;&quot;&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;th&gt;
+                Account Number
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.account_number}}&lt;/td&gt;
+              &lt;th&gt;
+                Account Name
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.first_name}} {{selectedReservation.accounts_.last_name}}&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;th&gt;
+                Credit Limit
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.credit_limit}}&lt;/td&gt;
+              &lt;th&gt;
+                Email Address
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.email}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;th&gt;
+                Address
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.address1}} , {{selectedReservation.accounts_.address2}}&lt;/td&gt;
+              &lt;th&gt;
+                City
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.city}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;th&gt;
+                Postal Code
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.postal_code}}&lt;/td&gt;
+              &lt;th&gt;
+                Phone Number
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.phone}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;th&gt;
+                State
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.state}}&lt;/td&gt;
+              &lt;th&gt;
+                Country
+              &lt;/th&gt;
+              &lt;td&gt;{{selectedReservation.accounts_.country}}&lt;/td&gt;
+            &lt;/tr&gt;
+
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/clr-wizard-page&gt;
+
+
+
+  &lt;clr-wizard-page #page2&gt;
+    &lt;ng-template clrPageTitle&gt;Reserved Rooms&lt;/ng-template&gt;
+    &lt;ng-template clrPageNavTitle&gt;Rooms&lt;/ng-template&gt;
+
+    &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+      &lt;div class&#x3D;&quot;clr-col-md-12&quot;&gt;
+
+        &lt;h5&gt;Reserved Rooms&lt;/h5&gt;
+
+        &lt;table class&#x3D;&quot;table table-bordered table-responsive&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th&gt;&lt;/th&gt;
+              &lt;th&gt;Serial Number&lt;/th&gt;
+              &lt;th&gt;Room Type&lt;/th&gt;
+              &lt;th&gt;Room Name&lt;/th&gt;
+              &lt;th&gt;Extra Adult&lt;/th&gt;
+              &lt;th&gt;Extra Child&lt;/th&gt;
+              &lt;th&gt;Owner&lt;/th&gt;
+              &lt;th&gt;Total Charges&lt;/th&gt;
+              &lt;th&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr *ngFor&#x3D;&quot;let room of selectedReservation.reserved_rooms&quot;&gt;
+              &lt;td&gt;
+                &lt;clr-icon shape&#x3D;&quot;home&quot; class&#x3D;&quot;is-solid&quot;&gt;&lt;/clr-icon&gt;
+              &lt;/td&gt;
+              &lt;td&gt;{{room.serial_number}}&lt;/td&gt;
+              &lt;td&gt; {{room.room_type_name}}&lt;/td&gt;
+              &lt;td&gt; {{room.room_name}} &lt;/td&gt;
+              &lt;td&gt; &lt;input type&#x3D;&quot;number&quot; value&#x3D;&quot;{{room.num_of_adult}}&quot; style&#x3D;&quot;width:50px!important;&quot; readonly class&#x3D;&quot;r{{room.id}}&quot;
+                  (change)&#x3D;&quot;onNumberOfAdultChange($event,room)&quot;&gt; &lt;/td&gt;
+              &lt;td&gt; &lt;input type&#x3D;&quot;number&quot; value&#x3D;&quot;{{room.num_of_children}}&quot; style&#x3D;&quot;width:50px!important;&quot; readonly class&#x3D;&quot;rr{{room.id}}&quot;
+                  (change)&#x3D;&quot;onNumberOfChildChange($event,room)&quot;&gt; &lt;/td&gt;
+              &lt;td&gt;
+                &lt;span *ngIf&#x3D;&quot;!room.transfer_owner&quot;&gt; {{room.original_owner}}&lt;/span&gt;
+                &lt;span *ngIf&#x3D;&quot;room.transfer_owner &amp;&amp; !room.transfer_mode&quot;&gt; {{room.transfer_owner}}&lt;/span&gt;
+
+                &lt;ng-select *ngIf&#x3D;&quot;room.transfer_mode&quot; [items]&#x3D;&quot;account_list&quot; bindLabel&#x3D;&quot;fullname&quot; bindValue&#x3D;&quot;id&quot;
+                  [(ngModel)]&#x3D;&quot;selected_account&quot; style&#x3D;&quot;width:150px!important;&quot; (change)&#x3D;&quot;onRoomOwnerChanged($event,room)&quot;&gt;
+                &lt;/ng-select&gt;
+
+
+              &lt;/td&gt;
+              &lt;td style&#x3D;&quot;font-size:10px!important;&quot;&gt;{{getTotalReservation400(room.reservation_transaction)[0].total |
+                number:&#x27;.2&#x27;}}&lt;/td&gt;
+              &lt;td&gt;
+                &lt;clr-button-group class&#x3D;&quot;btn-primary btn-sm&quot;&gt;
+                  &lt;clr-button [clrInMenu]&#x3D;&quot;true&quot; class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;onEditReserved_Room(room)&quot;&gt;Edit&lt;/clr-button&gt;
+                  &lt;clr-button [clrInMenu]&#x3D;&quot;true&quot; class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;onTransferMode(room)&quot;&gt;Change Owner&lt;/clr-button&gt;
+                  &lt;clr-button [clrInMenu]&#x3D;&quot;true&quot; class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;&quot;onDeleteReservation(room.id)&quot;&gt;Delete&lt;/clr-button&gt;
+                &lt;/clr-button-group&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+
+
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/clr-wizard-page&gt;
+
+
+
+   &lt;clr-wizard-page [clrWizardPageNextDisabled]&#x3D;&quot;!paymentForm.valid&quot;  (clrWizardPageCustomButton)&#x3D;&quot;doCustomClick($event)&quot;&gt;
+      &lt;ng-template clrPageTitle&gt;Reservation Payment&lt;/ng-template&gt;
+      &lt;ng-template clrPageNavTitle&gt;Make Payment&lt;/ng-template&gt;
+  
+      &lt;form [formGroup]&#x3D;&quot;paymentForm&quot; class&#x3D;&quot;clr-form clr-form-horizontal&quot; #formPageTwo&#x3D;&quot;ngForm&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;div class&#x3D;&quot;clr-col-md-12&quot;&gt;
+  
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                &lt;div style&#x3D;&quot;width:770px; height:120px; background:url(assets/images/payments.png)&quot;&gt;&lt;/div&gt;
+              &lt;/div&gt;
+  
+            &lt;/div&gt;
+  
+            &lt;h4&gt;Select your payment method.&lt;/h4&gt;
+  
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Payment Methods&lt;/label&gt;
+                  &lt;select formControlName&#x3D;&quot;payment_method&quot; clrInput  (change)&#x3D;&quot;onPaymentMethodChange($event)&quot;&gt;
+
+                    &lt;option value&#x3D;&quot;Cash&quot; &gt;Cash&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;Cheque&quot; &gt;Cheque&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;Transfer&quot; &gt;Transfer&lt;/option&gt;
+                    &lt;option value&#x3D;&quot;Credit Card&quot; &gt;Credit Card&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Total Amount&lt;/label&gt;
+                  &lt;input clrInput type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;total_amount&quot;   readonly /&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Amount&lt;/label&gt;
+                  &lt;input clrInput type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;amount&quot; #amount
+                  (keyup.enter)&#x3D;&quot;onAmountLeave(amount.value)&quot;
+                  (blur)&#x3D;&quot;onAmountLeave(amount.value)&quot;/&gt;
+                  &lt;clr-control-error&gt;Amount cannot be empty.&lt;/clr-control-error&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Balance&lt;/label&gt;
+                  &lt;input clrInput type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;balance&quot;  readonly/&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+  
+  
+            &lt;div class&#x3D;&quot;row&quot;  *ngIf&#x3D;&quot;isCheque&quot;&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Cheque Number&lt;/label&gt;
+                  &lt;input clrInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;cheque&quot; /&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Account Number&lt;/label&gt;
+                  &lt;input clrInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;account_number&quot; /&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                &lt;clr-input-container&gt;
+                  &lt;label&gt;Bank Name&lt;/label&gt;
+                  &lt;input clrInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;bank_name&quot; /&gt;
+                &lt;/clr-input-container&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;clr-col-md-6&quot;&gt;
+                  &lt;clr-input-container&gt;
+                    &lt;label&gt;Branch Name&lt;/label&gt;
+                    &lt;input clrInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;branch_name&quot; /&gt;
+                  &lt;/clr-input-container&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+  
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;clr-col-12&quot;&gt;
+                    &lt;h3&gt;Apply Discount &lt;input type&#x3D;&quot;checkbox&quot;  (change)&#x3D;&quot;onDiscountChange($event)&quot; formControlName&#x3D;&quot;apply_discount&quot;&gt; &lt;/h3&gt;
+                  &lt;/div&gt;
+            &lt;/div&gt;
+  
+        
+  
+  
+  
+  
+  
+  
+          &lt;/div&gt;
+  
+        &lt;/div&gt;
+      &lt;/form&gt;
+  
+  
+      &lt;ng-template clrPageButtons&gt;
+          &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;cancel&#x27;&quot;&gt;Cancel&lt;/clr-wizard-button&gt;
+          &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;custom-previous&#x27;&quot;&gt;Back&lt;/clr-wizard-button&gt;
+          &lt;clr-wizard-button [type]&#x3D;&quot;&#x27;custom-danger&#x27;&quot;&gt;Post Payment&lt;/clr-wizard-button&gt;
+      &lt;/ng-template&gt;
+    &lt;/clr-wizard-page&gt;
+
+
+
+&lt;/clr-wizard&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./checkin.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="clr-row">  <div class="clr-col-md-1"></div>  <div class="clr-col-md-10">    <h2 style="margin-top:5px!important;" class="label label-primary">Check In - Search Panel</h2>    <table class="table">      <thead>        <th>Search Field</th>        <th>Search Condition</th>        <th>Value</th>        <th>Action</th>      </thead>      <tbody>        <tr>          <td>            <select class="clr-col-md-12 ss0" (change)="onSearchFieldChange($event)">              <option value="select">--select--</option>              <option value="reservation_number|text">Reservation Number</option>              <option value="book_on|date">Booked On</option>              <option value="arrival|date">Arrival Date</option>              <option value="departure|date">Departure Date</option>              <option value="reservation_status|text">Reservation Status</option>            </select>          </td>          <td>            <select class="clr-col-md-12  cc0">              <option value="=">Equels To</option>              <option value=">">Greater Than</option>              <option value=">=">Greater Than Or equeals To</option>              <option value="<">Less Than</option>              <option value="<=">Less Than Or equeals To</option>              <option value="CN">Contains</option>            </select>          </td>          <td>            <input type="{{inputType}}" class="clr-col-md-12 vv0">          </td>          <td>            <div style="margin-top:-8px;">              <button class="btn btn-dark btn-sm" (click)="onReservationSearch($event)">Search<clr-icon shape="search"></clr-icon>              </button>              <button class="btn btn-success btn-sm" (click)="addCriterion($event)">add criterion<clr-icon shape="plus-circle"></clr-icon>              </button>            </div>          </td>        </tr>        <tr *ngFor="let g of criteriaList; let  index=index;">          <td>            <select class="clr-col-md-12 s{{index}}" (change)="onSearchFieldChange2($event)">              <option value="select">--select--</option>              <option value="reservation_number|number|{{index}}">Reservation Number</option>              <option value="book_on|date|{{index}}">Booked On</option>              <option value="arrival|date|{{index}}">Arrival Date</option>              <option value="departure|date|{{index}}">Departure Date</option>              <option value="reservation_status|text|{{index}}">Reservation Status</option>            </select>          </td>          <td>            <select class="clr-col-md-12 c{{index}}">              <option value="=">Equels To</option>              <option value=">">Greater Than</option>              <option value=">=">Greater Than Or equeals To</option>              <option value="<">Less Than</option>              <option value="<=">Less Than Or equeals To</option>              <option value="CN">Contains</option>            </select>          </td>          <td>            <input type="{{inputType}}" class="clr-col-md-12 v{{index}}">          </td>          <td>            <div style="margin-top:-8px;" *ngIf="criteriaList.length-1===index">              <button class="btn btn-danger btn-sm clr-col-md-12 b{{index}}" (click)="removeLast($event)">remove last                criterion <clr-icon shape="times-circle"></clr-icon>              </button>            </div>          </td>        </tr>      </tbody>    </table>    <hr>    <h4>Search Result</h4>    <table class="table table-bordered table-primary">      <thead>        <tr>          <th>Reservation Number</th>          <th>Book On</th>          <th>Arrival</th>          <th>Departure</th>          <th>Number Of Night</th>          <th>Total</th>          <th>Paid</th>          <th>Balance</th>          <th>On Discount</th>          <th>Status</th>          <th>Tools</th>        </tr>      </thead>      <tbody>        <tr *ngFor="let d of reservations">          <td><span class="label label-info">{{d.reservation_number}} </span> </td>          <td>{{d.book_on | date:\'short\'}}</td>          <td>{{d.arrival | date:\'short\'}}</td>          <td>{{d.departure | date:\'short\'}}</td>          <td>{{d.num_of_night}}</td>          <td *ngIf="d.apply_discount===0">{{d.total_booking  | number:\'.2\'}}</td>          <td *ngIf="d.apply_discount===1">{{d.total_amount_with_discount  | number:\'.2\'}} <br>             <span style="font-size:0.8em!important;color:red;"> <strike>{{d.total_booking  | number:\'.2\'}}</strike>            </span>          </td>          <td>{{d.amount_paid | number:\'.2\'}}</td>          <td>{{d.balance | number:\'.2\'}}</td>          <td [innerHTML]="getDiscountStatus(d.apply_discount, d)"> </td>          <td [innerHTML]="getReservationStatus(d.reservation_status)"></td>          <td > <button class="btn btn-sm btn-primary" (click)="onCheckInClicked(d)">Check In </button>                <button *ngIf="checkPaymentVisibility(d.payment_status)" button class="btn btn-danger btn-sm">Print Invoice</button>          </td>        </tr>      </tbody>    </table>  </div>  <div class="clr-col-md-1"></div></div><clr-wizard #wizardxl [(clrWizardOpen)]="open_wizard">  <clr-wizard-title>Reservation Check In</clr-wizard-title>  <clr-wizard-button [type]="\'cancel\'">Cancel</clr-wizard-button>  <clr-wizard-button [type]="\'previous\'">Back</clr-wizard-button>  <clr-wizard-button [type]="\'next\'">Next</clr-wizard-button>  <clr-wizard-button [type]="\'finish\'" (click)="onFinish()">Finish</clr-wizard-button>  <clr-wizard-page #page1>    <ng-template clrPageTitle>Reservation Details</ng-template>    <ng-template clrPageNavTitle>Reservation</ng-template>    <div class="clr-row">      <div class="clr-col-md-12">        <h5>Reservation Summary</h5>        <span *ngIf="loadingReservation" class="spinner  spinner-md" style="margin-left:50px; margin-top:-80px;"></span>        <table class="table" *ngIf="selectedReservation" style="margin-top:-3px;">          <tbody>            <tr>              <th>                Reservation Number              </th>              <td>{{selectedReservation.reservation_number}}</td>              <th>                Reservation Status              </th>              <td>{{selectedReservation.reservation_status}}</td>            </tr>            <tr>              <th>                Booked On              </th>              <td>{{selectedReservation.book_on | date:\'longDate\'}}</td>              <th>                Booked By              </th>              <td>{{selectedReservation.book_by}}</td>            </tr>            <tr>              <th>                Arrival Date              </th>              <td>{{selectedReservation.arrival | date:\'longDate\'}}</td>              <th>                Arrival Time              </th>              <td>{{selectedReservation.arrival_time}}</td>            </tr>            <tr>              <th>                Departure Date              </th>              <td>{{selectedReservation.departure | date:\'longDate\'}}</td>              <th>                Departure Time              </th>              <td>{{selectedReservation.departure_time}}</td>            </tr>          </tbody>        </table>      </div>      <div class="clr-col-md-12">        <h5>Account Summary</h5>        <span *ngIf="loadingAccount" class="spinner  spinner-md" style="margin-left:50px; margin-top:180px;"></span>        <table class="table" *ngIf="selectedReservation.accounts_" style="margin-top:-3px;">          <tbody>            <tr>              <th>                Account Number              </th>              <td>{{selectedReservation.accounts_.account_number}}</td>              <th>                Account Name              </th>              <td>{{selectedReservation.accounts_.first_name}} {{selectedReservation.accounts_.last_name}}</td>            </tr>            <tr>              <th>                Credit Limit              </th>              <td>{{selectedReservation.accounts_.credit_limit}}</td>              <th>                Email Address              </th>              <td>{{selectedReservation.accounts_.email}}</td>            </tr>            <tr>              <th>                Address              </th>              <td>{{selectedReservation.accounts_.address1}} , {{selectedReservation.accounts_.address2}}</td>              <th>                City              </th>              <td>{{selectedReservation.accounts_.city}}</td>            </tr>            <tr>              <th>                Postal Code              </th>              <td>{{selectedReservation.accounts_.postal_code}}</td>              <th>                Phone Number              </th>              <td>{{selectedReservation.accounts_.phone}}</td>            </tr>            <tr>              <th>                State              </th>              <td>{{selectedReservation.accounts_.state}}</td>              <th>                Country              </th>              <td>{{selectedReservation.accounts_.country}}</td>            </tr>          </tbody>        </table>      </div>    </div>  </clr-wizard-page>  <clr-wizard-page #page2>    <ng-template clrPageTitle>Reserved Rooms</ng-template>    <ng-template clrPageNavTitle>Rooms</ng-template>    <div class="clr-row">      <div class="clr-col-md-12">        <h5>Reserved Rooms</h5>        <table class="table table-bordered table-responsive">          <thead>            <tr>              <th></th>              <th>Serial Number</th>              <th>Room Type</th>              <th>Room Name</th>              <th>Extra Adult</th>              <th>Extra Child</th>              <th>Owner</th>              <th>Total Charges</th>              <th></th>            </tr>          </thead>          <tbody>            <tr *ngFor="let room of selectedReservation.reserved_rooms">              <td>                <clr-icon shape="home" class="is-solid"></clr-icon>              </td>              <td>{{room.serial_number}}</td>              <td> {{room.room_type_name}}</td>              <td> {{room.room_name}} </td>              <td> <input type="number" value="{{room.num_of_adult}}" style="width:50px!important;" readonly class="r{{room.id}}"                  (change)="onNumberOfAdultChange($event,room)"> </td>              <td> <input type="number" value="{{room.num_of_children}}" style="width:50px!important;" readonly class="rr{{room.id}}"                  (change)="onNumberOfChildChange($event,room)"> </td>              <td>                <span *ngIf="!room.transfer_owner"> {{room.original_owner}}</span>                <span *ngIf="room.transfer_owner && !room.transfer_mode"> {{room.transfer_owner}}</span>                <ng-select *ngIf="room.transfer_mode" [items]="account_list" bindLabel="fullname" bindValue="id"                  [(ngModel)]="selected_account" style="width:150px!important;" (change)="onRoomOwnerChanged($event,room)">                </ng-select>              </td>              <td style="font-size:10px!important;">{{getTotalReservation400(room.reservation_transaction)[0].total |                number:\'.2\'}}</td>              <td>                <clr-button-group class="btn-primary btn-sm">                  <clr-button [clrInMenu]="true" class="btn" (click)="onEditReserved_Room(room)">Edit</clr-button>                  <clr-button [clrInMenu]="true" class="btn btn-success" (click)="onTransferMode(room)">Change Owner</clr-button>                  <clr-button [clrInMenu]="true" class="btn btn-danger" (click)="onDeleteReservation(room.id)">Delete</clr-button>                </clr-button-group>              </td>            </tr>          </tbody>        </table>      </div>    </div>  </clr-wizard-page>   <clr-wizard-page [clrWizardPageNextDisabled]="!paymentForm.valid"  (clrWizardPageCustomButton)="doCustomClick($event)">      <ng-template clrPageTitle>Reservation Payment</ng-template>      <ng-template clrPageNavTitle>Make Payment</ng-template>        <form [formGroup]="paymentForm" class="clr-form clr-form-horizontal" #formPageTwo="ngForm">        <div class="row">          <div class="clr-col-md-12">              <div class="row">              <div class="col-md-12">                <div style="width:770px; height:120px; background:url(assets/images/payments.png)"></div>              </div>              </div>              <h4>Select your payment method.</h4>              <div class="row">              <div class="clr-col-md-6">                <clr-input-container>                  <label>Payment Methods</label>                  <select formControlName="payment_method" clrInput  (change)="onPaymentMethodChange($event)">                    <option value="Cash" >Cash</option>                    <option value="Cheque" >Cheque</option>                    <option value="Transfer" >Transfer</option>                    <option value="Credit Card" >Credit Card</option>                  </select>                </clr-input-container>              </div>              <div class="clr-col-md-6">                <clr-input-container>                  <label>Total Amount</label>                  <input clrInput type="number" formControlName="total_amount"   readonly />                </clr-input-container>              </div>            </div>              <div class="row">              <div class="clr-col-md-6">                <clr-input-container>                  <label>Amount</label>                  <input clrInput type="number" formControlName="amount" #amount                  (keyup.enter)="onAmountLeave(amount.value)"                  (blur)="onAmountLeave(amount.value)"/>                  <clr-control-error>Amount cannot be empty.</clr-control-error>                </clr-input-container>              </div>              <div class="clr-col-md-6">                <clr-input-container>                  <label>Balance</label>                  <input clrInput type="number" formControlName="balance"  readonly/>                </clr-input-container>              </div>            </div>                <div class="row"  *ngIf="isCheque">              <div class="clr-col-md-6">                <clr-input-container>                  <label>Cheque Number</label>                  <input clrInput type="text" formControlName="cheque" />                </clr-input-container>              </div>              <div class="clr-col-md-6">                <clr-input-container>                  <label>Account Number</label>                  <input clrInput type="text" formControlName="account_number" />                </clr-input-container>              </div>              <div class="clr-col-md-6">                <clr-input-container>                  <label>Bank Name</label>                  <input clrInput type="text" formControlName="bank_name" />                </clr-input-container>              </div>              <div class="clr-col-md-6">                  <clr-input-container>                    <label>Branch Name</label>                    <input clrInput type="text" formControlName="branch_name" />                  </clr-input-container>                </div>            </div>              <div class="row">                <div class="clr-col-12">                    <h3>Apply Discount <input type="checkbox"  (change)="onDiscountChange($event)" formControlName="apply_discount"> </h3>                  </div>            </div>                                </div>          </div>      </form>          <ng-template clrPageButtons>          <clr-wizard-button [type]="\'cancel\'">Cancel</clr-wizard-button>          <clr-wizard-button [type]="\'custom-previous\'">Back</clr-wizard-button>          <clr-wizard-button [type]="\'custom-danger\'">Post Payment</clr-wizard-button>      </ng-template>    </clr-wizard-page></clr-wizard></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArrivalListComponent', 'selector': 'app-arrival-list'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BookingListComponent', 'selector': 'app-booking-list'},{'name': 'BookStatusComponent', 'selector': 'app-book-status'},{'name': 'CheckinComponent', 'selector': 'app-checkin'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DateBarComponent', 'selector': 'app-date-bar'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'GuestDataBaseComponent', 'selector': 'app-guest-data-base'},{'name': 'GuestLedgerComponent', 'selector': 'app-guest-ledger'},{'name': 'GuestMessageComponent', 'selector': 'app-guest-message'},{'name': 'GuestProfileComponent', 'selector': 'app-guest-profile'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HotelWalkinComponent', 'selector': 'app-hotel-walkin'},{'name': 'MainDashboardComponent', 'selector': 'app-main-dashboard'},{'name': 'NewBookingComponent', 'selector': 'app-new-booking'},{'name': 'OutOfOrderComponent', 'selector': 'app-out-of-order'},{'name': 'ReservationComponent', 'selector': 'app-reservation'},{'name': 'ReservationListComponent', 'selector': 'app-reservation-list'},{'name': 'RoomLookUpComponent', 'selector': 'app-room-look-up'},{'name': 'RoomStatusComponent', 'selector': 'app-room-status'},{'name': 'SchedularComponent', 'selector': 'app-schedular'},{'name': 'SummaryBarComponent', 'selector': 'app-summary-bar'},{'name': 'TickerComponent', 'selector': 'app-ticker'},{'name': 'WalkinComponent', 'selector': 'app-walkin'}];
+    var DIRECTIVES = [{'name': 'CardHoverDirective', 'selector': '[appCardHover]'}];
+    var ACTUAL_COMPONENT = {'name': 'CheckinComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CheckinComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

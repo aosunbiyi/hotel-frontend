@@ -31,6 +31,8 @@ export class CheckinComponent implements OnInit {
   isCheque = false;
   applyDiscount = false;
   discountList = [];
+  onCheckinMode = false;
+  checkinReservation = null;
 
 
   constructor(private elementRef: ElementRef,
@@ -147,7 +149,9 @@ export class CheckinComponent implements OnInit {
     this.search_data = this.optionList;
     this.reservationsService.searchReservationWithParam(this.optionList).subscribe(data => {
       this.reservations = data;
-      console.log(data);
+      this.reservations.forEach(function (r) {
+        r.reservation_payments = lodash.orderBy(r.reservation_payments, ['id'], ['asc']);
+      });
     });
 
   }
@@ -166,7 +170,7 @@ export class CheckinComponent implements OnInit {
     this.refresh();
   }
 
-  onCheckInClicked(reservation) {
+  onPaymentCliked(reservation) {
 
     this.paymentForm.setValue({
       payment_method: '',
@@ -377,7 +381,7 @@ export class CheckinComponent implements OnInit {
 
   getDiscountStatus(onDiscount, sl) {
     if (onDiscount === 1) {
-      return '<a  class="label label-purple clickable">Yes<span class="badge">' + sl.discount_amount + '</span></a>';
+      return '<a  class="label label-purple clickable">Yes<span class="badge">' + sl.discount_value + '</span></a>';
     } else {
       return '<span class="label label-warning">No</span>';
     }
@@ -398,6 +402,37 @@ export class CheckinComponent implements OnInit {
       return true;
     } else {
       return false;
+    }
+  }
+  checkPaymentCheckinVisibility(res) {
+    const reservation_status = res.reservation_status;
+    const payment_status = res.payment_status;
+    if (reservation_status === 'Reserved' && payment_status === 'Completed') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  onCheckInClicked(data) {
+    this.checkinReservation = data;
+    this.onCheckinMode = true;
+    console.log(data);
+  }
+
+  onCheckInClicked2(data) {
+    const vm = this;
+    if (confirm('Are you sure you want to check in?') === true) {
+      const dt = {
+        id: data.id
+      };
+      this.reservationsService.checkin_reservation(dt).subscribe(function (result) {
+        console.log(result.data);
+        alert(result.data);
+        vm.checkinReservation = null;
+        vm.onCheckinMode = false;
+        vm.refresh();
+      });
     }
   }
 

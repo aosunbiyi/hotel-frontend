@@ -1,0 +1,2219 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>hotel-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">hotel-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>GuestProfileComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Components/guest-profile/guest-profile.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-guest-profile</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./guest-profile.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./guest-profile.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#canEdit">canEdit</a>
+                            </li>
+                            <li>
+                                <a href="#guestFilter">guestFilter</a>
+                            </li>
+                            <li>
+                                <a href="#guests">guests</a>
+                            </li>
+                            <li>
+                                <a href="#isPersonalInfoOpened">isPersonalInfoOpened</a>
+                            </li>
+                            <li>
+                                <a href="#isPersonalInfoOpened2">isPersonalInfoOpened2</a>
+                            </li>
+                            <li>
+                                <a href="#isPersonalInfoOpened3">isPersonalInfoOpened3</a>
+                            </li>
+                            <li>
+                                <a href="#isPersonalInfoOpened4">isPersonalInfoOpened4</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onEdit">onEdit</a>
+                            </li>
+                            <li>
+                                <a href="#togglePersonalInfoOpened">togglePersonalInfoOpened</a>
+                            </li>
+                            <li>
+                                <a href="#togglePersonalInfoOpened2">togglePersonalInfoOpened2</a>
+                            </li>
+                            <li>
+                                <a href="#togglePersonalInfoOpened3">togglePersonalInfoOpened3</a>
+                            </li>
+                            <li>
+                                <a href="#togglePersonalInfoOpened4">togglePersonalInfoOpened4</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onEdit"></a>
+                        <span class="name">
+                            <b>
+                            onEdit
+                            </b>
+                            <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onEdit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="togglePersonalInfoOpened"></a>
+                        <span class="name">
+                            <b>
+                            togglePersonalInfoOpened
+                            </b>
+                            <a href="#togglePersonalInfoOpened"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>togglePersonalInfoOpened()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="togglePersonalInfoOpened2"></a>
+                        <span class="name">
+                            <b>
+                            togglePersonalInfoOpened2
+                            </b>
+                            <a href="#togglePersonalInfoOpened2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>togglePersonalInfoOpened2()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="togglePersonalInfoOpened3"></a>
+                        <span class="name">
+                            <b>
+                            togglePersonalInfoOpened3
+                            </b>
+                            <a href="#togglePersonalInfoOpened3"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>togglePersonalInfoOpened3()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="togglePersonalInfoOpened4"></a>
+                        <span class="name">
+                            <b>
+                            togglePersonalInfoOpened4
+                            </b>
+                            <a href="#togglePersonalInfoOpened4"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>togglePersonalInfoOpened4()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:81</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canEdit"></a>
+                        <span class="name">
+                            <b>
+                            canEdit
+                            </b>
+                            <a href="#canEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>canEdit:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="guestFilter"></a>
+                        <span class="name">
+                            <b>
+                            guestFilter
+                            </b>
+                            <a href="#guestFilter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>guestFilter:     <code><a href="../interfaces/Guest.html" target="_self" >GuestFilter</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Guest.html" target="_self" >GuestFilter</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new GuestFilter()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="guests"></a>
+                        <span class="name">
+                            <b>
+                            guests
+                            </b>
+                            <a href="#guests"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>guests:     <code><a href="../interfaces/Guest.html" target="_self" >Guest[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Guest.html" target="_self" >Guest[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    {
+      id: 1, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 2, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 3, guestName: &#x27;ben king&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;hotel.com&#x27;, email: &#x27;ben@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 4, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 5, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 6, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 7, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPersonalInfoOpened"></a>
+                        <span class="name">
+                            <b>
+                            isPersonalInfoOpened
+                            </b>
+                            <a href="#isPersonalInfoOpened"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isPersonalInfoOpened:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPersonalInfoOpened2"></a>
+                        <span class="name">
+                            <b>
+                            isPersonalInfoOpened2
+                            </b>
+                            <a href="#isPersonalInfoOpened2"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isPersonalInfoOpened2:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPersonalInfoOpened3"></a>
+                        <span class="name">
+                            <b>
+                            isPersonalInfoOpened3
+                            </b>
+                            <a href="#isPersonalInfoOpened3"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isPersonalInfoOpened3:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPersonalInfoOpened4"></a>
+                        <span class="name">
+                            <b>
+                            isPersonalInfoOpened4
+                            </b>
+                            <a href="#isPersonalInfoOpened4"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isPersonalInfoOpened4:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/Components/guest-profile/guest-profile.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { ClrDatagridStringFilterInterface } from &#x27;@clr/angular&#x27;;
+
+class GuestFilter implements ClrDatagridStringFilterInterface&lt;Guest&gt; {
+  accepts(guest: Guest, search: string): boolean {
+    return guest.guestName.toLowerCase().indexOf(search) &gt;&#x3D; 0
+      || guest.country.toLowerCase().indexOf(search) &gt;&#x3D; 0
+      || guest.source.toLowerCase().indexOf(search) &gt;&#x3D; 0
+      || guest.email.toLowerCase().indexOf(search) &gt;&#x3D; 0
+      || guest.city.toLowerCase().indexOf(search) &gt;&#x3D; 0
+      || guest.phone.toLowerCase().indexOf(search) &gt;&#x3D; 0;
+  }
+}
+
+
+@Component({
+  selector: &#x27;app-guest-profile&#x27;,
+  templateUrl: &#x27;./guest-profile.component.html&#x27;,
+  styleUrls: [&#x27;./guest-profile.component.css&#x27;]
+})
+export class GuestProfileComponent implements OnInit {
+
+  isPersonalInfoOpened &#x3D; true;
+  isPersonalInfoOpened2 &#x3D; true;
+  isPersonalInfoOpened3 &#x3D; true;
+  isPersonalInfoOpened4 &#x3D; true;
+  guestFilter: GuestFilter &#x3D; new GuestFilter();
+  canEdit &#x3D; false;
+
+  guests: Guest[] &#x3D; [
+    {
+      id: 1, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 2, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 3, guestName: &#x27;ben king&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;hotel.com&#x27;, email: &#x27;ben@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 4, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 5, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 6, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+    {
+      id: 7, guestName: &#x27;fred amata&#x27;, country: &#x27;nigeria&#x27;, source: &#x27;booking.com&#x27;, email: &#x27;fred@mail.com&#x27;,
+      city: &#x27;Lagos&#x27;, phone: &#x27;08174536789&#x27;
+    },
+  ];
+
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+
+  togglePersonalInfoOpened() {
+    this.isPersonalInfoOpened &#x3D; !this.isPersonalInfoOpened;
+  }
+
+  togglePersonalInfoOpened2() {
+    this.isPersonalInfoOpened2 &#x3D; !this.isPersonalInfoOpened2;
+  }
+
+  togglePersonalInfoOpened3() {
+    this.isPersonalInfoOpened3 &#x3D; !this.isPersonalInfoOpened3;
+  }
+
+  togglePersonalInfoOpened4() {
+    this.isPersonalInfoOpened4 &#x3D; !this.isPersonalInfoOpened4;
+  }
+
+  onEdit() {
+    this.canEdit &#x3D; true;
+  }
+
+
+
+
+}
+
+
+export interface Guest {
+  id: number;
+  guestName: string;
+  country: string;
+  source: string;
+  email: string;
+  city: string;
+  phone: string;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;clr-row&quot;&gt;
+  &lt;div class&#x3D;&quot;clr-col-3 left-container&quot;&gt;
+    &lt;div class&#x3D;&quot;filter&quot;&gt;
+      &lt;table class&#x3D;&quot;table&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th class&#x3D;&quot;left&quot;&gt;
+              &lt;input type&#x3D;&quot;checkbox&quot;&gt;
+            &lt;/th&gt;
+            &lt;th class&#x3D;&quot;left&quot;&gt;Filter By&lt;/th&gt;
+            &lt;th class&#x3D;&quot;left&quot;&gt;Value&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+
+
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+      &lt;div class&#x3D;&quot;right space90&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-default btn-sm&quot;&gt;Reset&lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn  btn-dark bspace btn-sm&quot;&gt;Search&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;filter200&quot;&gt;
+      &lt;div class&#x3D;&quot;top-bar1&quot;&gt;
+        &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+          &lt;div class&#x3D;&quot;clr-col-10&quot;&gt;
+            &lt;p class&#x3D;&quot;plabel&quot;&gt;
+              Search By Personal Information
+            &lt;/p&gt;
+
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;clr-col-1&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-icon btn-sm&quot; (click)&#x3D;&quot;togglePersonalInfoOpened()&quot;&gt;
+              &lt;clr-icon shape&#x3D;&quot;angle-double&quot;&gt;&lt;/clr-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;body-bar1&quot; [hidden]&#x3D;&quot;isPersonalInfoOpened&quot;&gt;
+        &lt;table class&#x3D;&quot;table  table-compact&quot;&gt;
+          &lt;tr&gt;
+            &lt;td colspan&#x3D;&quot;2&quot; class&#x3D;&quot;left&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Gender&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;2&quot;&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Select Gender&lt;/option&gt;
+                  &lt;option&gt;Male&lt;/option&gt;
+                  &lt;option&gt;Female&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td colspan&#x3D;&quot;2&quot; class&#x3D;&quot;left&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Marital Status&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;2&quot;&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Select Marital Status&lt;/option&gt;
+                  &lt;option&gt;Single &lt;/option&gt;
+                  &lt;option&gt;Married&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;Month&lt;/td&gt;
+            &lt;td&gt;Day&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;input type&#x3D;&quot;checkbox&quot;&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Birth date&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Jan&lt;/option&gt;
+                  &lt;option&gt;Feb&lt;/option&gt;
+
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Any&lt;/option&gt;
+                  &lt;option&gt;1&lt;/option&gt;
+
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;input type&#x3D;&quot;checkbox&quot;&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Aniniversiry&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Jan&lt;/option&gt;
+                  &lt;option&gt;Feb&lt;/option&gt;
+
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Any&lt;/option&gt;
+                  &lt;option&gt;1&lt;/option&gt;
+
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;filter200&quot;&gt;
+      &lt;div class&#x3D;&quot;top-bar1&quot;&gt;
+        &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+          &lt;div class&#x3D;&quot;clr-col-10&quot;&gt;
+            &lt;p class&#x3D;&quot;plabel&quot;&gt;
+              Search By Address Information
+            &lt;/p&gt;
+
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;clr-col-1&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-icon btn-sm&quot; (click)&#x3D;&quot;togglePersonalInfoOpened2()&quot;&gt;
+              &lt;clr-icon shape&#x3D;&quot;angle-double&quot;&gt;&lt;/clr-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;body-bar1&quot; [hidden]&#x3D;&quot;isPersonalInfoOpened2&quot;&gt;
+        &lt;table class&#x3D;&quot;table table-compact table-vertical&quot;&gt;
+          &lt;tr&gt;
+            &lt;td class&#x3D;&quot;left text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;City&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;drop&quot;&gt;
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;left text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;State&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;drop high&quot;&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Address&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;high&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Address2&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;high&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Country&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;select&gt;
+                &lt;option&gt;Select Country&lt;/option&gt;
+                &lt;option&gt;Male&lt;/option&gt;
+                &lt;option&gt;Female&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Zip Code&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;high&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+        &lt;/table&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;filter200&quot;&gt;
+      &lt;div class&#x3D;&quot;top-bar1&quot;&gt;
+        &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+          &lt;div class&#x3D;&quot;clr-col-10&quot;&gt;
+            &lt;p class&#x3D;&quot;plabel&quot;&gt;
+              Search By Identification Information
+            &lt;/p&gt;
+
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;clr-col-1&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-icon btn-sm&quot; (click)&#x3D;&quot;togglePersonalInfoOpened3()&quot;&gt;
+              &lt;clr-icon shape&#x3D;&quot;angle-double&quot;&gt;&lt;/clr-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;body-bar1&quot; [hidden]&#x3D;&quot;isPersonalInfoOpened3&quot;&gt;
+        &lt;table class&#x3D;&quot;table table-compact table-vertical&quot;&gt;
+
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Type&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Select ID Type&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;State&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;high&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Exp. Date&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;date&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Country&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;div class&#x3D;&quot;select&quot;&gt;
+                &lt;select&gt;
+                  &lt;option&gt;Select Country&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Number&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+        &lt;/table&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;filter200&quot;&gt;
+      &lt;div class&#x3D;&quot;top-bar1&quot;&gt;
+        &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+          &lt;div class&#x3D;&quot;clr-col-10&quot;&gt;
+            &lt;p class&#x3D;&quot;plabel&quot;&gt;
+              Search By Contact Information
+            &lt;/p&gt;
+
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;clr-col-1&quot;&gt;
+            &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-icon btn-sm&quot; (click)&#x3D;&quot;togglePersonalInfoOpened4()&quot;&gt;
+              &lt;clr-icon shape&#x3D;&quot;angle-double&quot;&gt;&lt;/clr-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;body-bar1&quot; [hidden]&#x3D;&quot;isPersonalInfoOpened4&quot;&gt;
+        &lt;table class&#x3D;&quot;table table-compact table-vertical&quot;&gt;
+
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Phone&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+
+              &lt;input type&#x3D;&quot;text&quot;&gt;
+
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+
+            &lt;td class&#x3D;&quot;text-drop&quot;&gt;
+              &lt;label for&#x3D;&quot;&quot;&gt;Email&lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td colspan&#x3D;&quot;3&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;high&quot;&gt;
+            &lt;/td&gt;
+
+          &lt;/tr&gt;
+
+
+
+
+        &lt;/table&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;clr-col-9&quot;&gt;
+
+    &lt;clr-datagrid style&#x3D;&quot; height:95%;&quot;&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;&lt;/clr-dg-column&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;Guest Name
+        &lt;clr-dg-string-filter [clrDgStringFilter]&#x3D;&quot;guestFilter&quot;&gt;&lt;/clr-dg-string-filter&gt;
+      &lt;/clr-dg-column&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;Country
+        &lt;clr-dg-string-filter [clrDgStringFilter]&#x3D;&quot;guestFilter&quot;&gt;&lt;/clr-dg-string-filter&gt;
+      &lt;/clr-dg-column&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;Source
+        &lt;clr-dg-string-filter [clrDgStringFilter]&#x3D;&quot;guestFilter&quot;&gt;&lt;/clr-dg-string-filter&gt;
+      &lt;/clr-dg-column&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;Email
+        &lt;clr-dg-string-filter [clrDgStringFilter]&#x3D;&quot;guestFilter&quot;&gt;&lt;/clr-dg-string-filter&gt;
+      &lt;/clr-dg-column&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;City
+        &lt;clr-dg-string-filter [clrDgStringFilter]&#x3D;&quot;guestFilter&quot;&gt;&lt;/clr-dg-string-filter&gt;
+      &lt;/clr-dg-column&gt;
+      &lt;clr-dg-column  [ngClass]&#x3D;&quot;{&#x27;header1&#x27;:true}&quot;&gt;Phone
+        &lt;clr-dg-string-filter [clrDgStringFilter]&#x3D;&quot;guestFilter&quot;&gt;&lt;/clr-dg-string-filter&gt;
+      &lt;/clr-dg-column&gt;
+
+      &lt;clr-dg-placeholder&gt;We couldn&#x27;t find any Guest!&lt;/clr-dg-placeholder&gt;
+
+      &lt;clr-dg-row *ngFor&#x3D;&quot;let g of guests; let  even&#x3D;even; let odd&#x3D;odd; trackBy: tracker&quot;&gt;
+        &lt;clr-dg-cell [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;
+          &lt;input type&#x3D;&quot;checkbox&quot;  &gt; &lt;/clr-dg-cell&gt;
+        &lt;clr-dg-cell  [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;{{g.guestName}}&lt;/clr-dg-cell&gt;
+        &lt;clr-dg-cell  [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;{{g.country }}&lt;/clr-dg-cell&gt;
+        &lt;clr-dg-cell  [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;{{g.source}}&lt;/clr-dg-cell&gt;
+        &lt;clr-dg-cell  [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;{{g.email}}&lt;/clr-dg-cell&gt;
+        &lt;clr-dg-cell  [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;{{g.city}}&lt;/clr-dg-cell&gt;
+        &lt;clr-dg-cell  [ngClass]&#x3D;&quot;{&#x27;odd&#x27;:odd, &#x27;even&#x27;:even}&quot;&gt;{{g.phone}}&lt;/clr-dg-cell&gt;
+      &lt;/clr-dg-row&gt;
+
+      &lt;clr-dg-footer&gt; Guests&lt;/clr-dg-footer&gt;
+    &lt;/clr-datagrid&gt;
+
+    &lt;div class&#x3D;&quot;clr-row&quot;&gt;
+      &lt;div class&#x3D;&quot;clr-md-12 right-content&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-default btn-sm&quot; (click)&#x3D;&quot;onEdit()&quot;&gt;New&lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn btn-default btn-sm&quot; (click)&#x3D;&quot;onEdit()&quot;&gt;Edit&lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn btn-default btn-sm&quot;&gt;Delete&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;clr-modal [(clrModalOpen)]&#x3D;&quot;canEdit&quot; [clrModalSize]&#x3D;&quot;&#x27;xl&#x27;&quot;&gt;
+  &lt;h3 class&#x3D;&quot;modal-title&quot;&gt; Add / Edit Guest&lt;/h3&gt;
+
+  &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+
+      &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+
+        &lt;clr-tabs&gt;
+          &lt;clr-tab&gt;
+            &lt;button clrTabLink&gt;General&lt;/button&gt;
+            &lt;clr-tab-content *clrIfActive&gt;
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+                      &lt;h6&gt;Guest Information&lt;/h6&gt;
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;FirstName&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;First Name&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;LastName&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Last Name&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;h6&gt;Address Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Address&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Address&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Street&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Street&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;City&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;City&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;State&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;State&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Zip Code&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Zip Code&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Country&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Country&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+
+
+                    &lt;/form&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+
+                      &lt;h6&gt;Contact Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Email&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Email&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Phone&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;Phone&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;h6&gt;Other Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;GuestType&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;BirthDate&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Gender&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Reg. No.&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;h6&gt;Login Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;UserName&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Password&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                    &lt;/form&gt;
+
+
+
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+
+                      &lt;h6&gt;Identity Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;IDType&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;IDNumber&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;IDState&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;IDCountry&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Exp. Date&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;h6&gt;Guest Image&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;imageGrid&quot;&gt;
+                        &lt;div class&#x3D;&quot;imageBox&quot;&gt;
+
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;imageTools&quot;&gt;
+                          &lt;button class&#x3D;&quot;btn btn-icon btn-success &quot;&gt;
+                            &lt;clr-icon shape&#x3D;&quot;plus-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/button&gt;
+                          &lt;br&gt;
+                          &lt;button class&#x3D;&quot;btn btn-icon  btn-danger&quot;&gt;
+                            &lt;clr-icon shape&#x3D;&quot;minus-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/button&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+
+
+                    &lt;/form&gt;
+
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/clr-tab-content&gt;
+          &lt;/clr-tab&gt;
+
+          &lt;clr-tab&gt;
+            &lt;button clrTabLink&gt;Personal&lt;/button&gt;
+            &lt;clr-tab-content *clrIfActive&gt;
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+
+                      &lt;h6&gt;Professional Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Education&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;Select Education&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Occupation&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Income&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;0&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;h6&gt;Religion Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Nationality&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Language1&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Language2&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+
+
+                    &lt;/form&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+
+                      &lt;h6&gt;Marital Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;MaritalStatus&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;Select Marital Status&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Aniversary&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;date&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Children&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;h6&gt;Health Information&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Allegies&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;BloodGroup&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Festival&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+
+                          &lt;div class&#x3D;&quot;select multiple&quot;&gt;
+                            &lt;select id&#x3D;&quot;selects_5&quot; multiple&gt;
+                              &lt;option&gt;Christmas&lt;/option&gt;
+                              &lt;option&gt;New Year&lt;/option&gt;
+                              &lt;option&gt;Ramdhan&lt;/option&gt;
+                              &lt;option&gt;Holiday 1&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+
+
+
+
+
+                    &lt;/form&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+
+                      &lt;h6&gt;Communication Channel&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;OfficeAddress&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            
+                              &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;OfficeNumber&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Residential&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                          &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                          &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Fax&lt;/label&gt;
+                          &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                            &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                              &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                              &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                            &lt;/div&gt;
+                            &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+  
+
+                        &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                            &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Website&lt;/label&gt;
+                            &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                              &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                                &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                              &lt;/div&gt;
+                              &lt;span class&#x3D;&quot;clr-subtext&quot;&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                  
+
+
+
+
+
+
+
+                    &lt;/form&gt;
+
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/clr-tab-content&gt;
+          &lt;/clr-tab&gt;
+
+          &lt;clr-tab&gt;
+            &lt;button clrTabLink&gt;Preference&lt;/button&gt;
+            &lt;clr-tab-content *clrIfActive&gt;
+              &lt;div class&#x3D;&quot;row&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                      &lt;form class&#x3D;&quot;clr-form clr-form-compact formx&quot;&gt;
+
+                          &lt;h6&gt;Room Preferences&lt;/h6&gt;
+    
+                          &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                            &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Wing&lt;/label&gt;
+                            &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                              &lt;div class&#x3D;&quot;select&quot;&gt;
+                                &lt;select&gt;
+                                  &lt;option value&#x3D;&quot;&quot;&gt; --All--&lt;/option&gt;
+                                &lt;/select&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+    
+
+                          &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                              &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Floor&lt;/label&gt;
+                              &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                                &lt;div class&#x3D;&quot;select&quot;&gt;
+                                  &lt;select&gt;
+                                    &lt;option value&#x3D;&quot;&quot;&gt; --All--&lt;/option&gt;
+                                  &lt;/select&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+      
+
+                            
+                          &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                              &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;RoomType&lt;/label&gt;
+                              &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                                &lt;div class&#x3D;&quot;select&quot;&gt;
+                                  &lt;select&gt;
+                                    &lt;option value&#x3D;&quot;&quot;&gt; --All--&lt;/option&gt;
+                                  &lt;/select&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+      
+                     
+    
+                            &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                                &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;RoomNo&lt;/label&gt;
+                                &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                                  &lt;div class&#x3D;&quot;select&quot;&gt;
+                                    &lt;select&gt;
+                                      &lt;option value&#x3D;&quot;&quot;&gt; --All--&lt;/option&gt;
+                                    &lt;/select&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+        
+                     
+    
+    
+                       
+    
+    
+    
+    
+    
+    
+    
+                        &lt;/form&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                    
+                      &lt;h6&gt;Other Preferences&lt;/h6&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Magazine&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                            &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                            &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                        &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;NewsPaper&lt;/label&gt;
+                        &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                          &lt;div class&#x3D;&quot;select&quot;&gt;
+                            &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                              &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                            &lt;/select&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                          &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Flower&lt;/label&gt;
+                          &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                            &lt;div class&#x3D;&quot;select&quot;&gt;
+                              &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                                &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                              &lt;/select&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                        
+                        &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                            &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Fragrance&lt;/label&gt;
+                            &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                              &lt;div class&#x3D;&quot;select&quot;&gt;
+                                &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+                                  &lt;option value&#x3D;&quot;&quot;&gt;&lt;/option&gt;
+                                &lt;/select&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+
+
+                   
+
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-contents&quot;&gt;
+                      &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                          &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Amenities&lt;/label&gt;
+                          &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+  
+                            &lt;div class&#x3D;&quot;select multiple&quot;&gt;
+                              &lt;select id&#x3D;&quot;selects_5&quot; multiple&gt;
+                                &lt;option&gt;Air Condition&lt;/option&gt;
+                                &lt;option&gt;Coffee Maker&lt;/option&gt;
+                                &lt;option&gt;Fridge&lt;/option&gt;
+                                &lt;option&gt;Telephone&lt;/option&gt;
+                                &lt;option&gt;Television&lt;/option&gt;
+                              &lt;/select&gt;
+                            &lt;/div&gt;
+  
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+  
+                        &lt;div class&#x3D;&quot;clr-form-control clr-row&quot;&gt;
+                            &lt;label for&#x3D;&quot;example&quot; class&#x3D;&quot;clr-control-label clr-col-xs-12 clr-col-md-3&quot;&gt;Remark &lt;/label&gt;
+                            &lt;div class&#x3D;&quot;clr-control-container clr-col-xs-12 clr-col-md-9&quot;&gt;
+                                &lt;div class&#x3D;&quot;clr-input-wrapper&quot;&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;example&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;clr-input&quot;&gt;
+                                    &lt;clr-icon class&#x3D;&quot;clr-validate-icon&quot; shape&#x3D;&quot;exclamation-circle&quot;&gt;&lt;/clr-icon&gt;
+                                  &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/clr-tab-content&gt;
+          &lt;/clr-tab&gt;
+
+    
+
+
+        &lt;/clr-tabs&gt;
+
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-8&quot;&gt;&lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-md-4&quot; style&#x3D;&quot;text-align:right!important;&quot;&gt;
+        &lt;br&gt;
+        &lt;button class&#x3D;&quot;btn btn-default btn-sm&quot; (click)&#x3D;&quot;canEdit &#x3D; false&quot;&gt; Save &lt;/button&gt;
+        &lt;button class&#x3D;&quot;btn btn-danger  btn-sm&quot; (click)&#x3D;&quot;canEdit &#x3D; false&quot;&gt; Close &lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+
+  &lt;/div&gt;
+
+
+
+&lt;/clr-modal&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./guest-profile.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.filter {
+  width: 98%;
+  height: 200px;
+  border: solid 4px #25333D;
+  background-color: white;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.filter200 {
+  width: 98%;
+  border: solid 4px #25333D;
+  background-color: white;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.left-container {
+  background-color: #C1CDD4;
+  min-height: 600px;
+}
+
+.right {
+  float: right;
+}
+
+.space90 {
+  margin-top: 80px;
+}
+
+.bspace {
+  margin-left: 10px;
+}
+
+.top-bar1 {
+  border-bottom: solid 4px #25333D;
+  height: 40px;
+}
+
+.body-bar1 {
+  min-height: 100px;
+  padding: 2px;
+}
+
+.plabel {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 11px;
+}
+
+.drop {
+  width: 50px !important;
+}
+
+.high {}
+
+.text-drop {
+  padding-top: 20px !important;
+}
+
+.right-content {
+  margin-left: 15px;
+  text-align: right;
+  float: right;
+}
+
+.form-contents {
+  margin: 5px;
+  border: solid 1px #C1CDD4;
+  min-height: 350px;
+}
+
+.formx {
+  margin-top: -25px;
+}
+
+.imageGrid {
+  width: 210px;
+  height: 150px;
+  background-color: #798893;
+  border:solid 2px #C1CDD4;
+}
+
+
+.imageBox{
+    width: 140px;
+    height: 140px;
+    background-color:#25333D;
+    margin-left:5px;
+    margin-top:5px;
+    float:left;
+}
+
+.imageTools{
+    float:left;
+    margin-left:3px;
+}
+
+.even{
+  background: #0065AB;
+  color: white!important;
+ }
+ 
+ .odd{
+     background: #49AFD9;
+     color: white!important;
+ }
+ 
+ .header1{
+     background-color: #C1CDD4;
+     color:white!important;
+ }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="clr-row">  <div class="clr-col-3 left-container">    <div class="filter">      <table class="table">        <thead>          <tr>            <th class="left">              <input type="checkbox">            </th>            <th class="left">Filter By</th>            <th class="left">Value</th>          </tr>        </thead>        <tbody>        </tbody>      </table>      <div class="right space90">        <button class="btn btn-default btn-sm">Reset</button>        <button class="btn  btn-dark bspace btn-sm">Search</button>      </div>    </div>    <div class="filter200">      <div class="top-bar1">        <div class="clr-row">          <div class="clr-col-10">            <p class="plabel">              Search By Personal Information            </p>          </div>          <div class="clr-col-1">            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened()">              <clr-icon shape="angle-double"></clr-icon>            </button>          </div>        </div>      </div>      <div class="body-bar1" [hidden]="isPersonalInfoOpened">        <table class="table  table-compact">          <tr>            <td colspan="2" class="left">              <label for="">Gender</label>            </td>            <td colspan="2">              <div class="select">                <select>                  <option>Select Gender</option>                  <option>Male</option>                  <option>Female</option>                </select>              </div>            </td>          </tr>          <tr>            <td colspan="2" class="left">              <label for="">Marital Status</label>            </td>            <td colspan="2">              <div class="select">                <select>                  <option>Select Marital Status</option>                  <option>Single </option>                  <option>Married</option>                </select>              </div>            </td>          </tr>          <tr>            <td></td>            <td></td>            <td>Month</td>            <td>Day</td>          </tr>          <tr>            <td>              <input type="checkbox">            </td>            <td>              <label for="">Birth date</label>            </td>            <td>              <div class="select">                <select>                  <option>Jan</option>                  <option>Feb</option>                </select>              </div>            </td>            <td>              <div class="select">                <select>                  <option>Any</option>                  <option>1</option>                </select>              </div>            </td>          </tr>          <tr>            <td>              <input type="checkbox">            </td>            <td>              <label for="">Aniniversiry</label>            </td>            <td>              <div class="select">                <select>                  <option>Jan</option>                  <option>Feb</option>                </select>              </div>            </td>            <td>              <div class="select">                <select>                  <option>Any</option>                  <option>1</option>                </select>              </div>            </td>          </tr>        </table>      </div>    </div>    <div class="filter200">      <div class="top-bar1">        <div class="clr-row">          <div class="clr-col-10">            <p class="plabel">              Search By Address Information            </p>          </div>          <div class="clr-col-1">            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened2()">              <clr-icon shape="angle-double"></clr-icon>            </button>          </div>        </div>      </div>      <div class="body-bar1" [hidden]="isPersonalInfoOpened2">        <table class="table table-compact table-vertical">          <tr>            <td class="left text-drop">              <label for="">City</label>            </td>            <td>              <input type="text" class="drop">            </td>            <td class="left text-drop">              <label for="">State</label>            </td>            <td>              <input type="text" class="drop high">            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Address</label>            </td>            <td colspan="3">              <input type="text" class="high">            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Address2</label>            </td>            <td colspan="3">              <input type="text" class="high">            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Country</label>            </td>            <td colspan="3">              <select>                <option>Select Country</option>                <option>Male</option>                <option>Female</option>              </select>            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Zip Code</label>            </td>            <td colspan="3">              <input type="text" class="high">            </td>          </tr>        </table>      </div>    </div>    <div class="filter200">      <div class="top-bar1">        <div class="clr-row">          <div class="clr-col-10">            <p class="plabel">              Search By Identification Information            </p>          </div>          <div class="clr-col-1">            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened3()">              <clr-icon shape="angle-double"></clr-icon>            </button>          </div>        </div>      </div>      <div class="body-bar1" [hidden]="isPersonalInfoOpened3">        <table class="table table-compact table-vertical">          <tr>            <td class="text-drop">              <label for="">Type</label>            </td>            <td colspan="3">              <div class="select">                <select>                  <option>Select ID Type</option>                </select>              </div>            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">State</label>            </td>            <td colspan="3">              <input type="text" class="high">            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Exp. Date</label>            </td>            <td colspan="3">              <input type="date">            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Country</label>            </td>            <td colspan="3">              <div class="select">                <select>                  <option>Select Country</option>                </select>              </div>            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Number</label>            </td>            <td colspan="3">              <input type="text">            </td>          </tr>        </table>      </div>    </div>    <div class="filter200">      <div class="top-bar1">        <div class="clr-row">          <div class="clr-col-10">            <p class="plabel">              Search By Contact Information            </p>          </div>          <div class="clr-col-1">            <button type="button" class="btn btn-icon btn-sm" (click)="togglePersonalInfoOpened4()">              <clr-icon shape="angle-double"></clr-icon>            </button>          </div>        </div>      </div>      <div class="body-bar1" [hidden]="isPersonalInfoOpened4">        <table class="table table-compact table-vertical">          <tr>            <td class="text-drop">              <label for="">Phone</label>            </td>            <td colspan="3">              <input type="text">            </td>          </tr>          <tr>            <td class="text-drop">              <label for="">Email</label>            </td>            <td colspan="3">              <input type="text" class="high">            </td>          </tr>        </table>      </div>    </div>  </div>  <div class="clr-col-9">    <clr-datagrid style=" height:95%;">      <clr-dg-column  [ngClass]="{\'header1\':true}"></clr-dg-column>      <clr-dg-column  [ngClass]="{\'header1\':true}">Guest Name        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>      </clr-dg-column>      <clr-dg-column  [ngClass]="{\'header1\':true}">Country        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>      </clr-dg-column>      <clr-dg-column  [ngClass]="{\'header1\':true}">Source        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>      </clr-dg-column>      <clr-dg-column  [ngClass]="{\'header1\':true}">Email        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>      </clr-dg-column>      <clr-dg-column  [ngClass]="{\'header1\':true}">City        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>      </clr-dg-column>      <clr-dg-column  [ngClass]="{\'header1\':true}">Phone        <clr-dg-string-filter [clrDgStringFilter]="guestFilter"></clr-dg-string-filter>      </clr-dg-column>      <clr-dg-placeholder>We couldn\'t find any Guest!</clr-dg-placeholder>      <clr-dg-row *ngFor="let g of guests; let  even=even; let odd=odd; trackBy: tracker">        <clr-dg-cell [ngClass]="{\'odd\':odd, \'even\':even}">          <input type="checkbox"  > </clr-dg-cell>        <clr-dg-cell  [ngClass]="{\'odd\':odd, \'even\':even}">{{g.guestName}}</clr-dg-cell>        <clr-dg-cell  [ngClass]="{\'odd\':odd, \'even\':even}">{{g.country }}</clr-dg-cell>        <clr-dg-cell  [ngClass]="{\'odd\':odd, \'even\':even}">{{g.source}}</clr-dg-cell>        <clr-dg-cell  [ngClass]="{\'odd\':odd, \'even\':even}">{{g.email}}</clr-dg-cell>        <clr-dg-cell  [ngClass]="{\'odd\':odd, \'even\':even}">{{g.city}}</clr-dg-cell>        <clr-dg-cell  [ngClass]="{\'odd\':odd, \'even\':even}">{{g.phone}}</clr-dg-cell>      </clr-dg-row>      <clr-dg-footer> Guests</clr-dg-footer>    </clr-datagrid>    <div class="clr-row">      <div class="clr-md-12 right-content">        <button class="btn btn-default btn-sm" (click)="onEdit()">New</button>        <button class="btn btn-default btn-sm" (click)="onEdit()">Edit</button>        <button class="btn btn-default btn-sm">Delete</button>      </div>    </div>  </div></div><clr-modal [(clrModalOpen)]="canEdit" [clrModalSize]="\'xl\'">  <h3 class="modal-title"> Add / Edit Guest</h3>  <div class="modal-body">    <div class="row">      <div class="col-md-12">        <clr-tabs>          <clr-tab>            <button clrTabLink>General</button>            <clr-tab-content *clrIfActive>              <div class="row">                <div class="col-md-4">                  <div class="form-contents">                    <form class="clr-form clr-form-compact formx">                      <h6>Guest Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">FirstName</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="First Name" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">LastName</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Last Name" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <h6>Address Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Address</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Address" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Street</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Street" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">City</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="City" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">State</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="State" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Zip Code</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Zip Code" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Country</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Country" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                    </form>                  </div>                </div>                <div class="col-md-4">                  <div class="form-contents">                    <form class="clr-form clr-form-compact formx">                      <h6>Contact Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Email</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Email" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Phone</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="Phone" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <h6>Other Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">GuestType</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">BirthDate</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Gender</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Reg. No.</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                        </div>                      </div>                      <h6>Login Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">UserName</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Password</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                    </form>                  </div>                </div>                <div class="col-md-4">                  <div class="form-contents">                    <form class="clr-form clr-form-compact formx">                      <h6>Identity Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDType</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDNumber</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDState</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">IDCountry</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Exp. Date</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <h6>Guest Image</h6>                      <div class="imageGrid">                        <div class="imageBox">                        </div>                        <div class="imageTools">                          <button class="btn btn-icon btn-success ">                            <clr-icon shape="plus-circle"></clr-icon>                          </button>                          <br>                          <button class="btn btn-icon  btn-danger">                            <clr-icon shape="minus-circle"></clr-icon>                          </button>                        </div>                      </div>                    </form>                  </div>                </div>              </div>            </clr-tab-content>          </clr-tab>          <clr-tab>            <button clrTabLink>Personal</button>            <clr-tab-content *clrIfActive>              <div class="row">                <div class="col-md-4">                  <div class="form-contents">                    <form class="clr-form clr-form-compact formx">                      <h6>Professional Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Education</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select>                              <option value="">Select Education</option>                            </select>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Occupation</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Income</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="0" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <h6>Religion Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Nationality</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select name="" id="">                              <option value=""></option>                            </select>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Language1</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select name="" id="">                              <option value=""></option>                            </select>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Language2</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select name="" id="">                              <option value=""></option>                            </select>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>                <div class="col-md-4">                  <div class="form-contents">                    <form class="clr-form clr-form-compact formx">                      <h6>Marital Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">MaritalStatus</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select>                              <option value="">Select Marital Status</option>                            </select>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Aniversary</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="date" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Children</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <h6>Health Information</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Allegies</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">BloodGroup</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select name="" id="">                              <option value=""></option>                            </select>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Festival</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select multiple">                            <select id="selects_5" multiple>                              <option>Christmas</option>                              <option>New Year</option>                              <option>Ramdhan</option>                              <option>Holiday 1</option>                            </select>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>                <div class="col-md-4">                  <div class="form-contents">                    <form class="clr-form clr-form-compact formx">                      <h6>Communication Channel</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">OfficeAddress</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                                                          <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">OfficeNumber</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Residential</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                          <span class="clr-subtext"></span>                        </div>                      </div>                      <div class="clr-form-control clr-row">                          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Fax</label>                          <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                            <div class="clr-input-wrapper">                              <input type="text" id="example" placeholder="" class="clr-input">                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                            </div>                            <span class="clr-subtext"></span>                          </div>                        </div>                          <div class="clr-form-control clr-row">                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Website</label>                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                              <div class="clr-input-wrapper">                                <input type="text" id="example" placeholder="" class="clr-input">                                <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                              </div>                              <span class="clr-subtext"></span>                            </div>                          </div>                                      </form>                  </div>                </div>              </div>            </clr-tab-content>          </clr-tab>          <clr-tab>            <button clrTabLink>Preference</button>            <clr-tab-content *clrIfActive>              <div class="row">                <div class="col-md-4">                  <div class="form-contents">                      <form class="clr-form clr-form-compact formx">                          <h6>Room Preferences</h6>                              <div class="clr-form-control clr-row">                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Wing</label>                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                              <div class="select">                                <select>                                  <option value=""> --All--</option>                                </select>                              </div>                            </div>                          </div>                              <div class="clr-form-control clr-row">                              <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Floor</label>                              <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                                <div class="select">                                  <select>                                    <option value=""> --All--</option>                                  </select>                                </div>                              </div>                            </div>                                                            <div class="clr-form-control clr-row">                              <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">RoomType</label>                              <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                                <div class="select">                                  <select>                                    <option value=""> --All--</option>                                  </select>                                </div>                              </div>                            </div>                                                           <div class="clr-form-control clr-row">                                <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">RoomNo</label>                                <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                                  <div class="select">                                    <select>                                      <option value=""> --All--</option>                                    </select>                                  </div>                                </div>                              </div>                                                                                                                </form>                  </div>                </div>                <div class="col-md-4">                  <div class="form-contents">                                          <h6>Other Preferences</h6>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Magazine</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="clr-input-wrapper">                            <input type="text" id="example" placeholder="" class="clr-input">                            <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                        <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">NewsPaper</label>                        <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                          <div class="select">                            <select name="" id="">                              <option value=""></option>                            </select>                          </div>                        </div>                      </div>                      <div class="clr-form-control clr-row">                          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Flower</label>                          <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                            <div class="select">                              <select name="" id="">                                <option value=""></option>                              </select>                            </div>                          </div>                        </div>                                                <div class="clr-form-control clr-row">                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Fragrance</label>                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                              <div class="select">                                <select name="" id="">                                  <option value=""></option>                                </select>                              </div>                            </div>                          </div>                                     </div>                </div>                <div class="col-md-4">                  <div class="form-contents">                      <div class="clr-form-control clr-row">                          <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Amenities</label>                          <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                              <div class="select multiple">                              <select id="selects_5" multiple>                                <option>Air Condition</option>                                <option>Coffee Maker</option>                                <option>Fridge</option>                                <option>Telephone</option>                                <option>Television</option>                              </select>                            </div>                            </div>                        </div>                          <div class="clr-form-control clr-row">                            <label for="example" class="clr-control-label clr-col-xs-12 clr-col-md-3">Remark </label>                            <div class="clr-control-container clr-col-xs-12 clr-col-md-9">                                <div class="clr-input-wrapper">                                    <input type="text" id="example" placeholder="" class="clr-input">                                    <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>                                  </div>                            </div>                          </div>                  </div>                </div>              </div>            </clr-tab-content>          </clr-tab>            </clr-tabs>      </div>    </div>    <div class="row">      <div class="col-md-8"></div>      <div class="col-md-4" style="text-align:right!important;">        <br>        <button class="btn btn-default btn-sm" (click)="canEdit = false"> Save </button>        <button class="btn btn-danger  btn-sm" (click)="canEdit = false"> Close </button>      </div>    </div>  </div></clr-modal></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArrivalListComponent', 'selector': 'app-arrival-list'},{'name': 'BodyComponent', 'selector': 'app-body'},{'name': 'BookingListComponent', 'selector': 'app-booking-list'},{'name': 'BookStatusComponent', 'selector': 'app-book-status'},{'name': 'CheckinComponent', 'selector': 'app-checkin'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DateBarComponent', 'selector': 'app-date-bar'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'GuestDataBaseComponent', 'selector': 'app-guest-data-base'},{'name': 'GuestLedgerComponent', 'selector': 'app-guest-ledger'},{'name': 'GuestMessageComponent', 'selector': 'app-guest-message'},{'name': 'GuestProfileComponent', 'selector': 'app-guest-profile'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HotelWalkinComponent', 'selector': 'app-hotel-walkin'},{'name': 'MainDashboardComponent', 'selector': 'app-main-dashboard'},{'name': 'NewBookingComponent', 'selector': 'app-new-booking'},{'name': 'OutOfOrderComponent', 'selector': 'app-out-of-order'},{'name': 'ReservationComponent', 'selector': 'app-reservation'},{'name': 'ReservationListComponent', 'selector': 'app-reservation-list'},{'name': 'RoomLookUpComponent', 'selector': 'app-room-look-up'},{'name': 'RoomStatusComponent', 'selector': 'app-room-status'},{'name': 'SchedularComponent', 'selector': 'app-schedular'},{'name': 'SummaryBarComponent', 'selector': 'app-summary-bar'},{'name': 'TickerComponent', 'selector': 'app-ticker'},{'name': 'WalkinComponent', 'selector': 'app-walkin'}];
+    var DIRECTIVES = [{'name': 'CardHoverDirective', 'selector': '[appCardHover]'}];
+    var ACTUAL_COMPONENT = {'name': 'GuestProfileComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GuestProfileComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,57 +1,78 @@
-
-.red{
-    background-color: #C92100;
-    color:white;
+.red {
+  color: white;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 52%, rgba(252, 176, 69, 1) 100%);
 }
 
-.blue{
-    background-color:#25333D;
-    color: white;
+.blue {
+  color: white;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(16, 16, 161, 1) 35%);
 }
 
-.green{
-    background-color: #318700;
-    color:white;
+.green {
+  color: white;
+  background: rgb(24, 198, 61);
+  background: linear-gradient(90deg, rgba(24, 198, 61, 1) 0%, rgba(5, 57, 29, 1) 15%, rgba(3, 36, 22, 1) 83%, rgba(16, 161, 103, 1) 97%);
 }
 
-.comp{
-    width: 100px;
-    height: 40px;
-    padding-top: 15px;
-    margin-left:-10px;
-    cursor: pointer;
-}
-.m-body{
-    color: #0065AB!important;
-    
-}
-.m-title{
-
-    background-color:#C1CDD4;
-    padding: 10px;
-}
-.room-details{
-    margin-bottom: 20px;
-    text-align: left;
+.comp {
+  width: 100px;
+  height: 50px;
+  padding-top: 10px;
+  margin-left: -10px;
+  cursor: pointer;
 }
 
-.pbar{
-    background-color:#25333D;
-    margin-top:10px;
-    height: 40px;
-    text-align: center;
-    color:white;
-    margin-left: 5px;
-    font-size: 17px;
-    padding-top:10px;
+.CheckIn {
+  border: solid 3px #833ab4;
 }
 
-.r-menu{
-    height: 40px;
-    background: #798893;
-    padding-top: 12px;
-    color:white;
-    margin-bottom: 2px; 
-    cursor: pointer;   
+.Reserved {
+  border: solid 3px #19d9de;
 }
 
+.room {
+  border: solid 3px #042526;
+  padding-top: 15px !important;
+}
+
+.small {
+  font-size: 10px;
+}
+
+.m-body {
+  color: #0065AB !important;
+
+}
+
+.m-title {
+
+  background-color: #C1CDD4;
+  padding: 10px;
+}
+
+.room-details {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.pbar {
+  background-color: #25333D;
+  margin-top: 10px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  margin-left: 5px;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.r-menu {
+  height: 40px;
+  background: #798893;
+  padding-top: 12px;
+  color: white;
+  margin-bottom: 2px;
+  cursor: pointer;
+}

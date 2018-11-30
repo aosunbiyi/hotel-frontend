@@ -1,27 +1,15 @@
-<div class="comp " #comp (click)="open()"> {{occupantName}}</div>
-
-<clr-modal [(clrModalOpen)]="isBookingMenu" [clrModalSize]="'sm'">
-
-  <div class="modal-body">
-
-    <div class="row">
-      <div class="col-md-12 r-menu" (click)="isBookingMenu = false">User Details </div>
-      <div class="col-md-12 r-menu" (click)="isBookingMenu = false">Edit  </div>
-    </div>
+<div class="comp small" #comp (click)="open()"> {{occupantName}} <br>
+  <span *ngIf="transactionType.length > 1" style="font-size:9px;color:#a9fd1d!important;">{{transactionType}}</span></div>
 
 
-  </div>
-
-</clr-modal>
 
 <clr-modal [(clrModalOpen)]="isEmptyMenu" [clrModalSize]="'sm'" >
 
     <div class="modal-body">
   
       <div class="row">
-        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Book</div>
-        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Checkin </div>
-        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Reserve </div>
+        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">New Booking</div>
+        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Make Reservation </div>
       </div>
   
   
@@ -33,24 +21,29 @@
 
 <clr-modal [(clrModalOpen)]="isRoom" [clrModalSize]="'xl'">
   <h6 class="modal-title m-title">Room Details</h6>
-  <div class="modal-body m-body">
+  <div class="modal-body m-body" *ngIf="lodingRoomDetails">
+    <span  class="spinner  spinner-lg" style="margin-left:50px; margin-top:20px;"></span>
+    <h3>Loading..</h3>
+  </div>
+
+  <div class="modal-body m-body" *ngIf="!lodingRoomDetails">
 
     <div class="row room-details">
       <div class="col-md-4">
-        <b>Room Type:</b> Standard</div>
+        <b>Room Type:</b> {{roomDetails.room_type_.room_type_name}}</div>
       <div class="col-md-4">
-        <b>Floor:</b> Floor 50</div>
+        <b>Floor:</b> {{roomDetails.floor_.floor_name}}</div>
       <div class="col-md-4">
-        <b>Room Owner:</b> Fred Amata</div>
+        <b>Room Name:</b> {{roomDetails.room_name}}</div>
     </div>
 
     <div class="row room-details">
       <div class="col-md-4">
-        <b>Room Extension:</b> 450</div>
+        <b>Phone Extension:</b> {{roomDetails.phone_extension}}</div>
       <div class="col-md-4">
-        <b>Data Extension:</b> 230</div>
+        <b>Data Extension:</b> {{roomDetails.data_extension}}</div>
       <div class="col-md-4">
-        <b>Power Code:</b> 778</div>
+        <b>Power Code:</b> {{roomDetails.power_code}}</div>
     </div>
 
 
@@ -58,34 +51,15 @@
       <div class="col-md-12 pbar">Room Images</div>
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md">
+
+          <div class="col-md"  *ngFor="let img of roomDetails.room_images">
             <a class="card clickable">
               <div class="card-img">
-                <img src="assets/images/h1.png" style="width:250px;">
+                <img src="{{baseUrl}}/files/{{img.image_url}}" style="width:250px;">
               </div>
             </a>
           </div>
-          <div class="col-md">
-            <a class="card clickable">
-              <div class="card-img">
-                <img src="assets/images/h2.png" style="width:250px;">
-              </div>
-            </a>
-          </div>
-          <div class="col-md">
-            <a class="card clickable">
-              <div class="card-img">
-                <img src="assets/images/h3.png" style="width:250px;">
-              </div>
-            </a>
-          </div>
-          <div class="col-md">
-            <a class="card clickable">
-              <div class="card-img">
-                <img src="assets/images/h4.png" style="width:250px;">
-              </div>
-            </a>
-          </div>
+       
 
         </div>
       </div>
@@ -93,134 +67,17 @@
 
     <div class="row  ">
       <div class="col-md-12 pbar">Amenities</div>
-      <div class="col-md-2">
+
+      <div class="col-md-2"   *ngFor="let img of roomDetails.rooms_amenities">
         <div class="alert alert-success alert-sm">
           <div class="alert-items">
             <div class="alert-item static">
               <span class="alert-text">
-                Vending
+                {{img.amenity_.amenity_name}}
               </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Gym
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Recreation
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Swimming Pool
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Parking Lot
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Pool Bar
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Kichenette
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Television
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Laptop & Internet
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Iron
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Vending
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="alert alert-success alert-sm">
-          <div class="alert-items">
-            <div class="alert-item static">
-              <span class="alert-text">
-                Vending
-              </span>
+              <div class="card-img">
+                  <img src="{{baseUrl}}/files/{{img.amenity_.amenity_logo}}" style="width:150px;">
+                </div>
             </div>
           </div>
         </div>
@@ -236,3 +93,32 @@
     <button type="button" class="btn btn-danger" (click)="isRoom = false">Close</button>
   </div>
 </clr-modal>
+
+
+<clr-modal [(clrModalOpen)]="isCheckedIn" [clrModalSize]="'sm'">
+
+    <div class="modal-body">
+  
+      <div class="row">
+        <div class="col-md-12 r-menu" (click)="isCheckedIn = false">Check Out </div>
+        <div class="col-md-12 r-menu" (click)="isCheckedIn = false">View Transaction  </div>
+      </div>
+  
+  
+    </div>
+  
+  </clr-modal>
+
+  <clr-modal [(clrModalOpen)]="isReserved" [clrModalSize]="'sm'">
+
+      <div class="modal-body">
+    
+        <div class="row">
+          <div class="col-md-12 r-menu" (click)="isReserved = false">Check In </div>
+          <div class="col-md-12 r-menu" (click)="isReserved = false">View Transaction  </div>
+        </div>
+    
+    
+      </div>
+    
+    </clr-modal>

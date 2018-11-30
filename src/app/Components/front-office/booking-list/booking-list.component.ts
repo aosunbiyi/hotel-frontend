@@ -197,12 +197,14 @@ export class BookingListComponent implements OnInit {
   }
 
   public doCustomClick3(buttonType: string): void {
+
+    console.log('Major');
     if ('custom-previous' === buttonType) {
       this.wizardExtraLarge.previous();
     }
 
     if ('custom-next' === buttonType) {
-
+         console.log('Minor');
       const data = {
         bookingForm: this.bookingForm.value,
         userForm: this.userForm.value,
@@ -210,7 +212,10 @@ export class BookingListComponent implements OnInit {
         rms: this.selectedRooms
       };
 
+      console.log(data);
+
       this.reservationsService.get_total_reservation_rate(data).subscribe(r => {
+        console.log(r);
         this.reservation_transaction_list = r.reservation_transaction;
         this.paymentForm.setValue({
           payment_method: 0,
