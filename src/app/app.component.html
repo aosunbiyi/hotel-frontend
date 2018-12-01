@@ -6,13 +6,13 @@
   </nav>
   <header class="header header-6">
     <div class="branding">
-      <a href="javascript://" class="nav-link">
+      <a   [routerLink]="['/']"class="nav-link">
         <clr-icon shape="vm-bug"></clr-icon>
         <span class="title">Hotel Application</span>
       </a>
     </div>
     <div class="header-nav">
-      <a href="javascript://" [routerLink]="['/']" class="  nav-link nav-text">Dashboard</a>
+      <a href="javascript://" [routerLink]="['/']" class="  nav-link nav-text" (click)="setNull(0)">Dashboard</a>
       <a href="javascript://" [routerLink]="['/front-office']" class="nav-link nav-text" (click)="setNull(1)">Front
         Office</a>
       <a href="javascript://" class="nav-link nav-text">Back Office</a>
@@ -60,16 +60,22 @@
 
 
     </ul>
+    <ul class="nav" *ngIf="menu_default">
+  
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/front-office/checkin']">ChecK In</a>
+      </li>
+
+
+
+
+    </ul>
   </nav>
   <div class="content-container">
-    <div class="content-area">
-
-
+    <div class="content-area"  >
       <router-outlet></router-outlet>
-
-
-
-
     </div>
 
   </div>

@@ -1,5 +1,18 @@
 <div class="comp small" #comp (click)="open()"> {{occupantName}} <br>
-  <span *ngIf="transactionType.length > 1" style="font-size:9px;color:#a9fd1d!important;">{{transactionType}}</span></div>
+  <span *ngIf="transactionType.length > 1" style="font-size:9px;color:#a9fd1d!important;">{{transactionType}}</span>
+  <span *ngIf="transactionType === '5' && !RoomRate">
+      <span  *ngIf="!RoomRate"  class="spinner  spinner-md" style="margin-left:6px; "></span><br>
+      <span  *ngIf="!RoomRate">Loading rate...</span>
+
+  </span>
+
+<span *ngIf="RoomRate" style="font-size:8px;color:hsl(0, 0%, 100%)!important;">
+    <span class="lable label-info">{{RoomRate.rate_name}}</span> <br>
+  <span class="lable label-info">Rate: {{RoomRate.amount | number:'0.2'}}</span> <br>
+  <span class="lable label-info">E  Adult: {{RoomRate.extra_adult | number:'0.2'}}</span> <br>
+  <span class="lable label-info">E  Child: {{RoomRate.extra_child | number:'0.2'}}</span>
+</span>
+</div>
 
 
 
@@ -114,7 +127,7 @@
       <div class="modal-body">
     
         <div class="row">
-          <div class="col-md-12 r-menu" (click)="isReserved = false">Check In </div>
+          <div class="col-md-12 r-menu" (click)="OnCheckinClicked()">Check In </div>
           <div class="col-md-12 r-menu" (click)="isReserved = false">View Transaction  </div>
         </div>
     
@@ -122,3 +135,149 @@
       </div>
     
     </clr-modal>
+
+
+    
+<clr-modal [(clrModalOpen)]="onCheckinMode" [clrModalSize]="'xl'" [clrModalClosable]="false">
+    <h3 class="modal-title">Check In</h3>
+    <div class="modal-body">
+      <div >
+        <div class="clr-row">
+          <div class="clr-col-md-12">
+          
+              <span *ngIf="!checkinReservation" class="spinner  spinner-md" style="margin-left:50px;"></span>
+  
+         
+
+           <div class="clr-row"  *ngIf="checkinReservation">
+              <div class="clr-col-md-6">
+                <h4>Reservation Details</h4>
+                <table class="table table-striped">
+                  <tr>
+                    <th>Reservation Number</th>
+                    <td>{{checkinReservation.reservation_number}}</td>
+                  </tr>
+                  <tr>
+                     <th>Booked On </th>
+                     <td>{{checkinReservation.book_on  | date: 'dd/MM/yyyy'}}</td>
+                   </tr>
+                   <tr>
+                       <th>Arrival Date</th>
+                       <td>{{checkinReservation.arrival  | date: 'dd/MM/yyyy'}}</td>
+                     </tr>
+                     <tr>
+                         <th>Departure Date</th>
+                         <td>{{checkinReservation.departure  | date: 'dd/MM/yyyy'}}</td>
+                       </tr>
+                  
+                </table>
+              </div>
+              <div class="clr-col-md-6">
+ 
+                 <h4>Account Details</h4>
+                 <table class="table table-striped">
+                   <tr>
+                     <th>Fullname</th>
+                     <td >{{checkinReservation.account_.first_name}} {{checkinReservation.account_.last_name}}</td>
+                   </tr>
+                   <tr>
+                      <th>Email Address</th>
+                      <td>{{checkinReservation.account_.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td>{{checkinReservation.account_.phone}}</td>
+                      </tr>
+                      <tr>
+                          <th>Address</th>
+                          <td>{{checkinReservation.account_.address1}}  {{checkinReservation.account_.address2}} {{checkinReservation.account_.state}} {{checkinReservation.account_.country}}</td>
+                        </tr>
+                   
+                 </table>
+ 
+              </div>
+          
+            </div>
+                   
+           
+      
+           <table *ngIf="checkinReservation"  class="table table-striped">
+              <thead>
+                <tr>
+                  <td colspan="6">
+                    <h4>Reserved Rooms</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <th>S/N</th>
+                  <th>Room Name</th>
+                  <th>Room Type</th>
+                  <th>Number of Nights</th>
+                  <th>Number of Adult</th>
+                  <th>Number Of Children</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let d  of checkinReservation.reserved_rooms">
+                  <td>{{d.serial_number}}</td>
+                  <td>{{d.room_name}}</td>
+                  <td>{{d.room_type_name}}</td>
+                  <td>{{d.num_of_night}}</td>
+                  <td>{{d.num_of_adult}}</td>
+                  <td>{{d.num_of_children}}</td>
+                </tr>
+              </tbody>
+           </table>
+
+           <table *ngIf="checkinReservation"  class="table table-striped">
+              <thead>
+                <tr>
+                  <td colspan="6">
+                    <h4>Payments</h4>
+                  </td>
+                </tr>
+                <tr>
+                  <th>S/N</th>
+                  <th>Payment Method</th>
+                  <th>Total Amount</th>
+                  <th>Paid</th>
+                  <th>Balance</th>
+                  <th>Transaction Date</th>
+                  <th>On Discount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let d  of checkinReservation.reservation_payments; let index= index;">
+                  <td>{{index+1}}</td>
+                  <td>{{d.payment_method}}</td>
+                  <td  *ngIf="d.on_discount===0">{{d.total_amount | number:'.2'}}</td>
+                  <td *ngIf="d.on_discount > 0">{{d.total_amount_with_discount | number:'.2'}} <br>
+                     
+                  </td>
+                  <td>{{d.paid  | number:'.2'}}</td>
+                  <td>{{d.balance  | number:'.2'}}</td>
+                  <td>{{d.created | date: 'dd/MM/yyyy'}}</td>
+                  <td [innerHTML]="getDiscountStatus(d.on_discount, d)"> </td>
+                </tr>
+              </tbody>
+           </table>
+
+      
+  
+          </div> 
+          <div class="clr-col-4"></div> 
+          <div class="clr-col-4">
+            <button *ngIf="checkinReservation" class="btn btn-primary btn-block"  (click)=" onCheckInClicked2();"> Check In</button>
+          </div> 
+          <div class="clr-col-4"></div>    
+        </div>
+      </div>
+  
+  
+    </div>
+    <div class="modal-footer">
+  
+      <button type="button" class="btn btn-danger" (click)="onCheckinMode = false">Close</button>
+    </div>
+  </clr-modal>
+  

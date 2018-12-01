@@ -95,6 +95,14 @@ export class ReservationsService {
     );
   }
 
+  get_total_reservation_rate_by_room_id(data): Observable<any> {
+    console.log(JSON.stringify(data));
+    return this.http.post<any>(`${environment.baseUrl}Reservations/get_total_reservation_rate_by_room_id`, JSON.stringify(data)).pipe(
+      tap((ac) => console.log(`get_total_reservation_rate_by_room_id w/ id=${ac}`)),
+      catchError(this.handleError<any>('get_total_reservation_rate_by_room_id'))
+    );
+  }
+
   get_total_reservation_rate(data): Observable<any> {
     console.log(JSON.stringify(data));
     return this.http.post<any>(`${environment.baseUrl}Reservations/get_total_reservation_rate`, JSON.stringify(data)).pipe(

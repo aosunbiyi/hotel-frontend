@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { RoomsService } from '../../../../services/rooms.service';
 import { environment } from '../../../../../environments/environment';
+import { ReservationsService } from '../../../../services/reservations.service';
 
 @Component({
   selector: 'app-book-status',
@@ -37,11 +38,16 @@ export class BookStatusComponent implements OnInit {
   baseUrl;
   isCheckedIn = false;
   isReserved = false;
+  RoomRate;
+  onCheckinMode = false;
+  isLoadingBookinDetails = false;
+  checkinReservation = null;
 
 
-  constructor(private el: ElementRef, private roomService: RoomsService) { }
+  constructor(private el: ElementRef, private roomService: RoomsService, private reservationsService: ReservationsService) { }
 
   ngOnInit() {
+    const vm = this;
 
     this.baseUrl = environment.baseIp;
     if (this.label !== '' && this.label.length > 0) {
@@ -64,6 +70,17 @@ export class BookStatusComponent implements OnInit {
       if (this.transactionType === '5') {
         this.comp.nativeElement.classList.add('green');
         this.comp.nativeElement.classList.add('room');
+        const data = {
+          room_id: this.entity_id
+        };
+          this.reservationsService.get_total_reservation_rate_by_room_id(data).subscribe(function(result){
+
+            setTimeout(() => {
+           vm.RoomRate = result;
+            }, 1500);
+          },function(err){
+            console.log(err);
+         });
       }
 
     }
@@ -97,6 +114,55 @@ export class BookStatusComponent implements OnInit {
       this.isEmptyMenu = true;
     }
 
+  }
+
+  OnCheckinClicked(){
+    const vm = this;
+    this.isReserved = false;
+    this.onCheckinMode = true;
+    this.isLoadingBookinDetails = false;
+    console.log(this.entity_id);
+    this.reservationsService.getReservationById(this.entity_id).subscribe(function(result){
+
+     setTimeout(() => {
+      vm.checkinReservation = result;
+      vm.isLoadingBookinDetails = true;
+      console.log(vm.checkinReservation);
+     }, 1500);
+    });
+  }
+
+  getDiscountStatus(onDiscount, sl) {
+    if (onDiscount === 1) {
+      return '<a  class="label label-purple clickable">Yes<span class="badge">' + sl.discount_value + '</span></a>';
+    } else {
+      return '<span class="label label-warning">No</span>';
+    }
+  }
+
+  getReservationStatus(status) {
+
+    if (status === 'Open') {
+      return '<span class="label label-success">Open</span>';
+    } else {
+      return '<span class="label label-info">Close</span>';
+    }
+  }
+
+  onCheckInClicked2() {
+    const vm = this;
+    if (confirm('Are you sure you want to check in?') === true) {
+      const dt = {
+        id: vm.entity_id
+      };
+      this.reservationsService.checkin_reservation(dt).subscribe(function (result) {
+        console.log(result.data);
+        alert(result.data);
+        vm.checkinReservation = null;
+        vm.onCheckinMode = false;
+        window.location.reload();
+      });
+    }
   }
 
 }

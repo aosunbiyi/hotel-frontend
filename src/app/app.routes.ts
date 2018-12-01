@@ -8,14 +8,9 @@ import { RoomLookUpComponent } from './Components/room-manager/room-look-up/room
 
 const routes: Routes = [
     {
-        path: 'main',
+        path: '',
         component: MainDashboardComponent
     },
-    {
-        path: '',
-        redirectTo: 'main',
-        pathMatch: 'full'
-     },
     {
         path: 'guest-profile',
         component: GuestProfileComponent

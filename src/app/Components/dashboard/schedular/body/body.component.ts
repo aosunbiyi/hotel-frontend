@@ -66,6 +66,8 @@ export class BodyComponent implements OnInit {
 
 
   generateBody2() {
+
+    const vm = this;
     // get the Length of the Month
     this.lengthOfMonth = this.date.lengthOfMonth();
     // Get the total days to be displayed
@@ -75,50 +77,50 @@ export class BodyComponent implements OnInit {
     // Get the total ending day
     this.endingDay = this.startingDay + this.totalNeededDays;
 
+
     // iterate on all the available rooms
     this.roomlist.forEach(room => {
       // initialize the bookings on each room
-      this.room_labels[this.rowIndex] = new Array();
-      this.totalNeededDays = this.DAYS;
+      vm.room_labels[vm.rowIndex] = new Array();
+      vm.totalNeededDays = vm.DAYS;
       const rm = `${room.room_name}-5-room-${room.id}`;
-      this.room_labels[this.rowIndex].push(rm);
+      vm.room_labels[vm.rowIndex].push(rm);
 
-      if (this.endingDay > this.lengthOfMonth) {
-        const newEndingDay = this.endingDay - this.lengthOfMonth;
-        for (let i = this.startingDay; i <= this.lengthOfMonth; i++) {
-          const parseDate = this.jodalLib.withDayOfMonth(i);
-          const year = this.jodalLib.year();
-          const month = this.jodalLib.monthValue();
-          const monthName = this.jodalLib.month();
+      if (vm.endingDay > vm.lengthOfMonth) {
+        const newEndingDay = vm.endingDay - vm.lengthOfMonth;
+        for (let i = vm.startingDay; i <= vm.lengthOfMonth; i++) {
+          const parseDate = vm.jodalLib.withDayOfMonth(i);
+          const year = vm.jodalLib.year();
+          const month = vm.jodalLib.monthValue();
+          const monthName = vm.jodalLib.month();
           const fulldate = `${year}-${month}-${i}`;
-          this.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, this.room_labels, this.rowIndex);
-          this.totalNeededDays = this.totalNeededDays - 1;
+          vm.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, vm.room_labels, vm.rowIndex);
+          vm.totalNeededDays = vm.totalNeededDays - 1;
         }
 
-        const localJodaLib = this.jodalLib.plusMonths(1);
-        for (let i = 1; i <= this.totalNeededDays; i++) {
+        const localJodaLib = vm.jodalLib.plusMonths(1);
+        for (let i = 1; i <= vm.totalNeededDays; i++) {
           const parseDate = localJodaLib.withDayOfMonth(i);
           const year = localJodaLib.year();
           const month = localJodaLib.monthValue();
           const monthName = localJodaLib.month();
           const fulldate = `${year}-${month}-${i}`;
-
-          this.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, this.room_labels, this.rowIndex);
+          vm.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, vm.room_labels, vm.rowIndex);
 
         }
 
       } else {
-        const localJodaLib = this.jodalLib.plusMonths(0);
-        for (let i = 1; i <= this.totalNeededDays; i++) {
+        const localJodaLib = vm.jodalLib.plusMonths(0);
+        for (let i = 1; i <= vm.totalNeededDays; i++) {
           const parseDate = localJodaLib.withDayOfMonth(i);
           const year = localJodaLib.year();
           const month = localJodaLib.monthValue();
           const monthName = localJodaLib.month();
           const fulldate = `${year}-${month}-${i}`;
-          this.checkMultipleBookings2(parseDate.toString(), room.bookings, this.room_labels, this.rowIndex);
+          vm.checkMultipleBookings2(parseDate.toString(), room.reserved_rooms, vm.room_labels, vm.rowIndex);
         }
       }
-      this.rowIndex += 1;
+      vm.rowIndex += 1;
     });
 
 
