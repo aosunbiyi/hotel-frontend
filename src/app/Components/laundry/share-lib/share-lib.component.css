@@ -1,0 +1,148 @@
+
+.control_bar{
+    background: #314351;
+    min-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:3px;
+    padding-bottom: 3px;
+    border: solid 5px #002438;
+    z-index: 200000!important;
+}
+
+.top_title{
+    background: #485969;
+    min-height: 30px;
+}
+
+.floatter{
+    z-index: 20000000!important;;
+}
+
+label{
+    color:white!important;
+}
+
+input{
+    color:white!important;
+}
+
+.ld_service{
+    background-color: #314351;
+    border: solid 3px #002438;
+    min-height: 30px;
+    margin-left:-3px;
+    text-align: center;
+    font-size: 14px;
+    color: white!important;
+}
+
+.service_container{
+    min-height: 160px;
+    padding-left: 10px!important;
+    max-height: 450px!important;
+    overflow: auto;
+    padding-top: 8px;
+
+}
+
+.service_container2{
+    min-height: 60px;
+    padding-left: 10px!important;
+    overflow: scroll;
+    padding-top: 8px;
+
+}
+
+
+
+.service_container_selected{
+    background-color: #25333D;
+}
+
+
+.service_container_selected2{
+    background-color: #25333D;
+}
+
+.service_container_selected3{
+    background-color: #25333D;
+}
+
+.service_item_con{
+    border: solid 2px #002438;
+    border-radius: 5px;
+    margin-top:8px;
+    margin-bottom:5px;
+    margin-right: 1px;
+    height: 120px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.service_item_con2{
+    border: solid 2px #002438;
+    border-radius: 5px;
+    margin-top:8px;
+    margin-bottom:5px;
+    margin-right: 1px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+.service_item_con3{
+    border: solid 2px #002438;
+    border-radius: 5px;
+    margin-top:8px;
+    margin-bottom:5px;
+    margin-right: 1px;
+    height: 120px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.service_item_con:hover{
+    border: solid 2px #0065AB;
+}
+
+.service_item_con2:hover{
+    border: solid 2px #25333D;
+    color:white;
+}
+.service_item_con3:hover{
+    border: solid 2px #0065AB;
+}
+
+.service_item_con3:hover{
+    border: solid 2px #0065AB;
+}
+
+.service_item_con h4{
+    font-size: 11px;
+    background: #485969;
+    padding: 5px;
+    color:white;
+    margin-top:-10px;
+    margin-bottom: 3px;
+}
+
+.service_item_con2 h4{
+    font-size: 11px;
+    background: #0065AB;
+    padding: 5px;
+    color:white;
+    margin-top:5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service_item_con3 h4{
+    font-size: 11px;
+    background: #485969;
+    padding: 5px;
+    color:white;
+    margin-top:-10px;
+    margin-bottom: 3px;
+}

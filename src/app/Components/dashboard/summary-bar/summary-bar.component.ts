@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LocalDate } from 'js-joda';
-import { ClarityIcons } from '@clr/icons';
-import { NgForm } from '@angular/forms';
 import { WingService } from '../../../services/wing.service';
 import { FloorService } from '../../../services/floor.service';
 import { RoomsService } from '../../../services/rooms.service';

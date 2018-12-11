@@ -15,6 +15,7 @@
       <a href="javascript://" [routerLink]="['/']" class="  nav-link nav-text" (click)="setNull(0)">Dashboard</a>
       <a href="javascript://" [routerLink]="['/front-office']" class="nav-link nav-text" (click)="setNull(1)">Front
         Office</a>
+        <a href="javascript://" [routerLink]="['/laundry']" class="nav-link nav-text" (click)="setNull(2)">Laundry</a>
       <a href="javascript://" class="nav-link nav-text">Back Office</a>
 
       <a href="javascript://" class="nav-link nav-text">Help</a>
@@ -56,22 +57,30 @@
       <li class="nav-item">
         <a class="nav-link" href="#" [routerLink]="['/front-office/guest-messages']">guest-messages</a>
       </li>
-
-
-
     </ul>
+
+
+    
+    <ul class="nav" *ngIf="menu_laundry">
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/laundry']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/laundry/post_guest_laundry']">Guest Laundry</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" [routerLink]="['/laundry/post_hotel_laundry']">Hotel Laundry</a>
+      </li>
+    </ul>
+
+
     <ul class="nav" *ngIf="menu_default">
-  
-
-
       <li class="nav-item">
         <a class="nav-link" href="#" [routerLink]="['/front-office/checkin']">ChecK In</a>
       </li>
-
-
-
-
     </ul>
+
+
   </nav>
   <div class="content-container">
     <div class="content-area"  >

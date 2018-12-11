@@ -14,8 +14,6 @@ import { DiscountService } from '../../../services/discount.service';
 import { PaymentMethodService } from '../../../services/payment-method.service';
 import { AccountsService } from '../../../services/accounts.service';
 
-import { FieldTypeFilter } from '../../../Utils/Util_Filter';
-
 
 @Component({
   selector: 'app-booking-list',
@@ -27,7 +25,6 @@ export class BookingListComponent implements OnInit {
   @ViewChild('page1') page1: ClrWizardPage;
   @ViewChild('arrivalData') arrivalData;
   @ViewChild('departureDate') departureDate;
-  fieldTypeFilter = new FieldTypeFilter;
 
   open_wizard = false;
   model: any;
@@ -417,8 +414,6 @@ export class BookingListComponent implements OnInit {
 
 
   onFinish() {
-
-
     const data = {
       bookingForm: this.bookingForm.value,
       userForm: this.userForm.value,
@@ -426,9 +421,7 @@ export class BookingListComponent implements OnInit {
       rms: this.selectedRooms,
       paymentForm: this.paymentForm.value
     };
-
     //console.log(data);
-
     this.reservationsService.post_reservations(data).subscribe(r => {
       console.log(r);
       this.reservationsService.getReservations().subscribe(data2 => {
@@ -436,10 +429,7 @@ export class BookingListComponent implements OnInit {
         this.wizardExtraLarge.navService.setCurrentPage(this.page1);
         this.open_wizard = false;
       });
-
     });
-
-
   }
 
   onNew() {

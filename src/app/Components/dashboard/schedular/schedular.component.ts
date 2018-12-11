@@ -12,9 +12,7 @@ export class SchedularComponent implements OnInit {
   @ViewChild(HeaderComponent) header: HeaderComponent;
   @ViewChild(BodyComponent) body: BodyComponent;
 
-  constructor() {
-
-  }
+  constructor() {}
 
   onDateChanged(date) {
     this.header.reSetDate(date);

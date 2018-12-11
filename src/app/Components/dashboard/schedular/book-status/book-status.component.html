@@ -1,16 +1,13 @@
 <div class="comp small" #comp (click)="open()"> {{occupantName}} <br>
   <span *ngIf="transactionType.length > 1" style="font-size:9px;color:#a9fd1d!important;">{{transactionType}}</span>
-  <span *ngIf="transactionType === '5' && !RoomRate">
-      <span  *ngIf="!RoomRate"  class="spinner  spinner-md" style="margin-left:6px; "></span><br>
+  <span *ngIf="transactionType === '5' && !RoomRate" style="margin-top:80px!important;">
+      <span  *ngIf="!RoomRate"  class="spinner  spinner-sm" style="margin-left:6px; "></span><br>
       <span  *ngIf="!RoomRate">Loading rate...</span>
 
   </span>
 
 <span *ngIf="RoomRate" style="font-size:8px;color:hsl(0, 0%, 100%)!important;">
-    <span class="lable label-info">{{RoomRate.rate_name}}</span> <br>
-  <span class="lable label-info">Rate: {{RoomRate.amount | number:'0.2'}}</span> <br>
-  <span class="lable label-info">E  Adult: {{RoomRate.extra_adult | number:'0.2'}}</span> <br>
-  <span class="lable label-info">E  Child: {{RoomRate.extra_child | number:'0.2'}}</span>
+  <span class="lable label-info">Rate: {{RoomRate.amount | number:'0.2'}}</span>
 </span>
 </div>
 
@@ -21,8 +18,8 @@
     <div class="modal-body">
   
       <div class="row">
-        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">New Booking</div>
-        <div class="col-md-12 r-menu" (click)="isEmptyMenu = false">Make Reservation </div>
+        <div class="col-md-12 r-menu" (click)="OpenWalkingDialog();">Walk In</div>
+        <div class="col-md-12 r-menu" (click)="OpenWalkingDialog();">Reserve</div>
       </div>
   
   
@@ -280,4 +277,6 @@
       <button type="button" class="btn btn-danger" (click)="onCheckinMode = false">Close</button>
     </div>
   </clr-modal>
-  
+
+
+

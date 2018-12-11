@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, Output , EventEmitter } from '@angular/core';
 import { RoomsService } from '../../../../services/rooms.service';
 import { environment } from '../../../../../environments/environment';
 import { ReservationsService } from '../../../../services/reservations.service';
@@ -13,6 +13,7 @@ export class BookStatusComponent implements OnInit {
   @ViewChild('comp', { read: ElementRef }) comp: ElementRef;
 
   @Input() label: String = '';
+  @Output() onNewWalkin = new EventEmitter();
 
   bgColor: String = '';
   occupantName: String = '';
@@ -42,6 +43,7 @@ export class BookStatusComponent implements OnInit {
   onCheckinMode = false;
   isLoadingBookinDetails = false;
   checkinReservation = null;
+  open_wizard=false;
 
 
   constructor(private el: ElementRef, private roomService: RoomsService, private reservationsService: ReservationsService) { }
@@ -50,7 +52,7 @@ export class BookStatusComponent implements OnInit {
     const vm = this;
 
     this.baseUrl = environment.baseIp;
-    if (this.label !== '' && this.label.length > 0) {
+    if (this.label !== '' && this.label.length > 3) {
       const list = this.label.split('-');
       this.occupantName = list[0];
       this.transactionType = list[1];
@@ -74,7 +76,6 @@ export class BookStatusComponent implements OnInit {
           room_id: this.entity_id
         };
           this.reservationsService.get_total_reservation_rate_by_room_id(data).subscribe(function(result){
-
             setTimeout(() => {
            vm.RoomRate = result;
             }, 1500);
@@ -95,7 +96,6 @@ export class BookStatusComponent implements OnInit {
 
       this.roomService.getRoomById(this.entity_id).subscribe(function (data) {
         vm.roomDetails = data;
-        console.log(data);
         setTimeout(() => {
           vm.lodingRoomDetails = false;
         }, 1500);
@@ -112,8 +112,14 @@ export class BookStatusComponent implements OnInit {
 
     if (this.componentType === '') {
       this.isEmptyMenu = true;
+       
     }
 
+  }
+
+  OpenWalkingDialog(){
+    this.isEmptyMenu = false; 
+    this.onNewWalkin.emit(this.label.toString());
   }
 
   OnCheckinClicked(){
@@ -121,13 +127,10 @@ export class BookStatusComponent implements OnInit {
     this.isReserved = false;
     this.onCheckinMode = true;
     this.isLoadingBookinDetails = false;
-    console.log(this.entity_id);
     this.reservationsService.getReservationById(this.entity_id).subscribe(function(result){
-
      setTimeout(() => {
       vm.checkinReservation = result;
       vm.isLoadingBookinDetails = true;
-      console.log(vm.checkinReservation);
      }, 1500);
     });
   }
@@ -156,7 +159,6 @@ export class BookStatusComponent implements OnInit {
         id: vm.entity_id
       };
       this.reservationsService.checkin_reservation(dt).subscribe(function (result) {
-        console.log(result.data);
         alert(result.data);
         vm.checkinReservation = null;
         vm.onCheckinMode = false;
@@ -164,5 +166,7 @@ export class BookStatusComponent implements OnInit {
       });
     }
   }
+
+
 
 }

@@ -1,0 +1,118 @@
+<div class="clr-row">
+  <div class="clr-col-1"></div>
+  <div class="clr-col-10">
+    <div style="width:1330px; height:250px; background: url(assets/images/laundry.png); margin-top:-70px;"></div>
+
+    <div class="clr-row" style="margin-top:10px;">
+      <div class="clr-col-4">
+        <button type="button" class="btn btn-icon btn-block btn-primary" (click)="onPostGuestLaundryClicked($event)">
+          Post Guest Laundry
+
+          <clr-icon shape="add-text" size="72"></clr-icon>
+        </button>
+      </div>
+      <div class="clr-col-4">
+        <button type="button" class="btn btn-icon btn-block btn-warning">
+          Post Hotel Laundry
+          <clr-icon shape="note" size="72"></clr-icon>
+        </button>
+      </div>
+      <div class="clr-col-4">
+        <button type="button" class="btn btn-icon  btn-block btn-success">
+          Undelivered Items
+          <clr-icon shape="history" size="72"></clr-icon>
+        </button>
+      </div>
+      <div class="clr-col-4">
+        <button type="button" class="btn btn-icon btn-block btn-info">
+          Daily Linen
+          <clr-icon shape="tools" size="72" class="is-info"></clr-icon>
+        </button>
+      </div>
+
+
+      <div class="clr-col-12">
+
+        <div class="clr-row">
+
+
+          <div class="clr-col-7" style="margin-top:2px;">
+
+            <h4>Deliverables</h4>
+            <table class="table table-bordered table-secondary table-striped">
+              <thead>
+                <tr>
+                  <th style="width:1px!important;"></th>
+                  <th>Item Name</th>
+                  <th>Item category</th>
+                  <th>Expected Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ado bg-danger">
+
+                  </td>
+                  <td> <span>Item 1</span></td>
+                  <td>Category 1</td>
+                  <td>2/12/2018</td>
+                  <td>
+                    <clr-icon shape="flame" size="16" class="is-error"></clr-icon>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ado bg-success"></td>
+                  <td> <span>Item 1</span></td>
+                  <td>Category 2</td>
+                  <td>2/12/2018</td>
+                  <td>
+                    <clr-icon shape="flame" size="16" class="is-success"></clr-icon>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="ado bg-warning"></td>
+                  <td> <span>Item 1</span></td>
+                  <td>Category 2</td>
+                  <td>2/12/2018</td>
+                  <td>
+                    <clr-icon shape="flame" size="16" class="is-warning"></clr-icon>
+                  </td>
+                </tr>
+                <tr>
+                    <td class="ado bg-danger">
+  
+                    </td>
+                    <td> <span>Item 1</span></td>
+                    <td>Category 1</td>
+                    <td>2/12/2018</td>
+                    <td>
+                      <clr-icon shape="flame" size="16" class="is-error"></clr-icon>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="clr-col-5" style="margin-top:10px;">
+             
+            <div style="display: block">
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <div class="clr-col-1"></div>
+  </div>
+
+
+  <app-share-lib></app-share-lib>
+
+  

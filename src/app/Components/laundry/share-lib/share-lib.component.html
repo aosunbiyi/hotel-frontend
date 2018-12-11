@@ -1,0 +1,105 @@
+<clr-modal [(clrModalOpen)]="canPostGuestLaundry" [clrModalSize]="'xl'" [clrModalClosable]="false">
+  <h3 class="modal-title" *ngIf="!isLoadingComponents"> Add Guest Laundry</h3>
+  <div class="modal-body">
+    <div class="clr-row" *ngIf="isLoadingComponents">
+        <div class="clr-col-md-2"></div>
+      <div class="clr-col-md-4" style="padding-left:50px; text-align: right;">
+        <h3>Initializing Component...</h3>
+      </div>
+       <div class="clr-col-md-4">
+          <span  class="spinner  spinner-md" style="margin-left:10px; margin-top:20px;"></span>
+       </div>
+       <div class="clr-col-md-2"></div>
+    </div>
+    <div *ngIf="!isLoadingComponents">
+      <div class="clr-row">
+        <div class="clr-col-12 control_bar">
+          <div class="clr-row">
+            <div class="clr-col">
+              <label>Room Type  </label> <br>
+           
+              <select name="select" id="select" (change)="onRoomTypeChanged($event)">
+                  <option>--select--</option>
+                  <option value="{{f.id}}" *ngFor="let f of roomTypes">{{f.room_type_name}}</option>
+                </select>
+            </div>
+            <div class="clr-col">
+                <label>Room  </label><br>
+                <select name="room" id="room">
+                    <option>--select--</option>
+                    <option value="{{f.id}}" *ngFor="let f of rooms">{{f.room_name}}</option>
+                  </select>
+              </div>
+              <div class="clr-col">
+                  <label>Name  </label> <br>
+                  <ng-select  [items]="account_list" bindLabel="fullname" bindValue="id" class="floatter"
+                  [(ngModel)]="selected_account"  >
+                </ng-select>
+                </div>
+                <div class="clr-col">
+                    <label>Date  </label> <br>
+                   <input type="date" clrDate placeholder="DD/MM/YYYY">
+                </div>
+                <div class="clr-col">
+                    <label>Time   </label> <br>
+                   <input type="time">
+                </div>
+          </div>
+        </div>
+        <div class="clr-col-md-2"  style="min-height:400px;">
+           <div class="ld_service">
+             Laundry Services             
+           </div>
+          
+              <div class="service_container clr-row">
+                  <div  *ngFor="let service of laundry_services; let index= index;"   class="service_item_con clr-col-md-12  cc{{index}}" (click)="onServiceSelected($event,index)">
+                    <h4>{{service.service_name}}</h4>
+                      <img src="{{baseUrl}}/files/{{service.service_image}}" style="width:70px;">
+                  </div>
+             </div>
+         
+
+        </div>
+        <div class="clr-col-md-2"  style="min-height:400px;">
+            <div class="ld_service">
+              Hotel Services             
+            </div>
+           
+               <div class="service_container clr-row">
+                   <div  *ngFor="let service of laundry_hotel_services; let index= index;"   class="service_item_con2 clr-col-md-12  
+                   cx{{index}}" (click)="onServiceSelected2($event,index)">
+                     <h4>{{service.service_name}}</h4>
+                   </div>
+              </div>
+          
+ 
+         </div>
+
+         <div class="clr-col-md-2"  style="min-height:400px;">
+            <div class="ld_service">
+              Packaging Type            
+            </div>
+           
+               <div class="service_container clr-row">
+                   <div  *ngFor="let service of laundry_packaging_types; let index= index;"   class="service_item_con3 clr-col-md-12  
+                   cs{{index}}" (click)="onServiceSelected3($event,index)">
+                     <h4>{{service.packaging_name}}</h4>
+                     <img src="{{baseUrl}}/files/{{service.packaging_image}}" style="width:70px;">
+                   </div>
+              </div>
+          
+ 
+         </div>
+        <div class="clr-col-md-6">
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+
+    <button type="button" class="btn btn-danger" (click)="canPostGuestLaundry = false">Close</button>
+  </div>
+</clr-modal>

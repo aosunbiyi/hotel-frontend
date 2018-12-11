@@ -1,5 +1,5 @@
 import { Component, OnDestroy, ViewChild, OnInit } from "@angular/core";
-import { fadeAnimation } from './animations';
+import { fadeAnimation } from "./animations";
 import { LocalDate, LocalTime } from "js-joda";
 import { Ticker } from "./services/ticker.model";
 import { DataService } from "./backend/data.service";
@@ -36,6 +36,7 @@ export class AppComponent implements OnDestroy {
   selectedRoomIds: any[] = [];
 
   menu_front_office = false;
+  menu_laundry = false;
   menu_default = true;
 
   constructor(private ds: DataService) {
@@ -60,12 +61,18 @@ export class AppComponent implements OnDestroy {
   setNull(num) {
     this.menu_front_office = false;
     this.menu_default = false;
+    this.menu_laundry = false;
+
     if (num === 1) {
       this.menu_front_office = true;
     }
 
     if (num === 0) {
       this.menu_default = true;
+    }
+
+    if (num === 2) {
+      this.menu_laundry = true;
     }
   }
 
@@ -185,403 +192,373 @@ export class AppComponent implements OnDestroy {
         type: 0,
         title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
       },
       {
         type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
+        title: "No Connection",
+        message: "No Internet Connection in Room 505"
       },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
+      { type: 3, title: "House Keeping", message: "Room 305, is very dirty" },
+      { type: 4, title: "No Stock", message: "Stock Level is very low" },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
+          "Custmer in room 202, Mr Ben is running out of deposited credit"
       },
       {
         type: 0,
-        title: 'Low Credit',
+        title: "Low Credit",
         message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
+          "Custmer in room 201, Mr King is running out of deposited credit"
       },
       {
         type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
-      },
-      {
-        type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
-      },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' },
-      { type: 4, title: 'No Stock', message: 'Stock Level is very low' },
-      {
-        type: 0,
-        title: 'Low Credit',
-        message:
-          'Custmer in room 202, Mr Ben is running out of deposited credit'
-      },
-      {
-        type: 0,
-        title: 'Low Credit',
-        message:
-          'Custmer in room 201, Mr King is running out of deposited credit'
-      },
-      {
-        type: 1,
-        title: 'Low Inventry',
-        message: 'The inventry is very low, please reorder'
-      },
-      {
-        type: 2,
-        title: 'No Connection',
-        message: 'No Internet Connection in Room 505'
-      },
-      { type: 3, title: 'House Keeping', message: 'Room 305, is very dirty' }
+        title: "Low Inventry",
+        message: "The inventry is very low, please reorder"
+      }
     ];
   }
 

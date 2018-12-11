@@ -12,20 +12,12 @@ const routes: Routes = [
         component: MainDashboardComponent
     },
     {
-        path: 'guest-profile',
-        component: GuestProfileComponent
-    },
-    {
-        path: 'hotel-walkin',
-        component: HotelWalkinComponent
-    },
-    {
-        path: 'room-lookup',
-        component: RoomLookUpComponent
-    },
-    {
         path: 'front-office',
         loadChildren: './Components/front-office/front-office.module#FrontOfficeModule'
+    },
+    {
+        path: 'laundry',
+        loadChildren: './Components/laundry/laundry.module#LaundryModule'
     },
     {
         path: '**',
